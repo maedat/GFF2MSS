@@ -1,0 +1,270 @@
+Lj3.0_chrC	source	1..150519	ff_definition	@@[organism]@@ DNA, contig: Lj3.0_chrC
+			mol_type	genomic DNA
+			organism	Lotus japonicus
+			strain	MG-20
+			note	contig: Lj3.0_chrC
+	CDS	complement(520..1365)	codon_start	1
+			locus_tag	PRE_TEST_000000100
+			note	LjLj3.0_chrCg3v0000020.1
+			product	Photosystem Q(B) protein
+			transl_table	1
+	CDS	complement(5158..6585)	codon_start	1
+			locus_tag	PRE_TEST_000000200
+			note	LjLj3.0_chrCg3v0000040.1
+			product	Ribulose bisphosphate carboxylase large chain
+			transl_table	1
+	CDS	7484..8864	codon_start	1
+			locus_tag	PRE_TEST_000000300
+			note	LjLj3.0_chrCg3v0000060.1
+			product	ATP synthase subunit beta (Fragment)
+			transl_table	1
+	CDS	11104..11797	codon_start	1
+			locus_tag	PRE_TEST_000000400
+			note	LjLj3.0_chrCg3v0000080.1
+			product	Characterized Hit- tr|I3SJ79|I3SJ79_LOTJA Uncharacterized protein
+			transl_table	1
+	CDS	15228..15834	codon_start	1
+			locus_tag	PRE_TEST_000000500
+			note	LjLj3.0_chrCg3v0000110.1
+			product	Ribosomal protein S4
+			transl_table	1
+	CDS	16399..16534	codon_start	1
+			locus_tag	PRE_TEST_000000600
+			note	LjLj3.0_chrCg3v0000130.1
+			product	Ycf3 (Fragment)
+			transl_table	1
+	CDS	17245..17470	codon_start	1
+			locus_tag	PRE_TEST_000000700
+			note	LjLj3.0_chrCg3v0000150.1
+			product	Photosystem I assembly protein ycf3
+			transl_table	1
+	CDS	join(19017..20246,20856..20981,21180..21269)	codon_start	1
+			locus_tag	PRE_TEST_000000800
+			note	LjLj3.0_chrCg3v0000180.1
+			product	Photosystem I P700 chlorophyll a apoprotein A1
+			transl_table	1
+	CDS	25165..25408	codon_start	1
+			locus_tag	PRE_TEST_000000900
+			note	LjLj3.0_chrCg3v0000230.1
+			product	ORF83b
+			transl_table	1
+	CDS	complement(27388..28395)	codon_start	1
+			locus_tag	PRE_TEST_000001000
+			note	LjLj3.0_chrCg3v0000250.1
+			product	Photosystem II D2 protein (Fragment)
+			transl_table	1
+	CDS	31081..31249	codon_start	1
+			locus_tag	PRE_TEST_000001100
+			note	LjLj3.0_chrCg3v0000300.1
+			product	Characterized Hit- tr|G7ZX90|G7ZX90_MEDTR Mitochondrial protein, putative
+			transl_table	1
+	CDS	31598..31703	codon_start	1
+			locus_tag	PRE_TEST_000001200
+			note	LjLj3.0_chrCg3v0000320.1
+			product	Photosystem II protein M
+			transl_table	1
+	CDS	34384..35725	codon_start	1
+			locus_tag	PRE_TEST_000001300
+			note	LjLj3.0_chrCg3v0000370.1
+			product	DNA-directed RNA polymerase subunit beta
+			transl_table	1
+	CDS	35779..37594	codon_start	1
+			locus_tag	PRE_TEST_000001400
+			note	LjLj3.0_chrCg3v0000380.1
+			product	gene.g67809.t1.1
+			transl_table	1
+	CDS	42593..43139	codon_start	1
+			locus_tag	PRE_TEST_000001500
+			note	LjLj3.0_chrCg3v0000390.1
+			product	RNA polymerase beta'' subunit (Fragment)
+			transl_table	1
+	CDS	44956..45661	codon_start	1
+			locus_tag	PRE_TEST_000001600
+			note	LjLj3.0_chrCg3v0000410.1
+			product	30S ribosomal protein S2, chloroplastic
+			transl_table	1
+	CDS	45827..46571	codon_start	1
+			locus_tag	PRE_TEST_000001700
+			note	LjLj3.0_chrCg3v0000420.1
+			product	Characterized Hit- tr|I3SIQ0|I3SIQ0_LOTJA Uncharacterized protein
+			transl_table	1
+	CDS	47154..47352	codon_start	1
+			locus_tag	PRE_TEST_000001800
+			note	LjLj3.0_chrCg3v0000430.1
+			product	Characterized Hit- tr|I3SA09|I3SA09_LOTJA Uncharacterized protein
+			transl_table	1
+	CDS	49365..50898	codon_start	1
+			locus_tag	PRE_TEST_000001900
+			note	LjLj3.0_chrCg3v0000470.1
+			product	ATP synthase subunit alpha
+			transl_table	1
+	CDS	complement(53801..53986)	codon_start	1
+			locus_tag	PRE_TEST_000002000
+			note	LjLj3.0_chrCg3v0000530.1
+			product	Photosystem II reaction center protein K
+			transl_table	1
+	CDS	56938..58309	codon_start	1
+			locus_tag	PRE_TEST_000002100
+			note	LjLj3.0_chrCg3v0000580.1
+			product	Acetyl-coenzyme A carboxylase carboxyl transferase subunit beta, chloroplasti,81.94,0,COA_CT_NTER,Acetyl-coenzyme A carboxyltransferase, N-terminal; YNGE PROTEIN,NULL; ACETYL, PROPIONYL,,NODE_30531_length_1434_cov_27.039051.path1.1
+			transl_table	1
+	CDS	59718..60408	codon_start	1
+			locus_tag	PRE_TEST_000002200
+			note	LjLj3.0_chrCg3v0000600.1
+			product	envelope membrane protein, chloroplastic
+			transl_table	1
+	CDS	complement(67560..67781)	codon_start	1
+			locus_tag	PRE_TEST_000002300
+			note	LjLj3.0_chrCg3v0010700.1
+			product	ATP-dependent Clp protease proteolytic subunit
+			transl_table	1
+	CDS	complement(join(67734..67785,68426..68640))	codon_start	1
+			locus_tag	PRE_TEST_000002400
+			note	LjLj3.0_chrCg3v0010710.1
+			product	ATP-dependent Clp protease proteolytic subunit
+			transl_table	1
+	CDS	70038..71124	codon_start	1
+			locus_tag	PRE_TEST_000002500
+			note	LjLj3.0_chrCg3v0010730.1
+			product	Photosystem II CP47 chlorophyll apoprotein (Fragment)
+			transl_table	1
+	CDS	complement(71493..71654)	codon_start	1
+			locus_tag	PRE_TEST_000002600
+			note	LjLj3.0_chrCg3v0010740.1
+			product	ORF52b
+			transl_table	1
+	CDS	72162..72385	codon_start	1
+			locus_tag	PRE_TEST_000002700
+			note	LjLj3.0_chrCg3v0010750.1
+			product	Photosystem II phosphoprotein (Fragment)
+			transl_table	1
+	CDS	73499..73673	codon_start	1
+			locus_tag	PRE_TEST_000002800
+			note	LjLj3.0_chrCg3v0010770.1
+			product	Cytochrome b6
+			transl_table	1
+	CDS	74879..75281	codon_start	1
+			locus_tag	PRE_TEST_000002900
+			note	LjLj3.0_chrCg3v0010790.1
+			product	Cytochrome b6-f complex subunit 4
+			transl_table	1
+	CDS	74984..75404	codon_start	1
+			locus_tag	PRE_TEST_000003000
+			note	LjLj3.0_chrCg3v0010800.1
+			product	Cytochrome b6-f complex subunit 4
+			transl_table	1
+	CDS	complement(75823..76620)	codon_start	1
+			locus_tag	PRE_TEST_000003100
+			note	LjLj3.0_chrCg3v0010820.1
+			product	Characterized Hit- tr|I3S5B5|I3S5B5_LOTJA Uncharacterized protein
+			transl_table	1
+	CDS	86160..88230	codon_start	1
+			locus_tag	PRE_TEST_000003200
+			note	LjLj3.0_chrCg3v0010870.1
+			product	Hypothetical chloroplast RF2
+			transl_table	1
+	CDS	complement(98024..98254)	codon_start	1
+			locus_tag	PRE_TEST_000003300
+			note	LjLj3.0_chrCg3v0010940.1
+			product	Characterized Hit- tr|D7TNY0|D7TNY0_VITVI Putative uncharacterized protein
+			transl_table	1
+	CDS	complement(100778..101032)	codon_start	1
+			locus_tag	PRE_TEST_000003400
+			note	LjLj3.0_chrCg3v0011610.1
+			product	Characterized Hit- tr|G7J0Z8|G7J0Z8_MEDTR Putative uncharacterized protein
+			transl_table	1
+	CDS	105107..105281	codon_start	1
+			locus_tag	PRE_TEST_000003500
+			note	LjLj3.0_chrCg3v0013200.1
+			product	Characterized Hit- tr|G7JS10|G7JS10_MEDTR Putative uncharacterized protein
+			transl_table	1
+	CDS	106578..106983	codon_start	1
+			locus_tag	PRE_TEST_000003600
+			note	LjLj3.0_chrCg3v0013250.1
+			product	Characterized Hit- tr|I3T5M7|I3T5M7_LOTJA Uncharacterized protein
+			transl_table	1
+	CDS	110150..110303	codon_start	1
+			locus_tag	PRE_TEST_000003700
+			note	LjLj3.0_chrCg3v0013270.1
+			product	Ribosomal protein L32
+			transl_table	1
+	CDS	110740..111709	codon_start	1
+			locus_tag	PRE_TEST_000003800
+			note	LjLj3.0_chrCg3v0013290.1
+			product	Cytochrome c biogenesis protein ccsA
+			transl_table	1
+	CDS	complement(112919..113098)	codon_start	1
+			locus_tag	PRE_TEST_000003900
+			note	LjLj3.0_chrCg3v0013310.1
+			product	Photosystem I iron-sulfur center
+			transl_table	1
+	CDS	complement(113571..113816)	codon_start	1
+			locus_tag	PRE_TEST_000004000
+			note	LjLj3.0_chrCg3v0013320.1
+			product	Photosystem I subunit VII (Fragment)
+			transl_table	1
+	CDS	complement(114672..114968)	codon_start	1
+			locus_tag	PRE_TEST_000004100
+			note	LjLj3.0_chrCg3v0013330.1
+			product	NAD(P)H-quinone oxidoreductase subunit 6, chloroplastic
+			transl_table	1
+	CDS	complement(115625..116080)	codon_start	1
+			locus_tag	PRE_TEST_000004200
+			note	LjLj3.0_chrCg3v0013340.1
+			product	NAD(P)H-quinone oxidoreductase subunit
+			transl_table	1
+	CDS	complement(116202..116648)	codon_start	1
+			locus_tag	PRE_TEST_000004300
+			note	LjLj3.0_chrCg3v0013350.1
+			product	NAD(P)H-quinone oxidoreductase subunit 1, chloroplastic
+			transl_table	1
+	CDS	complement(118560..119741)	codon_start	1
+			locus_tag	PRE_TEST_000004400
+			note	LjLj3.0_chrCg3v0013390.1
+			product	NAD(P)H-quinone oxidoreductase subunit H, chloroplastic
+			transl_table	1
+	CDS	complement(123164..123805)	codon_start	1
+			locus_tag	PRE_TEST_000004500
+			note	LjLj3.0_chrCg3v0013410.1
+			product	Ycf1
+			transl_table	1
+	CDS	complement(125474..125878)	codon_start	1
+			locus_tag	PRE_TEST_000004600
+			note	LjLj3.0_chrCg3v0013420.1
+			product	Characterized Hit- tr|I3T5M7|I3T5M7_LOTJA Uncharacterized protein
+			transl_table	1
+	CDS	complement(127176..127349)	codon_start	1
+			locus_tag	PRE_TEST_000004700
+			note	LjLj3.0_chrCg3v0013470.1
+			product	Characterized Hit- tr|G7JS10|G7JS10_MEDTR Putative uncharacterized protein
+			transl_table	1
+	CDS	131424..131679	codon_start	1
+			locus_tag	PRE_TEST_000004800
+			note	LjLj3.0_chrCg3v0015020.1
+			product	Characterized Hit- tr|G7J0Z8|G7J0Z8_MEDTR Putative uncharacterized protein
+			transl_table	1
+	CDS	132832..132964	codon_start	1
+			locus_tag	PRE_TEST_000004900
+			note	LjLj3.0_chrCg3v0015040.1
+			product	ORF137
+			transl_table	1
+	CDS	complement(133251..133355)	codon_start	1
+			locus_tag	PRE_TEST_000005000
+			note	LjLj3.0_chrCg3v0015200.1
+			product	ORF58e
+			transl_table	1
+	CDS	134202..134433	codon_start	1
+			locus_tag	PRE_TEST_000005100
+			note	LjLj3.0_chrCg3v0016130.1
+			product	Characterized Hit- tr|D7TNY0|D7TNY0_VITVI Putative uncharacterized protein
+			transl_table	1
+	CDS	complement(135231..135491)	codon_start	1
+			locus_tag	PRE_TEST_000005200
+			note	LjLj3.0_chrCg3v0016150.1
+			product	Orf114a protein
+			transl_table	1
+	CDS	complement(142217..142519)	codon_start	1
+			locus_tag	PRE_TEST_000005300
+			note	LjLj3.0_chrCg3v0016220.1
+			product	Hypothetical chloroplast RF2
+			transl_table	1
