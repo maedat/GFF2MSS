@@ -1,0 +1,54 @@
+ID	Description
+LjLj3.0_chrCg3v0000020.1	Photosystem Q(B) protein
+LjLj3.0_chrCg3v0000040.1	Ribulose bisphosphate carboxylase large chain
+LjLj3.0_chrCg3v0000060.1	ATP synthase subunit beta (Fragment)
+LjLj3.0_chrCg3v0000080.1	Characterized Hit- tr|I3SJ79|I3SJ79_LOTJA Uncharacterized protein
+LjLj3.0_chrCg3v0000110.1	Ribosomal protein S4
+LjLj3.0_chrCg3v0000130.1	Ycf3 (Fragment)
+LjLj3.0_chrCg3v0000150.1	Photosystem I assembly protein ycf3
+LjLj3.0_chrCg3v0000180.1	Photosystem I P700 chlorophyll a apoprotein A1
+LjLj3.0_chrCg3v0000230.1	ORF83b
+LjLj3.0_chrCg3v0000250.1	Photosystem II D2 protein (Fragment)
+LjLj3.0_chrCg3v0000300.1	Characterized Hit- tr|G7ZX90|G7ZX90_MEDTR Mitochondrial protein, putative
+LjLj3.0_chrCg3v0000320.1	Photosystem II protein M
+LjLj3.0_chrCg3v0000370.1	DNA-directed RNA polymerase subunit beta
+LjLj3.0_chrCg3v0000380.1	gene.g67809.t1.1
+LjLj3.0_chrCg3v0000390.1	RNA polymerase beta'' subunit (Fragment)
+LjLj3.0_chrCg3v0000410.1	30S ribosomal protein S2, chloroplastic
+LjLj3.0_chrCg3v0000420.1	Characterized Hit- tr|I3SIQ0|I3SIQ0_LOTJA Uncharacterized protein
+LjLj3.0_chrCg3v0000430.1	Characterized Hit- tr|I3SA09|I3SA09_LOTJA Uncharacterized protein
+LjLj3.0_chrCg3v0000470.1	ATP synthase subunit alpha
+LjLj3.0_chrCg3v0000530.1	Photosystem II reaction center protein K
+LjLj3.0_chrCg3v0000580.1	Acetyl-coenzyme A carboxylase carboxyl transferase subunit beta, chloroplasti,81.94,0,COA_CT_NTER,Acetyl-coenzyme A carboxyltransferase, N-terminal; YNGE PROTEIN,NULL; ACETYL, PROPIONYL,,NODE_30531_length_1434_cov_27.039051.path1.1
+LjLj3.0_chrCg3v0000600.1	envelope membrane protein, chloroplastic
+LjLj3.0_chrCg3v0010700.1	ATP-dependent Clp protease proteolytic subunit
+LjLj3.0_chrCg3v0010710.1	ATP-dependent Clp protease proteolytic subunit
+LjLj3.0_chrCg3v0010730.1	Photosystem II CP47 chlorophyll apoprotein (Fragment)
+LjLj3.0_chrCg3v0010740.1	ORF52b
+LjLj3.0_chrCg3v0010750.1	Photosystem II phosphoprotein (Fragment)
+LjLj3.0_chrCg3v0010770.1	Cytochrome b6
+LjLj3.0_chrCg3v0010790.1	Cytochrome b6-f complex subunit 4
+LjLj3.0_chrCg3v0010800.1	Cytochrome b6-f complex subunit 4
+LjLj3.0_chrCg3v0010820.1	Characterized Hit- tr|I3S5B5|I3S5B5_LOTJA Uncharacterized protein
+LjLj3.0_chrCg3v0010870.1	Hypothetical chloroplast RF2
+LjLj3.0_chrCg3v0010940.1	Characterized Hit- tr|D7TNY0|D7TNY0_VITVI Putative uncharacterized protein
+LjLj3.0_chrCg3v0011610.1	Characterized Hit- tr|G7J0Z8|G7J0Z8_MEDTR Putative uncharacterized protein
+LjLj3.0_chrCg3v0013200.1	Characterized Hit- tr|G7JS10|G7JS10_MEDTR Putative uncharacterized protein
+LjLj3.0_chrCg3v0013250.1	Characterized Hit- tr|I3T5M7|I3T5M7_LOTJA Uncharacterized protein
+LjLj3.0_chrCg3v0013270.1	Ribosomal protein L32
+LjLj3.0_chrCg3v0013290.1	Cytochrome c biogenesis protein ccsA
+LjLj3.0_chrCg3v0013310.1	Photosystem I iron-sulfur center
+LjLj3.0_chrCg3v0013320.1	Photosystem I subunit VII (Fragment)
+LjLj3.0_chrCg3v0013330.1	NAD(P)H-quinone oxidoreductase subunit 6, chloroplastic
+LjLj3.0_chrCg3v0013340.1	NAD(P)H-quinone oxidoreductase subunit
+LjLj3.0_chrCg3v0013350.1	NAD(P)H-quinone oxidoreductase subunit 1, chloroplastic
+LjLj3.0_chrCg3v0013390.1	NAD(P)H-quinone oxidoreductase subunit H, chloroplastic
+LjLj3.0_chrCg3v0013410.1	Ycf1
+LjLj3.0_chrCg3v0013420.1	Characterized Hit- tr|I3T5M7|I3T5M7_LOTJA Uncharacterized protein
+LjLj3.0_chrCg3v0013470.1	Characterized Hit- tr|G7JS10|G7JS10_MEDTR Putative uncharacterized protein
+LjLj3.0_chrCg3v0015020.1	Characterized Hit- tr|G7J0Z8|G7J0Z8_MEDTR Putative uncharacterized protein
+LjLj3.0_chrCg3v0015040.1	ORF137
+LjLj3.0_chrCg3v0015200.1	ORF58e
+LjLj3.0_chrCg3v0016130.1	Characterized Hit- tr|D7TNY0|D7TNY0_VITVI Putative uncharacterized protein
+LjLj3.0_chrCg3v0016150.1	Orf114a protein
+LjLj3.0_chrCg3v0016220.1	Hypothetical chloroplast RF2
