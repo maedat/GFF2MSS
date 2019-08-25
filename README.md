@@ -47,4 +47,4 @@ python3 GFF2MSS.py \
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en)
 
 ## Author
-[Taro Maeda](https://github.com/tcnksm)
+[Taro Maeda](https://github.com/maedat)
