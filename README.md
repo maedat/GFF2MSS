@@ -1,4 +1,4 @@
-GFF2MSS; GFF3 converter for DDBJ submission via MSS
+# GFF2MSS; GFF3 converter for DDBJ submission via MSS
 
 ====
 
