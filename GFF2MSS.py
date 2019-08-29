@@ -12,9 +12,9 @@
 # license     CC BY 4.0 
 # ======================================================================
 # 
-# MSS (Mass Submission System) on DDBJ requires Uniq annotation format file for data submission. 
-# I here made a python script converting the standard gff3 gene model file to the MSS annotation file. 
-# This script makes an MSS file from a gff3 file for gene modeling, a tsv file for annotation file, and a fasta file containing genomic sequence. 
+# MSS (Mass Submission System) on DDBJ requires uniq annotation format file for data submission. 
+# For my convenience, I made a python script convert the standard gff3 gene model file to the MSS annotation file. 
+# This scrpt make a MSS file from gff3, annotation file (tsv file), and genomic fasta file. 
 
 
 import argparse
@@ -82,7 +82,7 @@ if __name__ == '__main__':
                 OUT_CHA += "\t" + "\t" + "\t" + "mol_type" + "\t" + mol_type_in + "\n"
                 OUT_CHA += "\t" + "\t" + "\t" + "organism" + "\t" + organism_name_in + "\n"
                 OUT_CHA += "\t" + "\t" + "\t" + "strain" + "\t" + strain_in + "\n"
-                OUT_CHA += "\t" + "\t" + "\t" + "note" + "\t" + "contig: " +  NowContig + "\n"
+                OUT_CHA += "\t" + "\t" + "\t" + "submitter_seqid" + "\t" +  NowContig + "\n"
     ##gffから該当配列に関するfeatureを順番に読み込む
                 with open(gff_filename, "rt") as gh:
                     for rec in GFF.parse(gh):
@@ -122,7 +122,7 @@ if __name__ == '__main__':
                                         JOIN_CDS = out_STRAND + out_JOINT + POSITION + out_JOINT_CLOSE + out_STRAND_CLOSE 
                                         OUT_CHA += "\tCDS\t"+ JOIN_CDS + "\tcodon_start\t1"+"\n"
                                         OUT_CHA += "\t\t\t" + "locus_tag\t" + locus_tag_prefix + str(locus_tag_counter).zfill(9) + "\n"
-                                        OUT_CHA += "\t\t\t" + "note\t" + mRNA_ID+"\n"
+                                        OUT_CHA += "\t\t\t" + "note\t" + "transcript_id:" + mRNA_ID+"\n"
                                         OUT_CHA += "\t\t\t" + "product\t" + product_name+"\n"
                                         OUT_CHA += "\t\t\t" + "transl_table\t" + transl_table[0]+"\n"
                                         print(mRNA_ID + " end") 
