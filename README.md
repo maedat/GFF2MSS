@@ -8,7 +8,7 @@ This script makes an MSS file from a gff3 file for gene modeling, a tsv file for
 
 ## v.2.0
 - rRNA and tRNA gene models were supported.
-- A utility for tRNAscan result processing to gff3 file was applied. 
+- A utility for tRNAscan result processing was applied. 
 - The license was changed from CC BY to the MIT License
 
 ## Requirement
