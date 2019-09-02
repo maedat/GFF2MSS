@@ -5,7 +5,7 @@
 # ======================================================================
 # Project Name    : GFF2MSS
 # File Name       : GFF2MSS.py
-# Version       : 2.0.0
+# Version       : 2.0.1
 # Encoding        : python
 # Creation Date   : 2019/08/30
 # Author : Taro Maeda 
@@ -211,7 +211,7 @@ if __name__ == '__main__':
                                                 COUNT += 1
                                                 POSITION, out_JOINT, out_JOINT_CLOSE  = POSITION_SET(Exon_f, COUNT, POSITION)
                                         JOIN = out_STRAND + out_JOINT + POSITION + out_JOINT_CLOSE + out_STRAND_CLOSE 
-                                        OUT_CHA += tRNA_CHA_SET(POSITION, locus_tag_prefix, locus_tag_counter, tRNA_name, tRNA_anticodon, tRNA_note, 9)
+                                        OUT_CHA += tRNA_CHA_SET(JOIN, locus_tag_prefix, locus_tag_counter, tRNA_name, tRNA_anticodon, tRNA_note, 9)
                                         print(tRNA_name + " end") 
                 with open(out_path, mode='a') as f:
                     f.write(OUT_CHA)
