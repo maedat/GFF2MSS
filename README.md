@@ -12,7 +12,7 @@ This script makes an MSS file from a gff3 file for gene modeling, a tsv file for
 - The license was changed from CC BY to the MIT License
 
 ## Requirement
-Python 3.7. (Biopython, pandas, argparse)
+Python 3.7. (Biopython, pandas, argparse, bcbio-gff)
 
 ## Usage
 ```sh
