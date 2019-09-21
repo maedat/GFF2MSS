@@ -1,11 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # coding: UTF-8
 
 # 
 # ======================================================================
 # Project Name    : GFF2MSS
 # File Name       : GFF2MSS.py
-# Version       : 2.0.1
+# Version       : 3.0.1
 # Encoding        : python
 # Creation Date   : 2019/08/30
 # Author : Taro Maeda 
@@ -42,7 +42,8 @@ def GET_ARGS():
     parser.add_argument('-s','--stn',help="strain", type=str, required=False)
     parser.add_argument('-o','--out',help="output MSS file path", required=True)
     parser.add_argument('-m','--mol',help="mol_type value (default = genomic DNA)", type=str, required=False)
-    parser.set_defaults(mol='genomic DNA', stn='')
+    parser.add_argument('-p','--pid',help="file for protein ID (Only for the genome version-up)", type=str, required=False)
+    parser.set_defaults(mol='genomic DNA', stn='', pid="NOFILE")
     return parser.parse_args()
 
 
@@ -119,6 +120,8 @@ if __name__ == '__main__':
     locus_tag_prefix = args.loc
 
     mol_type_in = args.mol
+    protein_id = args.pid
+    
     organism_name_in = args.nam
     strain_in = args.stn
 
@@ -164,6 +167,14 @@ if __name__ == '__main__':
                                                 POSITION, out_JOINT, out_JOINT_CLOSE  = POSITION_SET(CDS_f, COUNT, POSITION)
                                         JOIN = out_STRAND + out_JOINT + POSITION + out_JOINT_CLOSE + out_STRAND_CLOSE 
                                         OUT_CHA += CDS_CHA_SET(JOIN, locus_tag_prefix, locus_tag_counter, mRNA_ID, product_name, transl_table[0], 9)
+                                        if protein_id != "NOFILE":
+                                            pid_DF=pd.read_csv(protein_id, sep='\t')
+                                            tmp_DF = ""
+                                            tmp_DF = pid_DF[pid_DF['ID'] == mRNA_ID]
+                                            if (len(tmp_DF)>0):
+                                                pid_find= tmp_DF.iat[0,1]
+                                                print("-> protein_id = " + pid_find)
+                                                OUT_CHA += "\t" + "\t" + "\t" + "protein_id" + "\t" +  pid_find + "\n"
                                         print(mRNA_ID + " end") 
                                     elif RNA_f.type == 'rRNA':
                                         COUNT = 0 #新しいrRNAに入ったらcountを０にする
