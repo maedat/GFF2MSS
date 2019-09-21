@@ -74,7 +74,7 @@ Please use the following GFF3 format for  tRNA data.
 ```txt
 e.g.,
 chr1	.	gene	2	74	.	+	.	ID=t91_gene
-chr1	.	tRNA	2	74	.	+	.	Parent=t91_gene;ID=t91_tRNA;Name=tRNA-Lys-CTT;anticodon=(pos:45..47,aa:Lys)
+chr1	.	tRNA	2	74	.	+	.	Parent=t91_gene;ID=t91_tRNA;Name=tRNA-Lys;anticodon=(pos:45..47,aa:Lys)
 chr1	.	exon	2	51	.	+	.	Parent=t91_tRNA;ID=t91_exon_1
 chr1	.	exon	60	74	.	+	.	Parent=t91_tRNA;ID=t91_exon_2
 ```
@@ -83,7 +83,7 @@ chr1	.	exon	60	74	.	+	.	Parent=t91_tRNA;ID=t91_exon_2
 
 ```txt
 e.g.,
-	tRNA	join(2..51,60..74)   	product	tRNA-Lys-CTT;
+	tRNA	join(2..51,60..74)   	product	tRNA-Lys;
 			locus_tag	TES_000011100
 			anticodon	(pos:45..47,aa:Lys)
 ```
