@@ -5,6 +5,11 @@
 MSS (Mass Submission System) on DDBJ requires Uniq annotation format file for data submission. I here made a python script converting the standard gff3 gene model file to the MSS annotation. 
 This script makes an MSS file from a gff3 file for gene modeling, a tsv file for annotation file, and a fasta file containing genomic sequence. I recommend preprocessing [GFF3sort.pl](https://github.com/billzt/gff3sort). After the making of MSS file, you should fill "COMMON" entries (SUBMITTER, REFERENCE, etc.) before the submission for DDBJ. 
 
+## v.3.0
+
+- --pid option is available to marge the previous protein ID to the new submission.   
+- "@@[entry]@@", and "@@[submitter_seqid]@@" were used in submitter_seqid. 
+
 
 ## v.2.0
 - rRNA and tRNA gene models were supported.
@@ -17,7 +22,7 @@ Python 3.7. (Biopython, pandas, argparse, bcbio-gff)
 ## Usage
 ```sh
 usage: GFF2MSS.py [-h] -f FASTA -g GFF -a ANN -l LOC -n NAM [-s STN] -o OUT
-                  [-m MOL]
+                  [-m MOL] [-p PID]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -31,8 +36,9 @@ optional arguments:
   -s STN, --stn STN     strain
   -o OUT, --out OUT     output MSS file path
   -m MOL, --mol MOL     mol_type value (default = genomic DNA)
+  -p PID, --pid PID     file for protein ID (Only for the genome version-up)
 ```
-  
+
 ## Demo
 ```sh
 python3 GFF2MSS.py \
