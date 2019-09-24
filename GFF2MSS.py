@@ -5,7 +5,7 @@
 # ======================================================================
 # Project Name    : GFF2MSS
 # File Name       : GFF2MSS.py
-# Version       : 3.0.1
+# Version       : 3.0.2
 # Encoding        : python
 # Creation Date   : 2019/08/30
 # Author : Taro Maeda 
@@ -49,11 +49,11 @@ def GET_ARGS():
 
 def FASTA_CHA_SET(length_int, contig_name, organism_name_in, strain_in, mol_type_in):
     print("Processing " +  contig_name)
-    OUT_CHA = NowContig + "\t" + "source" + "\t" + str(1) + ".." + str(length_int) + "\t" + "ff_definition" + "\t" + "@@[organism]@@ DNA, contig: " + contig_name + "\n"
+    OUT_CHA = NowContig + "\t" + "source" + "\t" + str(1) + ".." + str(length_int) + "\t" + "ff_definition" + "\t" + "@@[organism]@@ DNA, @@[submitter_seqid]@@" + "\n"
     OUT_CHA += "\t" + "\t" + "\t" + "mol_type" + "\t" + mol_type_in + "\n"
     OUT_CHA += "\t" + "\t" + "\t" + "organism" + "\t" + organism_name_in + "\n"
     OUT_CHA += "\t" + "\t" + "\t" + "strain" + "\t" + strain_in + "\n"
-    OUT_CHA += "\t" + "\t" + "\t" + "submitter_seqid" + "\t" +  contig_name + "\n"
+    OUT_CHA += "\t" + "\t" + "\t" + "submitter_seqid" + "\t" +  "@@[entry]@@" + "\n"
     return OUT_CHA
     
     
