@@ -3,7 +3,14 @@
 ====
 
 MSS (Mass Submission System) on DDBJ requires Uniq annotation format file for data submission. I here made a python script converting the standard gff3 gene model file to the MSS annotation. 
-This script makes an MSS file from a gff3 file for gene modeling, a tsv file for annotation file, and a fasta file containing genomic sequence. I recommend preprocessing [GFF3sort.pl](https://github.com/billzt/gff3sort). After the making of MSS file, you should fill "COMMON" entries (SUBMITTER, REFERENCE, etc.) before the submission for DDBJ. 
+This script makes an MSS file from a gff3 file for gene modeling, a tsv file for annotation file, and a fasta file containing genomic sequence. Preprocessing of gff3 by [GFF3sort.pl](https://github.com/billzt/gff3sort). is recommended. After the making of MSS file, you should fill "COMMON" entries (SUBMITTER, REFERENCE, etc.) before the submission for DDBJ. 
+
+## v.4.0
+
+
+- Support for ambigous "N"-base in fasta. ("N/n"-base will be converted to "assembly_gap" feature in MSS). Please install "gffpandas" library. 
+
+- Processing speed is greatly improved by using pandas and so on (e.g., v3 = 14.8s, v4 = 4.2s).
 
 ## v.3.0
 
@@ -17,7 +24,7 @@ This script makes an MSS file from a gff3 file for gene modeling, a tsv file for
 - The license was changed from CC BY to the MIT License
 
 ## Requirement
-Python 3.7. (Biopython, pandas, argparse, bcbio-gff)
+Python 3.7. (Biopython, numpy, pandas, argparse, bcbio-gff, gffpandas)
 
 ## Usage
 ```sh
@@ -37,16 +44,17 @@ optional arguments:
   -o OUT, --out OUT     output MSS file path
   -m MOL, --mol MOL     mol_type value (default = genomic DNA)
   -p PID, --pid PID     file for protein ID (Only for the genome version-up)
+  -t GTY, --gty GTY     type of linkage_evidence (default = paired-ends)
 ```
 
 ## Demo
 ```sh
 python3 GFF2MSS.py \
--f example/Lj3.0_Chloroplastl.fna \
--g example/Lj3.0_cp_gene_models.gff3  \
--a example/Lj3.0_anno.txt \
+-f example2/test.fa \
+-g example2/test.gff  \
+-a example2/annot.list \
 -l "PRE_TEST_" \
--n "Lotus japonicus" \
+-n "Demo japonicus" \
 -s "MG-20" \
 -o mss.out.txt 
 
@@ -89,7 +97,7 @@ chr1	.	exon	60	74	.	+	.	Parent=t91_tRNA;ID=t91_exon_2
 
 ```txt
 e.g.,
-	tRNA	join(2..51,60..74)   	product	tRNA-Lys;
+	tRNA	join(2..51,60..74)   	product	tRNA-Lys
 			locus_tag	TES_000011100
 			anticodon	(pos:45..47,aa:Lys)
 ```

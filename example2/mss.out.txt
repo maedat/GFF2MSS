@@ -1,0 +1,2331 @@
+tig00000005	source	1..99492	ff_definition	@@[organism]@@ DNA, @@[submitter_seqid]@@
+			mol_type	genomic DNA
+			organism	Rhizo
+			strain	black
+			submitter_seqid	@@[entry]@@
+	CDS	complement(join(3274..3580,3658..3887,4172..4174,4241..4452,4545..4554,4602..4741,4816..4846))	codon_start	1
+			locus_tag	PRE_TEST_000000100
+			note	transcript_id:RCL_jg29243.t3
+			product	hypothetical protein GLOIN_2v1488591
+			transl_table	1
+	CDS	complement(join(3274..3580,3658..3887,4172..4174,4241..4452,4586..4741,4816..4846))	codon_start	1
+			locus_tag	PRE_TEST_000000100
+			note	transcript_id:RCL_jg29243.t1
+			product	hypothetical protein GLOIN_2v1488591
+			transl_table	1
+	CDS	complement(join(3274..3580,3658..3661,3740..3887,4172..4174,4241..4452,4586..4741,4816..4846))	codon_start	1
+			locus_tag	PRE_TEST_000000100
+			note	transcript_id:RCL_jg29243.t2
+			product	hypothetical protein GLOIN_2v1488591
+			transl_table	1
+	CDS	join(8896..9696,9814..9991,10080..11070,11151..11532,11615..11972,12037..12578)	codon_start	1
+			locus_tag	PRE_TEST_000000200
+			note	transcript_id:RCL_jg29244.t2
+			product	hypothetical protein GLOIN_2v1790940
+			transl_table	1
+	CDS	join(8896..9991,10080..11070,11151..11532,11615..11972,12037..12578)	codon_start	1
+			locus_tag	PRE_TEST_000000200
+			note	transcript_id:RCL_jg29244.t1
+			product	hypothetical protein GLOIN_2v1790940
+			transl_table	1
+	CDS	complement(16068..16403)	codon_start	1
+			locus_tag	PRE_TEST_000000300
+			note	transcript_id:RCL_jg29245.t1
+			product	hypothetical protein RCL_jg29245.t1
+			transl_table	1
+	CDS	join(18434..18436,18863..19477)	codon_start	1
+			locus_tag	PRE_TEST_000000400
+			note	transcript_id:RCL_jg29246.t1
+			product	GATA zinc finger domain-containing protein 14-like
+			transl_table	1
+	CDS	join(19514..19655,19919..20382)	codon_start	1
+			locus_tag	PRE_TEST_000000500
+			note	transcript_id:RCL_jg29247.t1
+			product	NUDIX domain-containing protein
+			transl_table	1
+	CDS	20422..20721	codon_start	1
+			locus_tag	PRE_TEST_000000600
+			note	transcript_id:RCL_jg29249.t1
+			product	hypothetical protein GLOIN_2v1869520
+			transl_table	1
+	CDS	20755..21183	codon_start	1
+			locus_tag	PRE_TEST_000000700
+			note	transcript_id:RCL_jg29250.t1
+			product	hypothetical protein RCL_jg29250.t1
+			transl_table	1
+	CDS	join(23366..23639,24024..24680,24792..25232,25308..25492)	codon_start	1
+			locus_tag	PRE_TEST_000000900
+			note	transcript_id:RCL_jg29251.t1
+			product	retrovirus-related Pol polyprotein from transposon 412
+			transl_table	1
+	CDS	complement(join(25693..26002,26062..26066))	codon_start	1
+			locus_tag	PRE_TEST_000001000
+			note	transcript_id:RCL_jg29252.t1
+			product	hypothetical protein RCL_jg29252.t1
+			transl_table	1
+	CDS	complement(join(30911..31108,31186..31260,31498..31710))	codon_start	1
+			locus_tag	PRE_TEST_000001100
+			note	transcript_id:RCL_jg29253.t1
+			product	hypothetical protein RCL_jg29253.t1
+			transl_table	1
+	CDS	complement(join(36598..36894,36971..37342,37629..37798,37877..37997))	codon_start	1
+			locus_tag	PRE_TEST_000001200
+			note	transcript_id:RCL_jg29254.t1
+			product	hypothetical protein GLOIN_2v1883439
+			transl_table	1
+	CDS	join(38908..38978,39143..39341,39427..39912,39985..39997,40094..40592,40665..41073,41143..41379,41446..41844,41908..42132)	codon_start	1
+			locus_tag	PRE_TEST_000001300
+			note	transcript_id:RCL_jg29255.t3
+			product	hypothetical protein GLOIN_2v1783703
+			transl_table	1
+	CDS	join(38908..38978,39143..39341,39427..39912,39985..40592,40665..41073,41143..41379,41446..41677,41762..41844,41908..42132)	codon_start	1
+			locus_tag	PRE_TEST_000001300
+			note	transcript_id:RCL_jg29255.t1
+			product	hypothetical protein GLOIN_2v1783703
+			transl_table	1
+	CDS	join(38908..38978,39143..39341,39427..39912,39985..40592,40665..41073,41143..41379,41446..41844,41908..42132)	codon_start	1
+			locus_tag	PRE_TEST_000001300
+			note	transcript_id:RCL_jg29255.t2
+			product	hypothetical protein GLOIN_2v1783703
+			transl_table	1
+	CDS	complement(join(44774..45468,45546..46715,46796..48038))	codon_start	1
+			locus_tag	PRE_TEST_000001400
+			note	transcript_id:RCL_jg29257.t1
+			product	hypothetical protein GLOIN_2v1849215
+			transl_table	1
+	CDS	join(48465..48629,48687..48965,49037..49276,49490..49849)	codon_start	1
+			locus_tag	PRE_TEST_000001600
+			note	transcript_id:RCL_jg29258.t1
+			product	hypothetical protein GLOIN_2v1485488
+			transl_table	1
+	CDS	53979..56285	codon_start	1
+			locus_tag	PRE_TEST_000001700
+			note	transcript_id:RCL_jg29259.t1
+			product	highly derived D5-like helicase-primase
+			transl_table	1
+	CDS	join(56362..58185,58273..58671)	codon_start	1
+			locus_tag	PRE_TEST_000001800
+			note	transcript_id:RCL_jg29260.t1
+			product	hypothetical protein RCL_jg29260.t1
+			transl_table	1
+	CDS	58846..59463	codon_start	1
+			locus_tag	PRE_TEST_000001900
+			note	transcript_id:RCL_jg29261.t1
+			product	hypothetical protein RCL_jg29261.t1
+			transl_table	1
+	CDS	join(59519..59888,59951..59997)	codon_start	1
+			locus_tag	PRE_TEST_000002000
+			note	transcript_id:RCL_jg29262.t1
+			product	hypothetical protein RCL_jg29262.t1
+			transl_table	1
+	CDS	complement(60051..61313)	codon_start	1
+			locus_tag	PRE_TEST_000002100
+			note	transcript_id:RCL_jg29263.t1
+			product	hypothetical protein GLOIN_2v1874888
+			transl_table	1
+	CDS	join(61408..61983,62046..63399,63453..64138)	codon_start	1
+			locus_tag	PRE_TEST_000002200
+			note	transcript_id:RCL_jg29264.t1
+			product	hypothetical protein GLOIN_2v1781358
+			transl_table	1
+	CDS	complement(64182..64802)	codon_start	1
+			locus_tag	PRE_TEST_000002300
+			note	transcript_id:RCL_jg29265.t1
+			product	hypothetical protein RCL_jg29265.t1
+			transl_table	1
+	CDS	complement(64915..66012)	codon_start	1
+			locus_tag	PRE_TEST_000002400
+			note	transcript_id:RCL_jg29266.t1
+			product	DDE-type integrase/transposase/recombinase
+			transl_table	1
+	CDS	66059..66373	codon_start	1
+			locus_tag	PRE_TEST_000002500
+			note	transcript_id:RCL_jg29267.t1
+			product	hypothetical protein GLOIN_2v1788557
+			transl_table	1
+	rRNA	complement(67591..71134)	product	28S rRNA
+			locus_tag	PRE_TEST_000002600
+			note	transcript_id:RCL_c5-1_28S
+	misc_RNA	complement(71135..71332)	note	internal transcribed spacer 2
+			locus_tag	PRE_TEST_000002700
+			note	transcript_id:RCL_RCL_c5-1_ITS2
+	rRNA	complement(71333..71489)	product	5.8S rRNA
+			locus_tag	PRE_TEST_000002800
+			note	transcript_id:RCL_RCL_c5-1_5.8S
+	misc_RNA	complement(71490..71596)	note	internal transcribed spacer 1
+			locus_tag	PRE_TEST_000002900
+			note	transcript_id:RCL_Rcl_c5_1_ITS1
+	rRNA	complement(71597..73407)	product	18S rRNA
+			locus_tag	PRE_TEST_000003000
+			note	transcript_id:RCL_c5-1_18S
+	CDS	complement(join(76390..76421,76512..76554,76835..77554))	codon_start	1
+			locus_tag	PRE_TEST_000003100
+			note	transcript_id:RCL_jg29271.t1
+			product	sentrin-specific protease 3 isoform X1
+			transl_table	1
+	CDS	complement(join(78712..79121,79183..79389,79464..79512,79590..79676))	codon_start	1
+			locus_tag	PRE_TEST_000003200
+			note	transcript_id:RCL_jg29272.t1
+			product	hypothetical protein GLOIN_2v1769431
+			transl_table	1
+	CDS	join(80704..80784,80864..80960,81033..81428,81510..81523)	codon_start	1
+			locus_tag	PRE_TEST_000003300
+			note	transcript_id:RCL_jg29273.t1
+			product	hypothetical protein GLOIN_2v1559315
+			transl_table	1
+	CDS	join(84512..84696,84781..84883)	codon_start	1
+			locus_tag	PRE_TEST_000003400
+			note	transcript_id:RCL_jg29274.t1
+			product	hypothetical protein GLOIN_2v1778495
+			transl_table	1
+	CDS	complement(join(92015..92556,92622..92799,92851..92979,93062..93443,93524..93734,93783..94514,94603..94711))	codon_start	1
+			locus_tag	PRE_TEST_000003500
+			note	transcript_id:RCL_jg29275.t1
+			product	hypothetical protein GLOIN_2v1790940
+			transl_table	1
+	CDS	complement(join(92015..92556,92622..92799,92851..92979,93062..93127,93188..93443,93524..93734,93783..94514,94603..94711))	codon_start	1
+			locus_tag	PRE_TEST_000003500
+			note	transcript_id:RCL_jg29275.t3
+			product	hypothetical protein GLOIN_2v1790940
+			transl_table	1
+	CDS	complement(join(92015..92556,92622..92799,92851..92979,93062..93127,93188..93275,93524..93734,93783..94514,94603..94711))	codon_start	1
+			locus_tag	PRE_TEST_000003500
+			note	transcript_id:RCL_jg29275.t2
+			product	hypothetical protein GLOIN_2v1790940
+			transl_table	1
+	CDS	complement(join(92015..92146,92281..92296,92388..92556,92622..92799,92851..92979,93062..93127,93188..93443,93524..93734,93783..94514,94603..94711))	codon_start	1
+			locus_tag	PRE_TEST_000003500
+			note	transcript_id:RCL_jg29275.t5
+			product	hypothetical protein GLOIN_2v1790940
+			transl_table	1
+	CDS	complement(join(92015..92556,92622..92765,92883..92979,93062..93127,93188..93443,93524..93734,93783..94514,94603..94711))	codon_start	1
+			locus_tag	PRE_TEST_000003500
+			note	transcript_id:RCL_jg29275.t4
+			product	hypothetical protein GLOIN_2v1790940
+			transl_table	1
+	CDS	complement(join(94735..94770,94888..94934,95025..95147,95214..95237,95391..95631))	codon_start	1
+			locus_tag	PRE_TEST_000003600
+			note	transcript_id:RCL_jg29276.t1
+			product	hypothetical protein GLOIN_2v1776430
+			transl_table	1
+	CDS	complement(join(95260..95267,95391..95631))	codon_start	1
+			locus_tag	PRE_TEST_000003600
+			note	transcript_id:RCL_jg29276.t2
+			product	hypothetical protein GLOIN_2v1776430
+			transl_table	1
+tig00000184	source	1..2067704	ff_definition	@@[organism]@@ DNA, @@[submitter_seqid]@@
+			mol_type	genomic DNA
+			organism	Rhizo
+			strain	black
+			submitter_seqid	@@[entry]@@
+	CDS	join(25755..25794,25873..25892,25960..26334,26418..26526,26609..26665,26736..27035,27114..27413,27507..27599,27682..28064)	codon_start	1
+			locus_tag	PRE_TEST_000004000
+			note	transcript_id:RCL_jg21450.t1
+			product	hypothetical protein GLOIN_2v1732694
+			transl_table	1
+	CDS	complement(join(29314..30422,30490..30555,30785..30965,31042..31347,31437..31456,31565..31604))	codon_start	1
+			locus_tag	PRE_TEST_000004100
+			note	transcript_id:RCL_jg21451.t1
+			product	hypothetical protein GLOIN_2v1489226
+			transl_table	1
+	CDS	32581..34266	codon_start	1
+			locus_tag	PRE_TEST_000004200
+			note	transcript_id:RCL_jg21452.t1
+			product	hypothetical protein GLOIN_2v1886429
+			transl_table	1
+	CDS	join(35573..35603,35682..35701,35773..36078,36182..36362,36442..36507,36581..37674)	codon_start	1
+			locus_tag	PRE_TEST_000004300
+			note	transcript_id:RCL_jg21453.t1
+			product	hypothetical protein GLOIN_2v1013708
+			transl_table	1
+	CDS	complement(37723..39006)	codon_start	1
+			locus_tag	PRE_TEST_000004400
+			note	transcript_id:RCL_jg21454.t1
+			product	hypothetical protein GLOIN_2v1738391
+			transl_table	1
+	rRNA	42150..43960	product	18S rRNA
+			locus_tag	PRE_TEST_000004500
+			note	transcript_id:RCL_c184-1_18S
+	misc_RNA	43961..44073	note	internal transcribed spacer 1
+			locus_tag	PRE_TEST_000004600
+			note	transcript_id:RCL_c184_1_ITS1
+	rRNA	44074..44231	product	5.8S rRNA
+			locus_tag	PRE_TEST_000004700
+			note	transcript_id:RCL_c184_1_5.8S
+	misc_RNA	44232..44437	note	internal transcribed spacer 2
+			locus_tag	PRE_TEST_000004800
+			note	transcript_id:RCL_c184_1_ITS2
+	rRNA	44436..47962	product	28S rRNA
+			locus_tag	PRE_TEST_000004900
+			note	transcript_id:RCL_c184-1_28S
+	CDS	join(51982..52727,52809..52950)	codon_start	1
+			locus_tag	PRE_TEST_000005000
+			note	transcript_id:RCL_jg21458.t1
+			product	hypothetical protein RCL_jg21458.t1
+			transl_table	1
+	CDS	71559..71798	codon_start	1
+			locus_tag	PRE_TEST_000005100
+			note	transcript_id:RCL_e39d769b-c099-40a3-9f1e-6a6b163e22d9
+			product	hypothetical protein GLOIN_2v1769754
+			transl_table	1
+	rRNA	complement(96907..100433)	product	28S rRNA
+			locus_tag	PRE_TEST_000005200
+			note	transcript_id:RCL_c184-2_28S
+	misc_RNA	complement(100434..100637)	note	internal transcribed spacer 2
+			locus_tag	PRE_TEST_000005300
+			note	transcript_id:RCL_c184-2_ITS2
+	rRNA	complement(100638..100795)	product	5.8S rRNA
+			locus_tag	PRE_TEST_000005400
+			note	transcript_id:RCL_c184-2_5.8S
+	misc_RNA	complement(100796..100909)	note	internal transcribed spacer 1
+			locus_tag	PRE_TEST_000005500
+			note	transcript_id:RCL_c184-2_ITS1
+	rRNA	complement(100909..102719)	product	18S rRNA
+			locus_tag	PRE_TEST_000005600
+			note	transcript_id:RCL_c184-2_18S
+	CDS	complement(join(105701..106001,106075..106514))	codon_start	1
+			locus_tag	PRE_TEST_000005700
+			note	transcript_id:RCL_jg21462.t1
+			product	ribonuclease H-like domain-containing protein
+			transl_table	1
+	CDS	complement(106918..107805)	codon_start	1
+			locus_tag	PRE_TEST_000005800
+			note	transcript_id:RCL_jg21463.t1
+			product	zinc finger protein 862-like
+			transl_table	1
+	CDS	complement(108283..108888)	codon_start	1
+			locus_tag	PRE_TEST_000005900
+			note	transcript_id:RCL_jg21464.t1
+			product	transmembrane protein C17orf113
+			transl_table	1
+	CDS	join(111598..111842,111932..112160,112261..112725)	codon_start	1
+			locus_tag	PRE_TEST_000006000
+			note	transcript_id:RCL_jg21465.t1
+			product	S-adenosyl-L-methionine-dependent methyltransferase
+			transl_table	1
+	CDS	join(158532..158914,159053..159199,159433..160255,160399..160465,160793..161515,161845..162048,162112..162320,162402..162773)	codon_start	1
+			locus_tag	PRE_TEST_000006100
+			note	transcript_id:RCL_jg21466.t1
+			product	craniofacial development protein 2-like
+			transl_table	1
+	CDS	complement(join(165405..165440,165512..165697))	codon_start	1
+			locus_tag	PRE_TEST_000006200
+			note	transcript_id:RCL_jg21467.t1
+			product	hypothetical protein RCL_jg21467.t1
+			transl_table	1
+	CDS	219576..219893	codon_start	1
+			locus_tag	PRE_TEST_000006400
+			note	transcript_id:RCL_da5bc477-944b-48b5-95b6-b4dfbcfc0908
+			product	hypothetical protein RCL_e12793_RclHR1_28850002
+			transl_table	1
+	CDS	join(222952..222984,223088..223243,223319..223517,223594..223683,223958..224052,224180..224219,224279..224364,224482..224687,224768..224900,224971..225144)	codon_start	1
+			locus_tag	PRE_TEST_000006500
+			note	transcript_id:RCL_jg21469.t1
+			product	hypothetical protein GLOIN_2v1828103
+			transl_table	1
+	CDS	complement(join(225182..225308,225377..225765,225836..225931))	codon_start	1
+			locus_tag	PRE_TEST_000006600
+			note	transcript_id:RCL_jg21470.t1
+			product	hypothetical protein GLOIN_2v1842188
+			transl_table	1
+	CDS	complement(join(226806..227016,227104..227368,227442..227882,227978..228131))	codon_start	1
+			locus_tag	PRE_TEST_000006700
+			note	transcript_id:RCL_jg21471.t1
+			product	hypothetical protein GLOIN_2v1847125
+			transl_table	1
+	CDS	complement(join(229083..229262,229333..229520,229604..229841,229930..230110,230178..230357,230439..230499,230570..230574,230658..230662,230734..230841,230913..231197,231261..231485,231555..231802,231944..232069,232144..232325,232431..232708))	codon_start	1
+			locus_tag	PRE_TEST_000006800
+			note	transcript_id:RCL_jg21472.t1
+			product	chloride channel
+			transl_table	1
+	CDS	join(242083..242174,242250..242382,242746..242919,243058..243139,243221..243264,243381..243626,243711..243869)	codon_start	1
+			locus_tag	PRE_TEST_000006900
+			note	transcript_id:RCL_jg21473.t1
+			product	hypothetical protein GLOIN_2v1789471
+			transl_table	1
+	CDS	complement(244357..244641)	codon_start	1
+			locus_tag	PRE_TEST_000007000
+			note	transcript_id:RCL_jg21474.t1
+			product	hypothetical protein GLOIN_2v1784824
+			transl_table	1
+	CDS	complement(join(244689..244919,245041..245138,245420..245560,245847..245922,246091..246174))	codon_start	1
+			locus_tag	PRE_TEST_000007100
+			note	transcript_id:RCL_jg21475.t1
+			product	hypothetical protein RCL_jg21475.t1
+			transl_table	1
+	CDS	join(255660..255788,255858..255977)	codon_start	1
+			locus_tag	PRE_TEST_000007200
+			note	transcript_id:RCL_jg21476.t1
+			product	hypothetical protein GLOIN_2v1797441
+			transl_table	1
+	CDS	complement(join(257047..257376,257533..257684,257882..257951))	codon_start	1
+			locus_tag	PRE_TEST_000007300
+			note	transcript_id:RCL_jg21477.t1
+			product	hypothetical protein RCL_jg21477.t1
+			transl_table	1
+	CDS	join(263720..264154,264598..265224,265301..265303)	codon_start	1
+			locus_tag	PRE_TEST_000007400
+			note	transcript_id:RCL_jg21478.t1
+			product	P-loop containing nucleoside triphosphate hydrolase protein
+			transl_table	1
+	CDS	complement(join(265638..266632,266700..268986))	codon_start	1
+			locus_tag	PRE_TEST_000007500
+			note	transcript_id:RCL_jg21479.t1
+			product	KRAB-A domain-containing protein
+			transl_table	1
+	CDS	complement(join(269331..270751,270824..271417,271550..271811))	codon_start	1
+			locus_tag	PRE_TEST_000007600
+			note	transcript_id:RCL_jg21480.t1
+			product	hypothetical protein RCL_jg21480.t1
+			transl_table	1
+	CDS	join(322486..322499,322583..322892,323159..323203,323370..323606,323703..323811,324280..324638)	codon_start	1
+			locus_tag	PRE_TEST_000007700
+			note	transcript_id:RCL_jg21482.t1
+			product	hypothetical protein GLOIN_2v1765605
+			transl_table	1
+	CDS	complement(join(324253..324301,324384..324461,324850..324962))	codon_start	1
+			locus_tag	PRE_TEST_000007800
+			note	transcript_id:RCL_jg21481.t1
+			product	hypothetical protein RCL_jg21481.t1
+			transl_table	1
+	CDS	complement(join(325835..325969,326094..327941))	codon_start	1
+			locus_tag	PRE_TEST_000007900
+			note	transcript_id:RCL_jg21483.t1
+			product	ubiquitin-protein ligase E3
+			transl_table	1
+	CDS	join(341109..341183,341794..341934,341996..342118,342174..342422)	codon_start	1
+			locus_tag	PRE_TEST_000008000
+			note	transcript_id:RCL_jg21484.t1
+			product	hypothetical protein GLOIN_2v1879215
+			transl_table	1
+	CDS	complement(join(350826..351384,351492..351672,351814..352021))	codon_start	1
+			locus_tag	PRE_TEST_000008100
+			note	transcript_id:RCL_jg21485.t1
+			product	hypothetical protein GLOIN_2v1822626
+			transl_table	1
+	CDS	complement(join(352094..352211,352459..352582,352802..352893,353037..353062))	codon_start	1
+			locus_tag	PRE_TEST_000008200
+			note	transcript_id:RCL_jg21486.t1
+			product	hypothetical protein GLOIN_2v1778046
+			transl_table	1
+	CDS	complement(353604..353960)	codon_start	1
+			locus_tag	PRE_TEST_000008300
+			note	transcript_id:RCL_336b49eb-4e47-4873-bb1c-88d6d71315c7
+			product	hypothetical protein GLOIN_2v1778046
+			transl_table	1
+	CDS	complement(355255..355641)	codon_start	1
+			locus_tag	PRE_TEST_000008400
+			note	transcript_id:RCL_jg21487.t1
+			product	hypothetical protein GLOIN_2v1773502
+			transl_table	1
+	CDS	complement(join(357550..357586,358045..358087,358166..358215,358295..358334,358418..358456,358625..358658))	codon_start	1
+			locus_tag	PRE_TEST_000008500
+			note	transcript_id:RCL_jg21488.t1
+			product	hypothetical protein RCL_jg21488.t1
+			transl_table	1
+	CDS	complement(362482..362832)	codon_start	1
+			locus_tag	PRE_TEST_000008600
+			note	transcript_id:RCL_jg21489.t1
+			product	hypothetical protein GLOIN_2v1768628
+			transl_table	1
+	CDS	complement(join(363759..364656,364902..365625,365785..365962))	codon_start	1
+			locus_tag	PRE_TEST_000008700
+			note	transcript_id:RCL_jg21490.t2
+			product	hypothetical protein GLOIN_2v1482214
+			transl_table	1
+	CDS	complement(join(364898..365625,365785..365962))	codon_start	1
+			locus_tag	PRE_TEST_000008700
+			note	transcript_id:RCL_jg21490.t1
+			product	hypothetical protein GLOIN_2v1482214
+			transl_table	1
+	CDS	complement(join(367980..368248,368329..368408,368472..368479))	codon_start	1
+			locus_tag	PRE_TEST_000008800
+			note	transcript_id:RCL_jg21491.t1
+			product	hypothetical protein GLOIN_2v1485807
+			transl_table	1
+	CDS	join(370812..370838,371035..371106,371248..371267,371713..371777,371971..372095,372269..372570,372733..373582)	codon_start	1
+			locus_tag	PRE_TEST_000008900
+			note	transcript_id:RCL_jg21492.t1
+			product	RNA binding protein
+			transl_table	1
+	CDS	complement(join(376649..376820,377070..377167))	codon_start	1
+			locus_tag	PRE_TEST_000009000
+			note	transcript_id:RCL_jg21493.t1
+			product	hypothetical protein GLOIN_2v1459336
+			transl_table	1
+	CDS	complement(join(399871..400026,400296..401050,401348..401381,401455..401624,401677..401895,401973..402006,402347..402537,402874..403114))	codon_start	1
+			locus_tag	PRE_TEST_000009100
+			note	transcript_id:RCL_jg21494.t1
+			product	hypothetical protein GLOIN_2v1791831
+			transl_table	1
+	CDS	complement(join(419267..421375,421461..421559,421655..421896,421977..422036,422108..422129,422280..422896,423010..423027,423160..423181))	codon_start	1
+			locus_tag	PRE_TEST_000009200
+			note	transcript_id:RCL_jg21495.t1
+			product	hypothetical protein RCL_jg21495.t1
+			transl_table	1
+	CDS	complement(join(423697..423709,423778..424084,424153..424255))	codon_start	1
+			locus_tag	PRE_TEST_000009300
+			note	transcript_id:RCL_jg21496.t1
+			product	hypothetical protein GLOIN_2v1546132
+			transl_table	1
+	CDS	complement(join(424516..424596,424677..424847,424928..425042,425117..425208,425290..426035,426219..426321,426396..426538,426642..427381,427491..427648))	codon_start	1
+			locus_tag	PRE_TEST_000009400
+			note	transcript_id:RCL_jg21497.t1
+			product	jumonji family transcription factor
+			transl_table	1
+	CDS	complement(join(434727..434817,435054..435125,435203..435265,435459..435491,435538..435554,435674..435786,436026..436055,436172..436183,436273..436344,436429..436437,436692..436717,436870..436895))	codon_start	1
+			locus_tag	PRE_TEST_000009500
+			note	transcript_id:RCL_jg21498.t1
+			product	hypothetical protein RCL_jg21498.t1
+			transl_table	1
+	CDS	join(441466..441470,441546..441679,441765..441970)	codon_start	1
+			locus_tag	PRE_TEST_000009600
+			note	transcript_id:RCL_jg21499.t1
+			product	uncharacterized protein LOC111112916 isoform X2
+			transl_table	1
+	CDS	join(448698..449021,449097..449348)	codon_start	1
+			locus_tag	PRE_TEST_000009700
+			note	transcript_id:RCL_jg21500.t1
+			product	hypothetical protein RCL_jg21500.t1
+			transl_table	1
+	CDS	join(460169..460324,460584..460721)	codon_start	1
+			locus_tag	PRE_TEST_000009800
+			note	transcript_id:RCL_jg21501.t1
+			product	hypothetical protein GLOIN_2v1792087
+			transl_table	1
+	CDS	complement(join(468559..468894,469225..469323))	codon_start	1
+			locus_tag	PRE_TEST_000009900
+			note	transcript_id:RCL_jg21502.t1
+			product	hypothetical protein GLOIN_2v1765047
+			transl_table	1
+	CDS	complement(469416..469733)	codon_start	1
+			locus_tag	PRE_TEST_000010000
+			note	transcript_id:RCL_cb47bb98-d1ad-4440-b6d7-e0152814ce87
+			product	hypothetical protein GLOIN_2v1475812
+			transl_table	1
+	CDS	complement(469972..470691)	codon_start	1
+			locus_tag	PRE_TEST_000010100
+			note	transcript_id:RCL_a9ac83b8-d5ce-439c-aecd-92ea85933cba
+			product	uncharacterized protein LOC110246960
+			transl_table	1
+	CDS	complement(join(470763..471085,471407..471629))	codon_start	1
+			locus_tag	PRE_TEST_000010200
+			note	transcript_id:RCL_jg21503.t1
+			product	hypothetical protein GLOIN_2v1779223
+			transl_table	1
+	CDS	complement(join(478615..479036,479140..479437))	codon_start	1
+			locus_tag	PRE_TEST_000010300
+			note	transcript_id:RCL_jg21504.t1
+			product	hypothetical protein GLOIN_2v1482460
+			transl_table	1
+	CDS	complement(479929..480171)	codon_start	1
+			locus_tag	PRE_TEST_000010400
+			note	transcript_id:RCL_jg21505.t1
+			product	hypothetical protein GLOIN_2v1781070
+			transl_table	1
+	CDS	complement(join(481010..481198,481267..481341))	codon_start	1
+			locus_tag	PRE_TEST_000010500
+			note	transcript_id:RCL_jg21506.t1
+			product	hypothetical protein GLOIN_2v1480545
+			transl_table	1
+	CDS	complement(495135..495560)	codon_start	1
+			locus_tag	PRE_TEST_000010600
+			note	transcript_id:RCL_jg21507.t1
+			product	zinc finger BED domain-containing protein RICESLEEPER 2-like
+			transl_table	1
+	CDS	complement(495896..496120)	codon_start	1
+			locus_tag	PRE_TEST_000010700
+			note	transcript_id:RCL_jg21508.t1
+			product	hypothetical protein RCL_jg21508.t1
+			transl_table	1
+	CDS	complement(join(505089..505343,505418..505663))	codon_start	1
+			locus_tag	PRE_TEST_000010900
+			note	transcript_id:RCL_jg21509.t1
+			product	hypothetical protein GLOIN_2v1470674
+			transl_table	1
+	CDS	complement(join(505957..506069,506314..506464))	codon_start	1
+			locus_tag	PRE_TEST_000011000
+			note	transcript_id:RCL_jg21511.t1
+			product	hypothetical protein RCL_jg21511.t1
+			transl_table	1
+	CDS	complement(join(521578..521894,522474..522492))	codon_start	1
+			locus_tag	PRE_TEST_000011100
+			note	transcript_id:RCL_jg21512.t1
+			product	hypothetical protein GLOIN_2v1472823
+			transl_table	1
+	CDS	complement(join(522974..523021,523095..523188,523487..523566))	codon_start	1
+			locus_tag	PRE_TEST_000011200
+			note	transcript_id:RCL_jg21513.t1
+			product	hypothetical protein RCL_jg21513.t1
+			transl_table	1
+	CDS	525534..526994	codon_start	1
+			locus_tag	PRE_TEST_000011300
+			note	transcript_id:RCL_jg21514.t1
+			product	hypothetical protein GLOIN_2v1837458
+			transl_table	1
+	CDS	527462..528865	codon_start	1
+			locus_tag	PRE_TEST_000011400
+			note	transcript_id:RCL_jg21515.t1
+			product	hypothetical protein GLOIN_2v1546071
+			transl_table	1
+	CDS	529297..530700	codon_start	1
+			locus_tag	PRE_TEST_000011500
+			note	transcript_id:RCL_jg21516.t1
+			product	hypothetical protein GLOIN_2v1546064
+			transl_table	1
+	CDS	join(532216..533602,533806..533822,533893..533952)	codon_start	1
+			locus_tag	PRE_TEST_000011600
+			note	transcript_id:RCL_jg21517.t1
+			product	hypothetical protein GLOIN_2v1473773
+			transl_table	1
+	CDS	534284..535777	codon_start	1
+			locus_tag	PRE_TEST_000011700
+			note	transcript_id:RCL_jg21518.t1
+			product	high mobility group box domain-containing protein
+			transl_table	1
+	CDS	536892..538100	codon_start	1
+			locus_tag	PRE_TEST_000011800
+			note	transcript_id:RCL_jg21519.t1
+			product	tandem-95 repeat protein
+			transl_table	1
+	CDS	join(538981..538983,539078..539081,539235..539238,539365..539478,539560..539593,539805..539969)	codon_start	1
+			locus_tag	PRE_TEST_000011900
+			note	transcript_id:RCL_jg21520.t1
+			product	hypothetical protein RCL_jg21520.t1
+			transl_table	1
+	CDS	540916..542241	codon_start	1
+			locus_tag	PRE_TEST_000012000
+			note	transcript_id:RCL_jg21521.t1
+			product	mating type protein MAT1-1-3
+			transl_table	1
+	CDS	543395..544312	codon_start	1
+			locus_tag	PRE_TEST_000012100
+			note	transcript_id:RCL_jg21522.t1
+			product	high mobility group box domain-containing protein
+			transl_table	1
+	CDS	complement(545727..547307)	codon_start	1
+			locus_tag	PRE_TEST_000012200
+			note	transcript_id:RCL_jg21523.t1
+			product	prestalk protein-like
+			transl_table	1
+	CDS	complement(join(550471..550482,550782..550845,550907..550955,551020..551028,551139..551169,551241..551286,551454..551600,551734..551756))	codon_start	1
+			locus_tag	PRE_TEST_000012300
+			note	transcript_id:RCL_jg21524.t2
+			product	hypothetical protein RCL_jg21524.t2
+			transl_table	1
+	CDS	complement(join(550471..550482,550782..550845,550907..550955,551020..551028,551139..551169,551241..551286,551464..551559,551734..551756))	codon_start	1
+			locus_tag	PRE_TEST_000012300
+			note	transcript_id:RCL_jg21524.t1
+			product	hypothetical protein RCL_jg21524.t1
+			transl_table	1
+	CDS	join(551931..552036,552582..552652,552761..552791,553091..553122,553187..553210,553284..553700,553772..553829,553901..554064,554135..554386)	codon_start	1
+			locus_tag	PRE_TEST_000012400
+			note	transcript_id:RCL_jg21525.t1
+			product	hypothetical protein GLOIN_2v1473763
+			transl_table	1
+	CDS	complement(555259..557178)	codon_start	1
+			locus_tag	PRE_TEST_000012500
+			note	transcript_id:RCL_jg21526.t1
+			product	Sel1 repeat family protein
+			transl_table	1
+	CDS	join(560372..562744,562934..563000,563316..563415,563497..563781,563872..564193)	codon_start	1
+			locus_tag	PRE_TEST_000012600
+			note	transcript_id:RCL_jg21527.t1
+			product	hypothetical protein GLOIN_2v1871247
+			transl_table	1
+	CDS	complement(join(564304..564446,564529..564600,564670..564689,564753..564814))	codon_start	1
+			locus_tag	PRE_TEST_000012700
+			note	transcript_id:RCL_jg21528.t2
+			product	hypothetical protein RCL_jg21528.t2
+			transl_table	1
+	CDS	complement(join(564304..564443,564529..564600,564670..564689,564753..564814))	codon_start	1
+			locus_tag	PRE_TEST_000012700
+			note	transcript_id:RCL_jg21528.t1
+			product	hypothetical protein RCL_jg21528.t1
+			transl_table	1
+	CDS	complement(join(567236..567284,567367..567398,567457..567569,567649..567741,567819..568208,568294..568384,568457..568608,568678..568684,568766..568833,568917..568979,569050..569059,569128..569258,569331..569369,569456..569544,569622..569815,569953..569973))	codon_start	1
+			locus_tag	PRE_TEST_000012900
+			note	transcript_id:RCL_jg21530.t1
+			product	proton myo-inositol cotransporter-like
+			transl_table	1
+	CDS	complement(join(567236..567284,567367..567398,567457..567569,567649..567741,567819..568208,568294..568384,568457..568608,568717..568833,568917..568979,569050..569059,569128..569258,569331..569369,569456..569544,569622..569815,569953..569973))	codon_start	1
+			locus_tag	PRE_TEST_000012900
+			note	transcript_id:RCL_jg21530.t2
+			product	proton myo-inositol cotransporter-like isoform X1
+			transl_table	1
+	CDS	join(573277..576390,576468..576492,576561..576660,576768..576980,577063..577458,577824..577864,577948..577967,578599..578771,578840..578898,579180..579265,579338..579340)	codon_start	1
+			locus_tag	PRE_TEST_000013000
+			note	transcript_id:RCL_jg21531.t1
+			product	hypothetical protein GLOIN_2v1871247
+			transl_table	1
+	CDS	join(579386..579402,579539..579678,579820..579884)	codon_start	1
+			locus_tag	PRE_TEST_000013100
+			note	transcript_id:RCL_jg21532.t1
+			product	hypothetical protein RCL_jg21532.t1
+			transl_table	1
+	CDS	complement(join(580086..580123,580190..580200,580284..580314,580806..580840,581023..581273))	codon_start	1
+			locus_tag	PRE_TEST_000013200
+			note	transcript_id:RCL_jg21533.t1
+			product	hypothetical protein RCL_jg21533.t1
+			transl_table	1
+	CDS	583993..584463	codon_start	1
+			locus_tag	PRE_TEST_000013300
+			note	transcript_id:RCL_jg21534.t1
+			product	hypothetical protein GLOIN_2v1473758
+			transl_table	1
+	CDS	complement(592141..593595)	codon_start	1
+			locus_tag	PRE_TEST_000013400
+			note	transcript_id:RCL_jg21535.t1
+			product	hypothetical protein GLOIN_2v1545940
+			transl_table	1
+	CDS	complement(593950..595416)	codon_start	1
+			locus_tag	PRE_TEST_000013500
+			note	transcript_id:RCL_jg21536.t1
+			product	hypothetical protein GLOIN_2v1545940
+			transl_table	1
+	CDS	join(601099..601133,601226..601320,601482..601690,601778..601879,601960..602046)	codon_start	1
+			locus_tag	PRE_TEST_000013600
+			note	transcript_id:RCL_jg21537.t1
+			product	hypothetical protein RCL_jg21537.t1
+			transl_table	1
+	CDS	join(604759..604761,604924..604937,605003..605036,605232..605253,605345..605408,605687..605710,605792..605863,605956..605981,606049..606080)	codon_start	1
+			locus_tag	PRE_TEST_000013700
+			note	transcript_id:RCL_jg21538.t1
+			product	hypothetical protein RCL_jg21538.t1
+			transl_table	1
+	CDS	607898..608236	codon_start	1
+			locus_tag	PRE_TEST_000013800
+			note	transcript_id:RCL_jg21539.t1
+			product	hypothetical protein GLOIN_2v1473755
+			transl_table	1
+	CDS	complement(613778..615244)	codon_start	1
+			locus_tag	PRE_TEST_000013900
+			note	transcript_id:RCL_jg21540.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	complement(616524..617978)	codon_start	1
+			locus_tag	PRE_TEST_000014000
+			note	transcript_id:RCL_jg21541.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	complement(621024..622487)	codon_start	1
+			locus_tag	PRE_TEST_000014100
+			note	transcript_id:RCL_jg21542.t2
+			product	hypothetical protein GLOIN_2v1791318
+			transl_table	1
+	CDS	complement(join(621793..621805,621886..622487))	codon_start	1
+			locus_tag	PRE_TEST_000014100
+			note	transcript_id:RCL_jg21542.t1
+			product	hypothetical protein GLOIN_2v1655883
+			transl_table	1
+	CDS	complement(624705..626159)	codon_start	1
+			locus_tag	PRE_TEST_000014200
+			note	transcript_id:RCL_jg21543.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	complement(626954..628456)	codon_start	1
+			locus_tag	PRE_TEST_000014300
+			note	transcript_id:RCL_jg21544.t1
+			product	hypothetical protein GLOIN_2v1771472
+			transl_table	1
+	CDS	complement(join(631295..631692,631791..631961,632030..632090,632158..632367))	codon_start	1
+			locus_tag	PRE_TEST_000014400
+			note	transcript_id:RCL_jg21545.t1
+			product	kinase-like domain-containing protein
+			transl_table	1
+	CDS	join(633547..633573,633645..633690,633797..634044,634279..634284,634549..634683,634748..634847,634921..634965,635035..635039)	codon_start	1
+			locus_tag	PRE_TEST_000014500
+			note	transcript_id:RCL_jg21546.t1
+			product	kinase-like domain-containing protein
+			transl_table	1
+	CDS	complement(join(635269..635288,635361..636807))	codon_start	1
+			locus_tag	PRE_TEST_000014600
+			note	transcript_id:RCL_jg21547.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	complement(638385..639854)	codon_start	1
+			locus_tag	PRE_TEST_000014700
+			note	transcript_id:RCL_jg21548.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	complement(join(641045..641064,641210..641220,641264..641346,641417..641599,641735..641814,641951..641980,642499..642515,642607..642636,642732..642757))	codon_start	1
+			locus_tag	PRE_TEST_000014800
+			note	transcript_id:RCL_jg21549.t1
+			product	hypothetical protein RCL_jg21549.t1
+			transl_table	1
+	CDS	complement(join(641045..641064,641210..641220,641264..641346,641417..641599,641755..641789,641951..641980,642499..642515,642607..642636,642732..642757))	codon_start	1
+			locus_tag	PRE_TEST_000014800
+			note	transcript_id:RCL_jg21549.t2
+			product	hypothetical protein RCL_jg21549.t2
+			transl_table	1
+	CDS	643243..644700	codon_start	1
+			locus_tag	PRE_TEST_000014900
+			note	transcript_id:RCL_jg21550.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	join(646611..646632,646724..646750,646831..646833,647024..647026,647109..647111,647190..647192,647322..647324,647421..647423,649166..649236,649313..649331,649874..650167,650299..650321)	codon_start	1
+			locus_tag	PRE_TEST_000015000
+			note	transcript_id:RCL_jg21551.t1
+			product	kinase-like domain-containing protein
+			transl_table	1
+	CDS	complement(655111..655869)	codon_start	1
+			locus_tag	PRE_TEST_000015100
+			note	transcript_id:RCL_jg21552.t1
+			product	kinase-like domain-containing protein
+			transl_table	1
+	CDS	join(660675..660928,661032..662139,662273..662293)	codon_start	1
+			locus_tag	PRE_TEST_000015200
+			note	transcript_id:RCL_jg21553.t1
+			product	hypothetical protein GLOIN_2v1479669
+			transl_table	1
+	CDS	complement(668376..668597)	codon_start	1
+			locus_tag	PRE_TEST_000015300
+			note	transcript_id:RCL_ecdad54d-c064-4805-ada4-5d0af8fc214c
+			product	hypothetical protein RCL_e3698_RclHR1_15980006
+			transl_table	1
+	CDS	join(669950..670534,670615..671022)	codon_start	1
+			locus_tag	PRE_TEST_000015400
+			note	transcript_id:RCL_jg21554.t1
+			product	hypothetical protein GLOIN_2v1587390
+			transl_table	1
+	CDS	complement(673052..674524)	codon_start	1
+			locus_tag	PRE_TEST_000015500
+			note	transcript_id:RCL_jg21555.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	complement(677489..678961)	codon_start	1
+			locus_tag	PRE_TEST_000015600
+			note	transcript_id:RCL_jg21556.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	join(680230..680290,680566..680585,680658..680691,680776..680856,681222..681246,681646..681669,682165..682210)	codon_start	1
+			locus_tag	PRE_TEST_000015700
+			note	transcript_id:RCL_jg21557.t1
+			product	hypothetical protein RCL_jg21557.t1
+			transl_table	1
+	CDS	complement(682766..683269)	codon_start	1
+			locus_tag	PRE_TEST_000015800
+			note	transcript_id:RCL_jg21558.t1
+			product	hypothetical protein GLOIN_2v1476258
+			transl_table	1
+	CDS	join(685277..685331,685669..685853,686087..686149,686223..686405,686480..686570,686641..686780,686846..686971)	codon_start	1
+			locus_tag	PRE_TEST_000015900
+			note	transcript_id:RCL_jg21559.t1
+			product	hypothetical protein RCL_jg21559.t1
+			transl_table	1
+	CDS	join(687622..687702,687764..687813,687894..688041)	codon_start	1
+			locus_tag	PRE_TEST_000016000
+			note	transcript_id:RCL_jg21560.t1
+			product	hypothetical protein RCL_jg21560.t1
+			transl_table	1
+	CDS	complement(join(691585..691599,691681..691733,691811..691840,691925..691931,692143..692162,692233..692256,692740..692812))	codon_start	1
+			locus_tag	PRE_TEST_000016100
+			note	transcript_id:RCL_jg21561.t1
+			product	hypothetical protein RCL_jg21561.t1
+			transl_table	1
+	CDS	join(696284..696512,696689..696753)	codon_start	1
+			locus_tag	PRE_TEST_000016200
+			note	transcript_id:RCL_jg21562.t1
+			product	hypothetical protein RCL_jg21562.t1
+			transl_table	1
+	CDS	join(698509..699636,699732..699746)	codon_start	1
+			locus_tag	PRE_TEST_000016300
+			note	transcript_id:RCL_jg21563.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	698509..699942	codon_start	1
+			locus_tag	PRE_TEST_000016300
+			note	transcript_id:RCL_jg21563.t2
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	700667..702106	codon_start	1
+			locus_tag	PRE_TEST_000016400
+			note	transcript_id:RCL_jg21564.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	704344..705756	codon_start	1
+			locus_tag	PRE_TEST_000016500
+			note	transcript_id:RCL_jg21565.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	706608..708074	codon_start	1
+			locus_tag	PRE_TEST_000016600
+			note	transcript_id:RCL_jg21566.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	join(710538..710606,710694..711263,711361..712482)	codon_start	1
+			locus_tag	PRE_TEST_000016700
+			note	transcript_id:RCL_jg21567.t1
+			product	kinase-like domain-containing protein
+			transl_table	1
+	CDS	complement(712620..714032)	codon_start	1
+			locus_tag	PRE_TEST_000016800
+			note	transcript_id:RCL_jg21568.t1
+			product	hypothetical protein GLOIN_2v1473747
+			transl_table	1
+	CDS	join(716862..716985,717049..717302)	codon_start	1
+			locus_tag	PRE_TEST_000016900
+			note	transcript_id:RCL_jg21569.t1
+			product	zinc finger protein 263 isoform X7
+			transl_table	1
+	CDS	join(727001..727060,727155..727266,727359..727859,727940..728059,728138..729013,729112..729128,729215..729919)	codon_start	1
+			locus_tag	PRE_TEST_000017000
+			note	transcript_id:RCL_jg21570.t1
+			product	DUF907 domain protein
+			transl_table	1
+	CDS	join(733519..734287,734387..734682)	codon_start	1
+			locus_tag	PRE_TEST_000017100
+			note	transcript_id:RCL_jg21571.t1
+			product	hypothetical protein GLOIN_2v1815713
+			transl_table	1
+	CDS	complement(join(736535..736556,736645..736678,737013..737291,737355..737373,737988..738215))	codon_start	1
+			locus_tag	PRE_TEST_000017200
+			note	transcript_id:RCL_jg21572.t1
+			product	DNA topoisomerase
+			transl_table	1
+	CDS	complement(738619..739038)	codon_start	1
+			locus_tag	PRE_TEST_000017300
+			note	transcript_id:RCL_jg21573.t1
+			product	hypothetical protein GLOIN_2v1636630
+			transl_table	1
+	CDS	complement(740686..741213)	codon_start	1
+			locus_tag	PRE_TEST_000017400
+			note	transcript_id:RCL_jg21574.t1
+			product	hypothetical protein GLOIN_2v1767631
+			transl_table	1
+	CDS	join(741818..742021,742094..742261,742327..742426,742505..742546,742612..742664,742728..742817,742894..743005,743100..743187,743570..743631,743717..743829,743911..744036)	codon_start	1
+			locus_tag	PRE_TEST_000017500
+			note	transcript_id:RCL_jg21575.t1
+			product	RluA family pseudouridine synthase
+			transl_table	1
+	CDS	745554..745889	codon_start	1
+			locus_tag	PRE_TEST_000017600
+			note	transcript_id:RCL_fc029fa8-6dce-4c24-88d6-34db27cb8457
+			product	hypothetical protein GLOIN_2v1767629
+			transl_table	1
+	CDS	750596..750934	codon_start	1
+			locus_tag	PRE_TEST_000017700
+			note	transcript_id:RCL_jg21576.t1
+			product	hypothetical protein RCL_jg21576.t1
+			transl_table	1
+	CDS	760824..761576	codon_start	1
+			locus_tag	PRE_TEST_000017800
+			note	transcript_id:RCL_jg21577.t1
+			product	ribonuclease H-like domain-containing protein
+			transl_table	1
+	CDS	761953..762432	codon_start	1
+			locus_tag	PRE_TEST_000017900
+			note	transcript_id:RCL_jg21578.t1
+			product	ribonuclease H-like domain-containing protein
+			transl_table	1
+	CDS	762520..763938	codon_start	1
+			locus_tag	PRE_TEST_000018000
+			note	transcript_id:RCL_jg21579.t1
+			product	DNA polymerase family B-domain-containing protein
+			transl_table	1
+	CDS	763984..764925	codon_start	1
+			locus_tag	PRE_TEST_000018100
+			note	transcript_id:RCL_jg21580.t1
+			product	DNA polymerase family B-domain-containing protein
+			transl_table	1
+	CDS	complement(join(766112..766792,767142..767756))	codon_start	1
+			locus_tag	PRE_TEST_000018200
+			note	transcript_id:RCL_jg21581.t1
+			product	hypothetical protein GLOIN_2v1786104
+			transl_table	1
+	CDS	complement(join(767936..769123,769459..769686))	codon_start	1
+			locus_tag	PRE_TEST_000018300
+			note	transcript_id:RCL_jg21582.t1
+			product	leucine Rich Repeat family protein
+			transl_table	1
+	CDS	complement(769757..770260)	codon_start	1
+			locus_tag	PRE_TEST_000018400
+			note	transcript_id:RCL_jg21583.t1
+			product	hypothetical protein GLOIN_2v1770740
+			transl_table	1
+	CDS	complement(join(770373..770748,770908..771050,771135..771524))	codon_start	1
+			locus_tag	PRE_TEST_000018500
+			note	transcript_id:RCL_jg21584.t1
+			product	hypothetical protein GLOIN_2v1873212
+			transl_table	1
+	CDS	complement(771949..773628)	codon_start	1
+			locus_tag	PRE_TEST_000018600
+			note	transcript_id:RCL_jg21585.t1
+			product	highly derived D5-like helicase-primase
+			transl_table	1
+	CDS	complement(774046..775119)	codon_start	1
+			locus_tag	PRE_TEST_000018700
+			note	transcript_id:RCL_jg21586.t1
+			product	hypothetical protein GLOIN_2v1770262
+			transl_table	1
+	CDS	join(776188..776343,776415..776499,776566..776586,776655..776886,776958..777099)	codon_start	1
+			locus_tag	PRE_TEST_000018800
+			note	transcript_id:RCL_jg21587.t1
+			product	NAD(P)H-dependent oxidoreductase
+			transl_table	1
+	CDS	complement(join(777549..778048,778121..778255,778349..778652))	codon_start	1
+			locus_tag	PRE_TEST_000018900
+			note	transcript_id:RCL_jg21589.t1
+			product	hypothetical protein GLOIN_2v1876937
+			transl_table	1
+	CDS	complement(join(778923..779160,779228..779403))	codon_start	1
+			locus_tag	PRE_TEST_000019000
+			note	transcript_id:RCL_jg21588.t1
+			product	hypothetical protein GLOIN_2v1765343
+			transl_table	1
+	CDS	779513..779986	codon_start	1
+			locus_tag	PRE_TEST_000019100
+			note	transcript_id:RCL_jg21590.t1
+			product	hypothetical protein GLOIN_2v1805909
+			transl_table	1
+	CDS	complement(join(780242..781298,781359..781776,781975..783068,783155..783771))	codon_start	1
+			locus_tag	PRE_TEST_000019200
+			note	transcript_id:RCL_jg21591.t1
+			product	hypothetical protein GLOIN_2v1766623
+			transl_table	1
+	CDS	join(786980..787499,787565..787905)	codon_start	1
+			locus_tag	PRE_TEST_000019300
+			note	transcript_id:RCL_jg21592.t1
+			product	hypothetical protein GLOIN_2v1822254
+			transl_table	1
+	CDS	complement(join(806699..807174,807250..807377,807501..808119,808198..808321))	codon_start	1
+			locus_tag	PRE_TEST_000019400
+			note	transcript_id:RCL_jg21593.t1
+			product	hypothetical protein GLOIN_2v1871772
+			transl_table	1
+	CDS	join(813194..813275,813596..813665,813754..813784,813904..813917,814014..814041,814110..814135,814217..814224,814291..814354,814444..814457,814516..814518,814612..814654,814760..814802)	codon_start	1
+			locus_tag	PRE_TEST_000019500
+			note	transcript_id:RCL_jg21594.t1
+			product	hypothetical protein RCL_jg21594.t1
+			transl_table	1
+	CDS	complement(join(815342..816591,817076..817202,817281..817322))	codon_start	1
+			locus_tag	PRE_TEST_000019600
+			note	transcript_id:RCL_jg21595.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	join(818261..818375,818535..818575,818657..818662,818718..818836,818902..818917)	codon_start	1
+			locus_tag	PRE_TEST_000019700
+			note	transcript_id:RCL_jg21596.t1
+			product	hypothetical protein GLOIN_2v1545527
+			transl_table	1
+	CDS	complement(join(819163..819475,819553..819619,819695..819865,819943..820045,820124..820321,820387..820617,820682..820731,820813..820877,820959..821051,821245..821396))	codon_start	1
+			locus_tag	PRE_TEST_000019800
+			note	transcript_id:RCL_jg21597.t1
+			product	MFS general substrate transporter
+			transl_table	1
+	CDS	complement(join(823218..823530,823612..823678,823745..823915,824009..824111,824191..824388,824469..824699,824764..824813,824887..824951,825029..825121,825224..825387))	codon_start	1
+			locus_tag	PRE_TEST_000019900
+			note	transcript_id:RCL_jg21598.t1
+			product	MFS general substrate transporter
+			transl_table	1
+	CDS	complement(join(826807..827119,827200..827300,827359..827516,827614..827716,827789..827986,828057..828287,828353..828401,828480..828539,828617..828709,828803..828966))	codon_start	1
+			locus_tag	PRE_TEST_000020000
+			note	transcript_id:RCL_jg21599.t1
+			product	MFS general substrate transporter
+			transl_table	1
+	CDS	complement(join(830551..830863,830936..831002,831103..831273,831364..831466,831547..831744,831818..832048,832114..832163,832237..832301,832376..832468,832547..832686))	codon_start	1
+			locus_tag	PRE_TEST_000020100
+			note	transcript_id:RCL_jg21600.t1
+			product	MFS general substrate transporter
+			transl_table	1
+	CDS	complement(join(833502..833811,833896..833962,834046..834216,834301..834403,834479..834676,834754..834984,835057..835106,835179..835243,835323..835415,835491..835654))	codon_start	1
+			locus_tag	PRE_TEST_000020200
+			note	transcript_id:RCL_jg21601.t1
+			product	MFS general substrate transporter
+			transl_table	1
+	CDS	complement(join(838291..838603,838692..838758,838851..839021,839110..839212,839290..839487,839559..839789,839864..839913,839989..840053,840132..840224,840317..840480))	codon_start	1
+			locus_tag	PRE_TEST_000020300
+			note	transcript_id:RCL_jg21602.t1
+			product	MFS general substrate transporter
+			transl_table	1
+	CDS	complement(join(843553..844296,844361..844611,844675..844690,844782..844918,844989..845250,845319..845645,845714..845834,845901..846032,846108..847675))	codon_start	1
+			locus_tag	PRE_TEST_000020400
+			note	transcript_id:RCL_jg21603.t1
+			product	probable RNA-dependent RNA polymerase 1
+			transl_table	1
+	CDS	join(849028..850999,851118..851144,851226..851236)	codon_start	1
+			locus_tag	PRE_TEST_000020500
+			note	transcript_id:RCL_jg21604.t1
+			product	hypothetical protein GLOIN_2v768782
+			transl_table	1
+	CDS	complement(852297..853778)	codon_start	1
+			locus_tag	PRE_TEST_000020600
+			note	transcript_id:RCL_jg21605.t1
+			product	Sel1 repeat family protein
+			transl_table	1
+	CDS	860560..861327	codon_start	1
+			locus_tag	PRE_TEST_000020700
+			note	transcript_id:RCL_jg21606.t1
+			product	hypothetical protein GLOIN_2v1767610
+			transl_table	1
+	CDS	join(873088..874064,874723..874816,874886..874945,875127..875141)	codon_start	1
+			locus_tag	PRE_TEST_000020800
+			note	transcript_id:RCL_jg21607.t1
+			product	hypothetical protein GLOIN_2v1545456
+			transl_table	1
+	CDS	complement(876140..876364)	codon_start	1
+			locus_tag	PRE_TEST_000020900
+			note	transcript_id:RCL_98927497-bd2d-4a0f-9718-f91ab3d912c3
+			product	hypothetical protein RCL_e2950_RclHR1_01520022
+			transl_table	1
+	CDS	complement(877645..878982)	codon_start	1
+			locus_tag	PRE_TEST_000021000
+			note	transcript_id:RCL_jg21608.t1
+			product	hypothetical protein GLOIN_2v1545445
+			transl_table	1
+	CDS	complement(879514..880821)	codon_start	1
+			locus_tag	PRE_TEST_000021100
+			note	transcript_id:RCL_jg21609.t1
+			product	concanavalin A-like lectin/glucanase domain-containing protein
+			transl_table	1
+	CDS	complement(join(881883..881888,881969..882000,882158..883679,883765..883826,883901..883933,884080..884137))	codon_start	1
+			locus_tag	PRE_TEST_000021200
+			note	transcript_id:RCL_jg21610.t1
+			product	hypothetical protein GLOIN_2v1545325
+			transl_table	1
+	CDS	complement(join(885065..885216,885305..885602))	codon_start	1
+			locus_tag	PRE_TEST_000021300
+			note	transcript_id:RCL_jg21611.t1
+			product	concanavalin A-like lectin/glucanase domain-containing protein
+			transl_table	1
+	CDS	complement(join(885793..886061,886296..886419))	codon_start	1
+			locus_tag	PRE_TEST_000021400
+			note	transcript_id:RCL_jg21612.t1
+			product	BTB/POZ protein
+			transl_table	1
+	CDS	complement(886844..888250)	codon_start	1
+			locus_tag	PRE_TEST_000021500
+			note	transcript_id:RCL_jg21613.t1
+			product	concanavalin A-like lectin/glucanase domain-containing protein
+			transl_table	1
+	CDS	complement(892905..894266)	codon_start	1
+			locus_tag	PRE_TEST_000021600
+			note	transcript_id:RCL_jg21614.t1
+			product	hypothetical protein GLOIN_2v1545431
+			transl_table	1
+	CDS	complement(894764..896143)	codon_start	1
+			locus_tag	PRE_TEST_000021700
+			note	transcript_id:RCL_jg21615.t1
+			product	concanavalin A-like lectin/glucanase domain-containing protein
+			transl_table	1
+	CDS	complement(join(897101..897272,897349..897430,898034..899459))	codon_start	1
+			locus_tag	PRE_TEST_000021800
+			note	transcript_id:RCL_jg21616.t3
+			product	hypothetical protein GLOIN_2v1545410
+			transl_table	1
+	CDS	complement(join(897101..897272,897349..897430,898034..898145))	codon_start	1
+			locus_tag	PRE_TEST_000021800
+			note	transcript_id:RCL_jg21616.t1
+			product	concanavalin A-like lectin/glucanase domain-containing protein
+			transl_table	1
+	CDS	complement(898011..899459)	codon_start	1
+			locus_tag	PRE_TEST_000021800
+			note	transcript_id:RCL_jg21616.t2
+			product	hypothetical protein GLOIN_2v1545410
+			transl_table	1
+	CDS	complement(join(901829..901946,902010..902036,902189..902208,902399..902416,902595..902639))	codon_start	1
+			locus_tag	PRE_TEST_000021900
+			note	transcript_id:RCL_jg21617.t1
+			product	hypothetical protein RCL_jg21617.t1
+			transl_table	1
+	CDS	902750..904237	codon_start	1
+			locus_tag	PRE_TEST_000022000
+			note	transcript_id:RCL_jg21618.t1
+			product	hypothetical protein GLOIN_2v1764020
+			transl_table	1
+	CDS	join(908824..909077,909138..910296)	codon_start	1
+			locus_tag	PRE_TEST_000022100
+			note	transcript_id:RCL_jg21619.t1
+			product	hypothetical protein GLOIN_2v1473716
+			transl_table	1
+	CDS	join(910727..910980,911066..912230)	codon_start	1
+			locus_tag	PRE_TEST_000022200
+			note	transcript_id:RCL_jg21620.t1
+			product	hypothetical protein GLOIN_2v1473716
+			transl_table	1
+	CDS	join(913336..913589,913665..914838)	codon_start	1
+			locus_tag	PRE_TEST_000022300
+			note	transcript_id:RCL_jg21621.t1
+			product	hypothetical protein GLOIN_2v1473716
+			transl_table	1
+	CDS	917504..919180	codon_start	1
+			locus_tag	PRE_TEST_000022400
+			note	transcript_id:RCL_jg21622.t1
+			product	hypothetical protein GLOIN_2v1545335
+			transl_table	1
+	CDS	920275..921384	codon_start	1
+			locus_tag	PRE_TEST_000022500
+			note	transcript_id:RCL_jg21623.t1
+			product	hypothetical protein GLOIN_2v1545329
+			transl_table	1
+	CDS	join(921816..923264,923347..923361)	codon_start	1
+			locus_tag	PRE_TEST_000022600
+			note	transcript_id:RCL_jg21624.t1
+			product	hypothetical protein GLOIN_2v1545325
+			transl_table	1
+	CDS	join(929903..930015,930222..930262,930353..930540,930648..930695)	codon_start	1
+			locus_tag	PRE_TEST_000022700
+			note	transcript_id:RCL_jg21626.t1
+			product	hypothetical protein GLOIN_2v1727104
+			transl_table	1
+	CDS	join(930749..930935,931240..931349,931517..931858)	codon_start	1
+			locus_tag	PRE_TEST_000022800
+			note	transcript_id:RCL_jg21625.t1
+			product	hypothetical protein GLOIN_2v229933
+			transl_table	1
+	CDS	complement(join(932522..932677,932747..932889,932963..933890,933967..934077,934154..934217,934283..934419,934493..934561,934809..935005,935074..935101))	codon_start	1
+			locus_tag	PRE_TEST_000022900
+			note	transcript_id:RCL_jg21627.t1
+			product	C2H2-type zinc finger transcription factor
+			transl_table	1
+	CDS	complement(join(938142..938147,938225..938293,938578..938651,938739..938820))	codon_start	1
+			locus_tag	PRE_TEST_000023000
+			note	transcript_id:RCL_jg21628.t1
+			product	hypothetical protein RCL_jg21628.t1
+			transl_table	1
+	CDS	complement(939783..940061)	codon_start	1
+			locus_tag	PRE_TEST_000023100
+			note	transcript_id:RCL_849628fa-09a4-4f67-8354-1461a3bda84f
+			product	hypothetical protein RCL_e2927_RclHR1_01520001
+			transl_table	1
+	CDS	complement(join(940340..940527,940806..940990,941068..941168,941230..941278,941372..941380,941611..941644,941744..941747))	codon_start	1
+			locus_tag	PRE_TEST_000023200
+			note	transcript_id:RCL_jg21629.t1
+			product	hypothetical protein RCL_jg21629.t1
+			transl_table	1
+	CDS	complement(join(940931..940990,941073..941168,941230..941278,941372..941380,941611..941644,941744..941747))	codon_start	1
+			locus_tag	PRE_TEST_000023200
+			note	transcript_id:RCL_jg21629.t2
+			product	hypothetical protein RCL_jg21629.t2
+			transl_table	1
+	CDS	complement(join(941805..941905,942112..942248,942431..942452,942560..942602))	codon_start	1
+			locus_tag	PRE_TEST_000023300
+			note	transcript_id:RCL_jg21630.t1
+			product	hypothetical protein RCL_jg21630.t1
+			transl_table	1
+	CDS	complement(join(966307..967125,967191..967405,967622..968201))	codon_start	1
+			locus_tag	PRE_TEST_000023400
+			note	transcript_id:RCL_jg21631.t1
+			product	tigger transposable element-derived protein 6-like
+			transl_table	1
+	CDS	complement(972927..973337)	codon_start	1
+			locus_tag	PRE_TEST_000023500
+			note	transcript_id:RCL_a781b162-7405-41e0-b5cd-6e53291acb51
+			product	hypothetical protein RCL_e1901_RclHR1_14220005
+			transl_table	1
+	CDS	join(975235..975303,975367..975421,975497..975553,975734..975814,975891..975904,975939..975942,976030..976034,976163..976165,976269..976283,976362..976444,976527..976589,976675..976697,976835..976910,977015..977028,977113..977210,977597..977821)	codon_start	1
+			locus_tag	PRE_TEST_000023600
+			note	transcript_id:RCL_jg21632.t2
+			product	hypothetical protein RCL_jg21632.t2
+			transl_table	1
+	CDS	979748..980128	codon_start	1
+			locus_tag	PRE_TEST_000023700
+			note	transcript_id:RCL_f160a034-626f-4725-a7c4-4c59ae9ea26d
+			product	hypothetical protein RCL_e1899_RclHR1_14220003
+			transl_table	1
+	CDS	complement(999046..999933)	codon_start	1
+			locus_tag	PRE_TEST_000023800
+			note	transcript_id:RCL_jg21633.t1
+			product	specific transcriptional repressor
+			transl_table	1
+	CDS	complement(join(1008336..1008858,1008957..1009375,1009478..1009546))	codon_start	1
+			locus_tag	PRE_TEST_000023900
+			note	transcript_id:RCL_jg21634.t1
+			product	hypothetical protein GLOIN_2v1871772
+			transl_table	1
+	CDS	1022823..1023266	codon_start	1
+			locus_tag	PRE_TEST_000024000
+			note	transcript_id:RCL_jg21635.t1
+			product	kinase-like domain-containing protein
+			transl_table	1
+	CDS	1023470..1023967	codon_start	1
+			locus_tag	PRE_TEST_000024100
+			note	transcript_id:RCL_jg21636.t1
+			product	kinase-like domain-containing protein
+			transl_table	1
+	CDS	1027465..1028442	codon_start	1
+			locus_tag	PRE_TEST_000024200
+			note	transcript_id:RCL_jg21637.t1
+			product	hypothetical protein GLOIN_2v1846864
+			transl_table	1
+	CDS	1031338..1031820	codon_start	1
+			locus_tag	PRE_TEST_000024300
+			note	transcript_id:RCL_jg21638.t1
+			product	hypothetical protein GLOIN_2v1701705
+			transl_table	1
+	CDS	1034749..1035444	codon_start	1
+			locus_tag	PRE_TEST_000024400
+			note	transcript_id:RCL_jg21639.t1
+			product	hypothetical protein GLOIN_2v1701705
+			transl_table	1
+	CDS	join(1037141..1037876,1037983..1038008)	codon_start	1
+			locus_tag	PRE_TEST_000024500
+			note	transcript_id:RCL_jg21640.t1
+			product	specific transcriptional repressor
+			transl_table	1
+	CDS	join(1052534..1052712,1052789..1053791)	codon_start	1
+			locus_tag	PRE_TEST_000024600
+			note	transcript_id:RCL_jg21641.t1
+			product	peptidase S8/S53 domain-containing protein
+			transl_table	1
+	CDS	1066935..1067897	codon_start	1
+			locus_tag	PRE_TEST_000024700
+			note	transcript_id:RCL_jg21642.t1
+			product	hypothetical protein GLOIN_2v1701679
+			transl_table	1
+	CDS	1069738..1070577	codon_start	1
+			locus_tag	PRE_TEST_000024800
+			note	transcript_id:RCL_jg21643.t1
+			product	transcription factor SOX-9-like
+			transl_table	1
+	CDS	1074091..1074735	codon_start	1
+			locus_tag	PRE_TEST_000024900
+			note	transcript_id:RCL_jg21645.t1
+			product	hypothetical protein RCL_jg21645.t1
+			transl_table	1
+	CDS	complement(join(1074362..1074425,1074508..1074654,1074911..1074937,1075021..1075054,1075194..1075209))	codon_start	1
+			locus_tag	PRE_TEST_000025000
+			note	transcript_id:RCL_jg21644.t1
+			product	hypothetical protein RCL_jg21644.t1
+			transl_table	1
+	CDS	complement(join(1082239..1082575,1082801..1082855,1083027..1083138,1083214..1083229,1083305..1083339))	codon_start	1
+			locus_tag	PRE_TEST_000025100
+			note	transcript_id:RCL_jg21647.t1
+			product	hypothetical protein GLOIN_2v1701663
+			transl_table	1
+	CDS	complement(join(1083575..1083746,1083865..1083925,1084011..1084038))	codon_start	1
+			locus_tag	PRE_TEST_000025200
+			note	transcript_id:RCL_jg21646.t1
+			product	hypothetical protein GLOIN_2v1669753
+			transl_table	1
+	CDS	complement(1087579..1088562)	codon_start	1
+			locus_tag	PRE_TEST_000025300
+			note	transcript_id:RCL_jg21648.t1
+			product	hypothetical protein GLOIN_2v1701663
+			transl_table	1
+	CDS	1107249..1108946	codon_start	1
+			locus_tag	PRE_TEST_000025500
+			note	transcript_id:RCL_jg21650.t1
+			product	hypothetical protein GLOIN_2v1805486
+			transl_table	1
+	CDS	complement(join(1113505..1113571,1113652..1113879,1113950..1114193,1114263..1114363,1114460..1114692))	codon_start	1
+			locus_tag	PRE_TEST_000025600
+			note	transcript_id:RCL_jg21651.t1
+			product	putative E3 ubiquitin-protein ligase ARI9
+			transl_table	1
+	CDS	complement(join(1113560..1113566,1113652..1113879,1113950..1114193,1114263..1114363,1114460..1114692))	codon_start	1
+			locus_tag	PRE_TEST_000025600
+			note	transcript_id:RCL_jg21651.t2
+			product	putative E3 ubiquitin-protein ligase ARI9
+			transl_table	1
+	CDS	join(1116550..1116581,1116653..1116765,1116837..1116868,1117131..1117157)	codon_start	1
+			locus_tag	PRE_TEST_000025700
+			note	transcript_id:RCL_jg21652.t1
+			product	hypothetical protein RCL_jg21652.t1
+			transl_table	1
+	CDS	join(1128069..1128454,1128692..1128830,1128922..1129053)	codon_start	1
+			locus_tag	PRE_TEST_000025900
+			note	transcript_id:RCL_jg21654.t1
+			product	uncharacterized protein LOC115034219
+			transl_table	1
+	CDS	complement(1138373..1139023)	codon_start	1
+			locus_tag	PRE_TEST_000026000
+			note	transcript_id:RCL_jg21655.t1
+			product	HMG domain containing protein
+			transl_table	1
+	CDS	join(1142541..1142586,1142700..1142721,1142952..1143018,1143105..1143142,1143198..1143294,1143431..1143563,1143769..1143812)	codon_start	1
+			locus_tag	PRE_TEST_000026100
+			note	transcript_id:RCL_jg21656.t3
+			product	hypothetical protein RCL_jg21656.t3
+			transl_table	1
+	CDS	join(1142541..1142586,1142700..1142721,1142952..1143018,1143105..1143142,1143198..1143294,1143431..1143563,1143631..1143649,1143769..1143817)	codon_start	1
+			locus_tag	PRE_TEST_000026100
+			note	transcript_id:RCL_jg21656.t1
+			product	hypothetical protein RCL_jg21656.t1
+			transl_table	1
+	CDS	join(1142936..1143018,1143085..1143093,1143198..1143294,1143431..1143563,1143631..1143649,1143769..1143817)	codon_start	1
+			locus_tag	PRE_TEST_000026100
+			note	transcript_id:RCL_jg21656.t2
+			product	hypothetical protein RCL_jg21656.t2
+			transl_table	1
+	CDS	complement(join(1148271..1148348,1148428..1148454,1148537..1148731,1148797..1148921,1149011..1149084,1149243..1149351,1149436..1149471,1149552..1149582))	codon_start	1
+			locus_tag	PRE_TEST_000026200
+			note	transcript_id:RCL_jg21657.t1
+			product	C2 domain-containing protein At1g63220
+			transl_table	1
+	CDS	complement(1151875..1152813)	codon_start	1
+			locus_tag	PRE_TEST_000026300
+			note	transcript_id:RCL_jg21658.t1
+			product	transcription factor SOX-8
+			transl_table	1
+	CDS	1157386..1158114	codon_start	1
+			locus_tag	PRE_TEST_000026400
+			note	transcript_id:RCL_jg21659.t1
+			product	HMG box protein, putative
+			transl_table	1
+	CDS	join(1197867..1197902,1197983..1198024,1198099..1198147,1198239..1198327,1198477..1198480,1198568..1198647,1198732..1198758,1198840..1198851,1199059..1199083,1199179..1199216,1199297..1199305)	codon_start	1
+			locus_tag	PRE_TEST_000026500
+			note	transcript_id:RCL_jg21660.t2
+			product	hypothetical protein RCL_jg21660.t2
+			transl_table	1
+	CDS	join(1197867..1197902,1197983..1198024,1198099..1198147,1198239..1198327,1198568..1198582)	codon_start	1
+			locus_tag	PRE_TEST_000026500
+			note	transcript_id:RCL_jg21660.t3
+			product	hypothetical protein RCL_jg21660.t3
+			transl_table	1
+	CDS	join(1197867..1197902,1197983..1198024,1198099..1198147,1198239..1198327,1198477..1198480,1198568..1198570,1198638..1198647,1198732..1198754,1198840..1198850)	codon_start	1
+			locus_tag	PRE_TEST_000026500
+			note	transcript_id:RCL_jg21660.t1
+			product	hypothetical protein RCL_jg21660.t1
+			transl_table	1
+	CDS	join(1199561..1199609,1199701..1199706,1199790..1199903,1200034..1200121,1200286..1200439)	codon_start	1
+			locus_tag	PRE_TEST_000026600
+			note	transcript_id:RCL_jg21661.t1
+			product	hypothetical protein RCL_jg21661.t1
+			transl_table	1
+	CDS	join(1201267..1202801,1202871..1203002,1203090..1203213,1203270..1203602,1203676..1203771,1203847..1203934,1204006..1204142,1204232..1204247,1204321..1204568,1204658..1205326)	codon_start	1
+			locus_tag	PRE_TEST_000026700
+			note	transcript_id:RCL_jg21662.t1
+			product	RNA-dependent RNA polymerase 6-like
+			transl_table	1
+	CDS	complement(join(1206210..1206233,1206311..1206346,1206433..1206462,1206675..1206706,1206840..1206927))	codon_start	1
+			locus_tag	PRE_TEST_000026800
+			note	transcript_id:RCL_jg21663.t1
+			product	hypothetical protein RCL_jg21663.t1
+			transl_table	1
+	CDS	join(1211044..1211328,1211402..1211531,1211709..1211888,1212028..1212143)	codon_start	1
+			locus_tag	PRE_TEST_000026900
+			note	transcript_id:RCL_jg21664.t1
+			product	hypothetical protein GLOIN_2v1817865
+			transl_table	1
+	CDS	complement(1216159..1216449)	codon_start	1
+			locus_tag	PRE_TEST_000027000
+			note	transcript_id:RCL_jg21665.t1
+			product	hypothetical protein RCL_jg21665.t1
+			transl_table	1
+	CDS	complement(join(1226870..1226960,1227041..1227060,1227480..1227499,1227908..1227928,1229134..1229519,1229604..1229847,1229904..1229907))	codon_start	1
+			locus_tag	PRE_TEST_000027100
+			note	transcript_id:RCL_jg21666.t1
+			product	hypothetical protein GLOIN_2v1717957
+			transl_table	1
+	CDS	complement(join(1240677..1242300,1242376..1243373))	codon_start	1
+			locus_tag	PRE_TEST_000027200
+			note	transcript_id:RCL_jg21667.t1
+			product	hypothetical protein GLOIN_2v1782174
+			transl_table	1
+	CDS	complement(1246265..1247476)	codon_start	1
+			locus_tag	PRE_TEST_000027300
+			note	transcript_id:RCL_jg21668.t1
+			product	hypothetical protein GLOIN_2v1669744
+			transl_table	1
+	CDS	join(1272605..1272658,1272923..1272994,1273070..1273205,1273272..1273663)	codon_start	1
+			locus_tag	PRE_TEST_000027400
+			note	transcript_id:RCL_jg21669.t1
+			product	hypothetical protein GLOIN_2v1719991
+			transl_table	1
+	CDS	complement(join(1273905..1274057,1274192..1274280,1274359..1275343))	codon_start	1
+			locus_tag	PRE_TEST_000027500
+			note	transcript_id:RCL_jg21670.t1
+			product	hypothetical protein GLOIN_2v1778530
+			transl_table	1
+	CDS	complement(join(1275479..1275764,1275943..1276196))	codon_start	1
+			locus_tag	PRE_TEST_000027600
+			note	transcript_id:RCL_jg21671.t1
+			product	hypothetical protein GLOIN_2v1784175
+			transl_table	1
+	CDS	complement(1292356..1292727)	codon_start	1
+			locus_tag	PRE_TEST_000027700
+			note	transcript_id:RCL_jg21672.t1
+			product	hypothetical protein RCL_jg21672.t1
+			transl_table	1
+	CDS	complement(1310304..1310723)	codon_start	1
+			locus_tag	PRE_TEST_000027800
+			note	transcript_id:RCL_jg21673.t1
+			product	hypothetical protein GLOIN_2v1886362
+			transl_table	1
+	CDS	complement(join(1310924..1311199,1311347..1311444,1311520..1311728,1311809..1311927,1312186..1312713,1312945..1313073,1313182..1313496))	codon_start	1
+			locus_tag	PRE_TEST_000027900
+			note	transcript_id:RCL_jg21674.t1
+			product	hypothetical protein GLOIN_2v1790377
+			transl_table	1
+	CDS	join(1317205..1317235,1317310..1317507,1317599..1317837)	codon_start	1
+			locus_tag	PRE_TEST_000028000
+			note	transcript_id:RCL_jg21675.t1
+			product	protein split ends isoform X4
+			transl_table	1
+	CDS	complement(join(1321649..1322058,1322140..1322631,1322696..1322965,1323030..1323458,1323528..1324083,1324158..1324455,1324542..1324909,1324973..1325572))	codon_start	1
+			locus_tag	PRE_TEST_000028100
+			note	transcript_id:RCL_jg21676.t1
+			product	hypothetical protein GLOIN_2v1785707
+			transl_table	1
+	CDS	complement(join(1327275..1327472,1327531..1329335,1329405..1330277,1330350..1330761))	codon_start	1
+			locus_tag	PRE_TEST_000028200
+			note	transcript_id:RCL_jg21677.t1
+			product	hypothetical protein GLOIN_2v1480545
+			transl_table	1
+	CDS	complement(join(1339490..1340199,1340292..1341192))	codon_start	1
+			locus_tag	PRE_TEST_000028300
+			note	transcript_id:RCL_jg21678.t1
+			product	hypothetical protein GLOIN_2v1783898
+			transl_table	1
+	CDS	join(1342123..1342242,1342332..1342638,1342738..1342769)	codon_start	1
+			locus_tag	PRE_TEST_000028400
+			note	transcript_id:RCL_jg21679.t1
+			product	histone H2A
+			transl_table	1
+	CDS	complement(join(1342868..1342906,1342983..1343231))	codon_start	1
+			locus_tag	PRE_TEST_000028500
+			note	transcript_id:RCL_jg21680.t1
+			product	hypothetical protein RCL_jg21680.t1
+			transl_table	1
+	CDS	complement(join(1343610..1343823,1343893..1344010,1344076..1344145))	codon_start	1
+			locus_tag	PRE_TEST_000028600
+			note	transcript_id:RCL_jg21681.t1
+			product	hypothetical protein GLOIN_2v1644672
+			transl_table	1
+	CDS	complement(join(1346577..1346588,1346694..1346908,1346982..1347231,1347311..1347375,1347455..1347550,1347633..1347697,1347783..1347827,1347923..1347990,1348062..1348372,1348463..1348571))	codon_start	1
+			locus_tag	PRE_TEST_000028700
+			note	transcript_id:RCL_jg21682.t1
+			product	7-dehydrocholesterol reductase
+			transl_table	1
+	CDS	1350803..1352365	codon_start	1
+			locus_tag	PRE_TEST_000028800
+			note	transcript_id:RCL_jg21683.t1
+			product	hypothetical protein GLOIN_2v1669673
+			transl_table	1
+	CDS	join(1354035..1354268,1354387..1354482)	codon_start	1
+			locus_tag	PRE_TEST_000028900
+			note	transcript_id:RCL_jg21684.t1
+			product	hypothetical protein GLOIN_2v1782112
+			transl_table	1
+	CDS	complement(join(1356505..1356701,1356759..1356780))	codon_start	1
+			locus_tag	PRE_TEST_000029000
+			note	transcript_id:RCL_jg21685.t1
+			product	hypothetical protein GLOIN_2v615733
+			transl_table	1
+	CDS	complement(join(1358823..1358972,1359061..1359119,1359197..1359314,1359402..1359528,1359601..1359704,1359798..1359839,1359915..1359994,1360065..1360140,1360215..1360337,1360408..1360487,1360613..1360626,1360702..1360712))	codon_start	1
+			locus_tag	PRE_TEST_000029100
+			note	transcript_id:RCL_jg21686.t1
+			product	stomatin family protein
+			transl_table	1
+	CDS	1361781..1363172	codon_start	1
+			locus_tag	PRE_TEST_000029200
+			note	transcript_id:RCL_jg21687.t1
+			product	hypothetical protein GLOIN_2v440448
+			transl_table	1
+	CDS	complement(join(1367866..1368038,1368116..1368185,1368254..1368322))	codon_start	1
+			locus_tag	PRE_TEST_000029300
+			note	transcript_id:RCL_jg21688.t1
+			product	hypothetical protein RCL_jg21688.t1
+			transl_table	1
+	CDS	complement(1368808..1369038)	codon_start	1
+			locus_tag	PRE_TEST_000029400
+			note	transcript_id:RCL_jg21689.t1
+			product	hypothetical protein GLOIN_2v1148199
+			transl_table	1
+	CDS	complement(1370191..1371852)	codon_start	1
+			locus_tag	PRE_TEST_000029500
+			note	transcript_id:RCL_jg21690.t1
+			product	hypothetical protein GLOIN_2v1669608
+			transl_table	1
+	CDS	join(1373455..1373586,1373809..1374054)	codon_start	1
+			locus_tag	PRE_TEST_000029700
+			note	transcript_id:RCL_jg21692.t1
+			product	BTB/POZ protein
+			transl_table	1
+	CDS	join(1374880..1374957,1375046..1375078,1375180..1375227,1375324..1375402,1375487..1375545,1375646..1375808,1375883..1375954,1376047..1376088,1376158..1376363)	codon_start	1
+			locus_tag	PRE_TEST_000029800
+			note	transcript_id:RCL_jg21693.t1
+			product	hypothetical protein GLOIN_2v439536
+			transl_table	1
+	CDS	complement(1385055..1385627)	codon_start	1
+			locus_tag	PRE_TEST_000029900
+			note	transcript_id:RCL_jg21694.t1
+			product	hypothetical protein GLOIN_2v1669596
+			transl_table	1
+	CDS	join(1390019..1390318,1390569..1390594,1390737..1390832,1391066..1391073,1391302..1391319,1391559..1391566)	codon_start	1
+			locus_tag	PRE_TEST_000030000
+			note	transcript_id:RCL_jg21695.t1
+			product	hypothetical protein GLOIN_2v1669594
+			transl_table	1
+	CDS	join(1392950..1392978,1393176..1393428)	codon_start	1
+			locus_tag	PRE_TEST_000030100
+			note	transcript_id:RCL_jg21696.t1
+			product	hypothetical protein GLOIN_2v1669593
+			transl_table	1
+	CDS	complement(1397511..1398107)	codon_start	1
+			locus_tag	PRE_TEST_000030200
+			note	transcript_id:RCL_jg21697.t1
+			product	hypothetical protein GLOIN_2v1669592
+			transl_table	1
+	CDS	complement(join(1400100..1400463,1400520..1400523,1400585..1400672))	codon_start	1
+			locus_tag	PRE_TEST_000030300
+			note	transcript_id:RCL_jg21698.t1
+			product	specific transcriptional repressor
+			transl_table	1
+	CDS	complement(1403990..1404547)	codon_start	1
+			locus_tag	PRE_TEST_000030400
+			note	transcript_id:RCL_jg21699.t1
+			product	hypothetical protein GLOIN_2v1669589
+			transl_table	1
+	CDS	complement(join(1407263..1407475,1407612..1407707))	codon_start	1
+			locus_tag	PRE_TEST_000030500
+			note	transcript_id:RCL_jg21700.t1
+			product	hypothetical protein RCL_jg21700.t1
+			transl_table	1
+	CDS	complement(1410955..1411926)	codon_start	1
+			locus_tag	PRE_TEST_000030600
+			note	transcript_id:RCL_jg21701.t1
+			product	hypothetical protein GLOIN_2v1669585
+			transl_table	1
+	CDS	complement(1413917..1414855)	codon_start	1
+			locus_tag	PRE_TEST_000030700
+			note	transcript_id:RCL_jg21702.t1
+			product	hypothetical protein GLOIN_2v1669580
+			transl_table	1
+	CDS	complement(join(1417260..1417876,1417945..1417948,1418046..1418219))	codon_start	1
+			locus_tag	PRE_TEST_000030800
+			note	transcript_id:RCL_jg21703.t1
+			product	Sel1 repeat family protein
+			transl_table	1
+	tRNA	join(1419161..1419198,1419207..1419243)	product	tRNA-Phe
+			locus_tag	PRE_TEST_000030900
+			anticodon	(pos:1419193..1419195,aa:Phe)
+	CDS	complement(join(1423184..1423407,1423534..1423581,1423736..1423932,1424176..1424294))	codon_start	1
+			locus_tag	PRE_TEST_000031000
+			note	transcript_id:RCL_jg21704.t1
+			product	hypothetical protein RCL_jg21704.t1
+			transl_table	1
+	CDS	complement(1424513..1424950)	codon_start	1
+			locus_tag	PRE_TEST_000031100
+			note	transcript_id:RCL_jg21705.t1
+			product	hypothetical protein RCL_jg21705.t1
+			transl_table	1
+	CDS	complement(1429843..1430076)	codon_start	1
+			locus_tag	PRE_TEST_000031200
+			note	transcript_id:RCL_jg21706.t1
+			product	hypothetical protein RCL_jg21706.t1
+			transl_table	1
+	CDS	join(1430796..1430846,1430919..1431056,1431306..1431674)	codon_start	1
+			locus_tag	PRE_TEST_000031300
+			note	transcript_id:RCL_jg21707.t1
+			product	hypothetical protein GLOIN_2v1782566
+			transl_table	1
+	CDS	join(1460501..1461097,1461190..1464468)	codon_start	1
+			locus_tag	PRE_TEST_000031400
+			note	transcript_id:RCL_jg21708.t1
+			product	glycosyltransferase family 2 protein
+			transl_table	1
+	CDS	complement(join(1465368..1465498,1465579..1465666,1465739..1465943,1466024..1466277,1466352..1466386,1466460..1466673))	codon_start	1
+			locus_tag	PRE_TEST_000031500
+			note	transcript_id:RCL_jg21709.t1
+			product	hypothetical protein GLOIN_2v1735056
+			transl_table	1
+	CDS	complement(join(1468635..1468853,1469013..1469106,1469180..1469574))	codon_start	1
+			locus_tag	PRE_TEST_000031600
+			note	transcript_id:RCL_jg21710.t1
+			product	potassium voltage-gated channel protein Shaw-like
+			transl_table	1
+	CDS	join(1470331..1470344,1470421..1470500,1470581..1470975,1471049..1471852)	codon_start	1
+			locus_tag	PRE_TEST_000031700
+			note	transcript_id:RCL_jg21711.t1
+			product	flotillin domain protein
+			transl_table	1
+	CDS	complement(join(1472947..1472979,1473059..1473086,1473949..1474054,1474112..1474370,1474454..1476707,1476783..1479218,1479304..1480341,1480415..1480520,1480596..1480650,1480735..1481583,1481651..1481738,1481818..1482785,1482860..1484810,1484904..1486670,1486740..1487548,1487623..1489557))	codon_start	1
+			locus_tag	PRE_TEST_000031800
+			note	transcript_id:RCL_jg21712.t1
+			product	hypothetical protein GLOIN_2v1764819
+			transl_table	1
+	CDS	complement(join(1491195..1491263,1491346..1493605,1493686..1496106,1496192..1497229,1497303..1497408,1497490..1497544,1497651..1498493,1498561..1498648,1498734..1499680,1499759..1501709,1501794..1503560,1503639..1504447,1504523..1505974))	codon_start	1
+			locus_tag	PRE_TEST_000031900
+			note	transcript_id:RCL_jg21713.t1
+			product	hypothetical protein GLOIN_2v1764819
+			transl_table	1
+	CDS	complement(join(1506719..1507482,1507564..1508181,1508296..1508299,1508631..1508737,1508812..1509171,1509258..1510095,1510208..1510736,1510833..1510918))	codon_start	1
+			locus_tag	PRE_TEST_000032000
+			note	transcript_id:RCL_jg21714.t1
+			product	endochitinase 1
+			transl_table	1
+	CDS	complement(join(1511963..1512512,1512600..1512809,1512884..1513085,1513224..1513245,1513429..1513487,1513620..1514114,1514243..1514368,1514495..1514501))	codon_start	1
+			locus_tag	PRE_TEST_000032100
+			note	transcript_id:RCL_jg21715.t1
+			product	general negative regulator of transcription subunit 2
+			transl_table	1
+	CDS	complement(join(1514575..1514596,1514663..1514794,1516448..1516495,1516680..1516687))	codon_start	1
+			locus_tag	PRE_TEST_000032200
+			note	transcript_id:RCL_jg21716.t1
+			product	hypothetical protein RCL_jg21716.t1
+			transl_table	1
+	CDS	complement(join(1519547..1519686,1519743..1519797,1519867..1519878))	codon_start	1
+			locus_tag	PRE_TEST_000032300
+			note	transcript_id:RCL_jg21718.t1
+			product	hypothetical protein RCL_jg21718.t1
+			transl_table	1
+	CDS	join(1519557..1520499,1520602..1521488)	codon_start	1
+			locus_tag	PRE_TEST_000032400
+			note	transcript_id:RCL_jg21717.t1
+			product	alpha/beta hydrolase protein
+			transl_table	1
+	CDS	join(1530856..1531486,1531547..1531640,1531710..1531725)	codon_start	1
+			locus_tag	PRE_TEST_000032600
+			note	transcript_id:RCL_jg21720.t1
+			product	kinase-like domain-containing protein
+			transl_table	1
+	CDS	complement(join(1536590..1536675,1536744..1536784,1536911..1536936,1537011..1537027,1537104..1537109,1537283..1537322,1537386..1537398,1537491..1537507))	codon_start	1
+			locus_tag	PRE_TEST_000032700
+			note	transcript_id:RCL_jg21721.t1
+			product	hypothetical protein RCL_jg21721.t1
+			transl_table	1
+	CDS	complement(join(1540107..1541585,1541782..1542015))	codon_start	1
+			locus_tag	PRE_TEST_000032800
+			note	transcript_id:RCL_jg21722.t1
+			product	arrestin domain-containing protein
+			transl_table	1
+	CDS	complement(join(1542107..1542120,1542269..1542289,1543131..1543653,1543742..1543783,1543865..1544527))	codon_start	1
+			locus_tag	PRE_TEST_000032900
+			note	transcript_id:RCL_jg21723.t1
+			product	hypothetical protein GLOIN_2v1555519
+			transl_table	1
+	CDS	complement(join(1547213..1548094,1548175..1548645))	codon_start	1
+			locus_tag	PRE_TEST_000033000
+			note	transcript_id:RCL_jg21724.t1
+			product	hypothetical protein GLOIN_2v1474584
+			transl_table	1
+	CDS	complement(join(1550620..1551392,1551470..1551509,1551593..1552066))	codon_start	1
+			locus_tag	PRE_TEST_000033100
+			note	transcript_id:RCL_jg21725.t1
+			product	hypothetical protein GLOIN_2v1474584
+			transl_table	1
+	CDS	complement(join(1553093..1553995,1554108..1554578))	codon_start	1
+			locus_tag	PRE_TEST_000033200
+			note	transcript_id:RCL_jg21726.t1
+			product	hypothetical protein GLOIN_2v1838075
+			transl_table	1
+	CDS	complement(1555767..1556162)	codon_start	1
+			locus_tag	PRE_TEST_000033300
+			note	transcript_id:RCL_jg21727.t1
+			product	hypothetical protein GLOIN_2v1488809
+			transl_table	1
+	CDS	complement(join(1557081..1557429,1557492..1557706,1557789..1558004,1558122..1558238,1558412..1558528,1558682..1558839,1558938..1559042,1559113..1559155))	codon_start	1
+			locus_tag	PRE_TEST_000033400
+			note	transcript_id:RCL_jg21728.t1
+			product	hypothetical protein GLOIN_2v1804648
+			transl_table	1
+	CDS	complement(join(1559768..1559995,1560137..1560206,1560273..1560463,1560549..1560594,1560652..1560970,1561064..1561133,1561218..1561293,1561364..1561674))	codon_start	1
+			locus_tag	PRE_TEST_000033500
+			note	transcript_id:RCL_jg21729.t1
+			product	IS200/IS605 family element transposase accessory protein TnpB
+			transl_table	1
+	CDS	complement(join(1562548..1562982,1563111..1563243,1563331..1563386))	codon_start	1
+			locus_tag	PRE_TEST_000033600
+			note	transcript_id:RCL_jg21730.t1
+			product	IS607 family transposase
+			transl_table	1
+	CDS	join(1563889..1564005,1564109..1564516)	codon_start	1
+			locus_tag	PRE_TEST_000033700
+			note	transcript_id:RCL_jg21731.t1
+			product	hypothetical protein GLOIN_2v1777145
+			transl_table	1
+	CDS	complement(join(1566120..1567019,1567102..1567587))	codon_start	1
+			locus_tag	PRE_TEST_000033800
+			note	transcript_id:RCL_jg21732.t1
+			product	hypothetical protein GLOIN_2v1838075
+			transl_table	1
+	CDS	complement(join(1572062..1572447,1572533..1572602,1572682..1572691,1572792..1572888,1572952..1573066,1573132..1573223,1573303..1573515,1573599..1573655,1573738..1573930))	codon_start	1
+			locus_tag	PRE_TEST_000033900
+			note	transcript_id:RCL_jg21733.t1
+			product	galactose oxidase
+			transl_table	1
+	CDS	join(1574394..1575080,1575155..1575196,1575264..1575327,1575397..1575603,1575695..1576122)	codon_start	1
+			locus_tag	PRE_TEST_000034000
+			note	transcript_id:RCL_jg21734.t1
+			product	hypothetical protein GLOIN_2v1474580
+			transl_table	1
+	CDS	complement(join(1579034..1579284,1579376..1579429,1579798..1579912,1579975..1580108,1580177..1580425,1580497..1580556,1580641..1580727,1580793..1580823))	codon_start	1
+			locus_tag	PRE_TEST_000034100
+			note	transcript_id:RCL_jg21735.t1
+			product	hypothetical protein GLOIN_2v1820242
+			transl_table	1
+	CDS	complement(join(1581975..1582199,1582511..1582575,1582706..1582986,1583069..1583148,1583233..1583361))	codon_start	1
+			locus_tag	PRE_TEST_000034200
+			note	transcript_id:RCL_jg21736.t1
+			product	hypothetical protein GLOIN_2v1791321
+			transl_table	1
+	CDS	complement(join(1586963..1586979,1587058..1587486,1587568..1587637,1587709..1587718,1587806..1587902,1587968..1588082,1588143..1588276,1588357..1588608,1588683..1588742,1588823..1589015))	codon_start	1
+			locus_tag	PRE_TEST_000034300
+			note	transcript_id:RCL_jg21737.t1
+			product	galactose oxidase
+			transl_table	1
+	CDS	join(1589446..1590078,1590156..1590197,1590263..1590320,1590402..1590599,1590678..1591123)	codon_start	1
+			locus_tag	PRE_TEST_000034400
+			note	transcript_id:RCL_jg21738.t1
+			product	hypothetical protein GLOIN_2v1878605
+			transl_table	1
+	CDS	join(1595514..1595904,1596073..1596281,1596364..1596699)	codon_start	1
+			locus_tag	PRE_TEST_000034500
+			note	transcript_id:RCL_jg21739.t1
+			product	kinase-like domain-containing protein
+			transl_table	1
+	CDS	complement(join(1599071..1599582,1599663..1599836,1599913..1599964,1600189..1600223,1600301..1600526))	codon_start	1
+			locus_tag	PRE_TEST_000034600
+			note	transcript_id:RCL_jg21740.t1
+			product	hypothetical protein GLOIN_2v1844124
+			transl_table	1
+	CDS	join(1602291..1602983,1603055..1603096,1603165..1603228,1603313..1603510,1603584..1604077)	codon_start	1
+			locus_tag	PRE_TEST_000034700
+			note	transcript_id:RCL_jg21741.t1
+			product	hypothetical protein GLOIN_2v1878605
+			transl_table	1
+	CDS	complement(join(1605247..1605686,1605761..1605830,1605909..1605918,1606014..1606113,1606196..1606310,1606370..1606503,1606582..1606833,1606907..1606966,1607048..1607240))	codon_start	1
+			locus_tag	PRE_TEST_000034800
+			note	transcript_id:RCL_jg21742.t1
+			product	galactose oxidase
+			transl_table	1
+	CDS	join(1608682..1609317,1609395..1609436,1609503..1609566,1609645..1609842,1609934..1610325)	codon_start	1
+			locus_tag	PRE_TEST_000034900
+			note	transcript_id:RCL_jg21743.t1
+			product	hypothetical protein GLOIN_2v1878605
+			transl_table	1
+	CDS	complement(join(1611753..1612246,1612319..1612388,1612471..1612480,1612568..1612655,1612725..1612839,1612903..1613033,1613109..1613339,1613411..1613467,1613546..1613735))	codon_start	1
+			locus_tag	PRE_TEST_000035000
+			note	transcript_id:RCL_jg21744.t1
+			product	hypothetical protein GLOIN_2v1768947
+			transl_table	1
+	CDS	join(1616632..1616737,1616884..1616943,1617017..1617262,1617368..1617498,1617564..1617678,1617742..1617788)	codon_start	1
+			locus_tag	PRE_TEST_000035100
+			note	transcript_id:RCL_jg21745.t1
+			product	hypothetical protein GLOIN_2v1768947
+			transl_table	1
+	CDS	join(1618029..1618086,1618156..1618532)	codon_start	1
+			locus_tag	PRE_TEST_000035200
+			note	transcript_id:RCL_jg21746.t1
+			product	hypothetical protein GLOIN_2v250418
+			transl_table	1
+	CDS	complement(join(1619820..1620487,1620622..1621210))	codon_start	1
+			locus_tag	PRE_TEST_000035300
+			note	transcript_id:RCL_jg21747.t1
+			product	hypothetical protein GLOIN_2v1846234
+			transl_table	1
+	CDS	complement(join(1626518..1626844,1627219..1627482))	codon_start	1
+			locus_tag	PRE_TEST_000035500
+			note	transcript_id:RCL_jg21749.t1
+			product	hypothetical protein GLOIN_2v1792321
+			transl_table	1
+	CDS	complement(join(1627536..1627816,1627935..1628178))	codon_start	1
+			locus_tag	PRE_TEST_000035600
+			note	transcript_id:RCL_jg21750.t1
+			product	hypothetical protein GLOIN_2v986619
+			transl_table	1
+	CDS	complement(join(1629077..1629472,1629633..1630267,1630415..1630690,1630778..1630792,1630958..1631174))	codon_start	1
+			locus_tag	PRE_TEST_000035700
+			note	transcript_id:RCL_jg21751.t1
+			product	hypothetical protein GLOIN_2v1467223
+			transl_table	1
+	CDS	join(1634133..1634391,1634466..1634704,1634753..1635093,1635172..1635472,1635624..1635746,1635960..1636238,1636310..1636735)	codon_start	1
+			locus_tag	PRE_TEST_000035800
+			note	transcript_id:RCL_jg21752.t1
+			product	ribonuclease H-like domain-containing protein
+			transl_table	1
+	CDS	1646734..1647927	codon_start	1
+			locus_tag	PRE_TEST_000035900
+			note	transcript_id:RCL_jg21753.t1
+			product	homeodomain-like protein
+			transl_table	1
+	CDS	join(1648762..1648764,1649010..1649013,1649131..1649174,1649415..1649513,1649596..1649697,1649814..1649881,1649959..1650061)	codon_start	1
+			locus_tag	PRE_TEST_000036000
+			note	transcript_id:RCL_jg21754.t1
+			product	hypothetical protein RCL_jg21754.t1
+			transl_table	1
+	CDS	join(1651452..1651652,1651745..1651785,1651945..1651957,1652073..1652099)	codon_start	1
+			locus_tag	PRE_TEST_000036100
+			note	transcript_id:RCL_jg21755.t1
+			product	hypothetical protein GLOIN_2v1735228
+			transl_table	1
+	CDS	join(1660163..1660870,1660949..1661173,1661239..1662057)	codon_start	1
+			locus_tag	PRE_TEST_000036200
+			note	transcript_id:RCL_jg21756.t1
+			product	CENP-B homolog protein 2-like
+			transl_table	1
+	CDS	complement(join(1672086..1672130,1672366..1672429,1672618..1672654,1672790..1672898))	codon_start	1
+			locus_tag	PRE_TEST_000036300
+			note	transcript_id:RCL_jg21757.t1
+			product	hypothetical protein RCL_jg21757.t1
+			transl_table	1
+	CDS	complement(join(1673275..1673304,1673388..1673734,1673816..1673915,1674009..1676729,1676903..1676956,1677103..1677168,1677449..1677481,1677580..1677699))	codon_start	1
+			locus_tag	PRE_TEST_000036400
+			note	transcript_id:RCL_jg21758.t1
+			product	serine/threonine-protein kinase PAK 6
+			transl_table	1
+	CDS	join(1690463..1690465,1690543..1691097,1691183..1691209)	codon_start	1
+			locus_tag	PRE_TEST_000036500
+			note	transcript_id:RCL_jg21759.t1
+			product	60S ribosomal protein L11
+			transl_table	1
+	CDS	complement(join(1692392..1692783,1692861..1693125,1693234..1693337,1693425..1693554))	codon_start	1
+			locus_tag	PRE_TEST_000036600
+			note	transcript_id:RCL_jg21760.t1
+			product	7-methylguanosine phosphate-specific 5'-nucleotidase
+			transl_table	1
+	CDS	complement(join(1695224..1695327,1695393..1695470,1696137..1696211,1696280..1696341,1696941..1696957))	codon_start	1
+			locus_tag	PRE_TEST_000036700
+			note	transcript_id:RCL_jg21761.t1
+			product	hypothetical protein RCL_jg21761.t1
+			transl_table	1
+	CDS	join(1698268..1698369,1698553..1698651,1698787..1698865,1698936..1699261,1699343..1699351,1699455..1699790)	codon_start	1
+			locus_tag	PRE_TEST_000036800
+			note	transcript_id:RCL_jg21762.t1
+			product	hypothetical protein GLOIN_2v1707898
+			transl_table	1
+	CDS	complement(join(1700951..1700984,1701045..1701109,1701175..1701343,1701458..1701623,1701775..1701778))	codon_start	1
+			locus_tag	PRE_TEST_000036900
+			note	transcript_id:RCL_jg21763.t1
+			product	40S ribosomal protein S23
+			transl_table	1
+	CDS	join(1701953..1702039,1702126..1702264,1702336..1702622,1702697..1702804,1702875..1703027,1703092..1703222,1703290..1703392,1703477..1703543,1703647..1703771,1703834..1703958,1704040..1704160,1704256..1704351,1704423..1704557,1704825..1704951,1705026..1705099)	codon_start	1
+			locus_tag	PRE_TEST_000037000
+			note	transcript_id:RCL_jg21764.t1
+			product	negative elongation factor D
+			transl_table	1
+	CDS	complement(join(1705390..1705602,1705677..1705795,1705886..1705911,1705979..1706098,1706184..1706313,1706403..1706457,1706535..1706602,1706671..1706731,1706804..1706889,1706957..1707089))	codon_start	1
+			locus_tag	PRE_TEST_000037100
+			note	transcript_id:RCL_jg21765.t1
+			product	UPF0014-domain-containing protein
+			transl_table	1
+	CDS	join(1707460..1707596,1707668..1707701,1707770..1707998,1708060..1708149,1708255..1708331,1708401..1708442,1708509..1708590,1708661..1708740,1708814..1709140)	codon_start	1
+			locus_tag	PRE_TEST_000037200
+			note	transcript_id:RCL_jg21766.t1
+			product	cystathionine beta-synthase
+			transl_table	1
+	CDS	complement(join(1709332..1709450,1709530..1709854,1709941..1709986,1710064..1710328,1710391..1710433))	codon_start	1
+			locus_tag	PRE_TEST_000037300
+			note	transcript_id:RCL_jg21767.t1
+			product	mitochondrial protein
+			transl_table	1
+	CDS	join(1711603..1711666,1711813..1711961,1712067..1712075,1712154..1712627)	codon_start	1
+			locus_tag	PRE_TEST_000037400
+			note	transcript_id:RCL_jg21768.t1
+			product	hypothetical protein GLOIN_2v1555171
+			transl_table	1
+	CDS	join(1713255..1713853,1713950..1714049,1714121..1714212,1714294..1714413,1714491..1714971,1715063..1715194,1715273..1715306,1715379..1715523,1715599..1716004,1716098..1716565)	codon_start	1
+			locus_tag	PRE_TEST_000037500
+			note	transcript_id:RCL_jg21769.t1
+			product	glycoside hydrolase family 5 protein
+			transl_table	1
+	CDS	1717095..1718204	codon_start	1
+			locus_tag	PRE_TEST_000037600
+			note	transcript_id:RCL_jg21770.t1
+			product	Sel1 repeat family protein
+			transl_table	1
+	CDS	join(1719761..1719848,1720044..1720055,1720165..1720284,1720725..1720804,1720995..1721067,1721134..1721282,1721431..1721474,1721813..1721927)	codon_start	1
+			locus_tag	PRE_TEST_000037700
+			note	transcript_id:RCL_jg21771.t1
+			product	hypothetical protein RCL_jg21771.t1
+			transl_table	1
+	CDS	complement(join(1724260..1724381,1724463..1724519,1724610..1724954,1725019..1725288,1725353..1725694,1725850..1726405,1726480..1726777,1726864..1727231,1727295..1727894))	codon_start	1
+			locus_tag	PRE_TEST_000037800
+			note	transcript_id:RCL_jg21772.t1
+			product	hypothetical protein GLOIN_2v1785707
+			transl_table	1
+	CDS	complement(join(1732164..1732323,1732462..1732762,1732872..1733412))	codon_start	1
+			locus_tag	PRE_TEST_000037900
+			note	transcript_id:RCL_jg21773.t1
+			product	hypothetical protein GLOIN_2v1555119
+			transl_table	1
+	CDS	complement(1736834..1737394)	codon_start	1
+			locus_tag	PRE_TEST_000038000
+			note	transcript_id:RCL_jg21774.t1
+			product	SWIRM domain-containing protein
+			transl_table	1
+	CDS	join(1739693..1739789,1739871..1740017,1740108..1740112)	codon_start	1
+			locus_tag	PRE_TEST_000038100
+			note	transcript_id:RCL_jg21775.t1
+			product	IPTL-CTERM sorting domain-containing protein
+			transl_table	1
+	CDS	complement(join(1747947..1748119,1748210..1748280,1748443..1748675,1748790..1749257))	codon_start	1
+			locus_tag	PRE_TEST_000038200
+			note	transcript_id:RCL_jg21776.t1
+			product	hypothetical protein GLOIN_2v1776609
+			transl_table	1
+	CDS	complement(join(1751321..1751763,1751851..1752214))	codon_start	1
+			locus_tag	PRE_TEST_000038300
+			note	transcript_id:RCL_jg21777.t1
+			product	hypothetical protein GLOIN_2v1555084
+			transl_table	1
+	CDS	join(1761667..1761769,1761848..1762032,1762101..1762257,1762435..1762673,1762869..1763695,1763777..1763918)	codon_start	1
+			locus_tag	PRE_TEST_000038400
+			note	transcript_id:RCL_jg21778.t1
+			product	zinc finger BED domain-containing protein 1-like
+			transl_table	1
+	CDS	complement(1768938..1770140)	codon_start	1
+			locus_tag	PRE_TEST_000038500
+			note	transcript_id:RCL_jg21779.t1
+			product	putative disease resistance protein RGA3 isoform X1
+			transl_table	1
+	CDS	1771476..1772597	codon_start	1
+			locus_tag	PRE_TEST_000038600
+			note	transcript_id:RCL_1b377ebd-d0fa-4d0b-8c3a-0cd09a1e84fa
+			product	hypothetical protein GLOIN_2v1774577
+			transl_table	1
+	CDS	complement(join(1776996..1777598,1777664..1778046,1778124..1778745))	codon_start	1
+			locus_tag	PRE_TEST_000038700
+			note	transcript_id:RCL_jg21780.t1
+			product	CENP-B homolog protein 2-like
+			transl_table	1
+	CDS	complement(1802326..1802622)	codon_start	1
+			locus_tag	PRE_TEST_000038800
+			note	transcript_id:RCL_jg21781.t1
+			product	hypothetical protein RCL_jg21781.t1
+			transl_table	1
+	CDS	complement(1802773..1803294)	codon_start	1
+			locus_tag	PRE_TEST_000038900
+			note	transcript_id:RCL_jg21782.t1
+			product	hypothetical protein GLOIN_2v1788498
+			transl_table	1
+	CDS	complement(join(1803355..1803631,1803737..1803914,1803984..1804310,1804419..1804788))	codon_start	1
+			locus_tag	PRE_TEST_000039000
+			note	transcript_id:RCL_jg21783.t1
+			product	hypothetical protein RCL_jg21783.t1
+			transl_table	1
+	CDS	complement(join(1805260..1805491,1805630..1806369))	codon_start	1
+			locus_tag	PRE_TEST_000039100
+			note	transcript_id:RCL_jg21784.t1
+			product	RNA-directed DNA polymerase from mobile element jockey-like
+			transl_table	1
+	CDS	complement(join(1806468..1807580,1807653..1807796,1807962..1808148,1808202..1808606,1808892..1808965,1809158..1809356,1809564..1809750,1810080..1810311))	codon_start	1
+			locus_tag	PRE_TEST_000039200
+			note	transcript_id:RCL_jg21785.t1
+			product	hypothetical protein RCL_jg21785.t1
+			transl_table	1
+	CDS	join(1817952..1818014,1818084..1818131,1818193..1818352,1818428..1818654)	codon_start	1
+			locus_tag	PRE_TEST_000039300
+			note	transcript_id:RCL_jg21786.t1
+			product	hypothetical protein GLOIN_2v1709121
+			transl_table	1
+	CDS	complement(1820114..1820386)	codon_start	1
+			locus_tag	PRE_TEST_000039400
+			note	transcript_id:RCL_6f902a5e-835c-4f32-8034-707cf40b9f5a
+			product	hypothetical protein GLOIN_2v1838029
+			transl_table	1
+	CDS	complement(join(1820489..1820697,1820794..1820887))	codon_start	1
+			locus_tag	PRE_TEST_000039500
+			note	transcript_id:RCL_jg21787.t1
+			product	hypothetical protein GLOIN_2v1838029
+			transl_table	1
+	CDS	complement(join(1824448..1824783,1824868..1825794,1825878..1826180))	codon_start	1
+			locus_tag	PRE_TEST_000039600
+			note	transcript_id:RCL_jg21788.t1
+			product	phosphate:H+ symporter
+			transl_table	1
+	CDS	join(1827580..1827693,1827801..1827806,1827985..1828068,1828164..1828178)	codon_start	1
+			locus_tag	PRE_TEST_000039700
+			note	transcript_id:RCL_jg21789.t1
+			product	hypothetical protein RCL_jg21789.t1
+			transl_table	1
+	CDS	complement(join(1828193..1828691,1828780..1829297,1829387..1829539,1829613..1829965,1830052..1830433,1830528..1830716))	codon_start	1
+			locus_tag	PRE_TEST_000039800
+			note	transcript_id:RCL_jg21790.t1
+			product	P-loop containing nucleoside triphosphate hydrolase protein
+			transl_table	1
+	CDS	join(1832476..1833193,1833282..1833949)	codon_start	1
+			locus_tag	PRE_TEST_000039900
+			note	transcript_id:RCL_jg21791.t1
+			product	G1/S-specific cyclin Pcl5, putative
+			transl_table	1
+	CDS	complement(join(1835179..1835313,1835402..1835677,1835791..1835997))	codon_start	1
+			locus_tag	PRE_TEST_000040000
+			note	transcript_id:RCL_jg21792.t1
+			product	putative glycosyltransferase
+			transl_table	1
+	CDS	join(1839012..1839419,1839496..1840099,1840203..1840267)	codon_start	1
+			locus_tag	PRE_TEST_000040100
+			note	transcript_id:RCL_jg21793.t1
+			product	hypothetical protein GLOIN_2v1768878
+			transl_table	1
+	CDS	complement(join(1842230..1842405,1842497..1842584))	codon_start	1
+			locus_tag	PRE_TEST_000040200
+			note	transcript_id:RCL_jg21794.t1
+			product	hypothetical protein RCL_jg21794.t1
+			transl_table	1
+	CDS	complement(join(1846630..1846748,1846816..1847201,1847280..1847344,1847422..1847534,1847627..1847666))	codon_start	1
+			locus_tag	PRE_TEST_000040400
+			note	transcript_id:RCL_jg21796.t1
+			product	oxidoreductase HTATIP2 isoform X2
+			transl_table	1
+	CDS	complement(join(1849031..1849545,1849643..1849667))	codon_start	1
+			locus_tag	PRE_TEST_000040500
+			note	transcript_id:RCL_jg21797.t1
+			product	hypothetical protein GLOIN_2v1768850
+			transl_table	1
+	CDS	complement(join(1850919..1850945,1851028..1851054,1851220..1851518,1851591..1851959,1852039..1852052,1852178..1852316,1852612..1852639))	codon_start	1
+			locus_tag	PRE_TEST_000040600
+			note	transcript_id:RCL_jg21798.t1
+			product	hypothetical protein GLOIN_2v1474524
+			transl_table	1
+	CDS	join(1853210..1853311,1853366..1853484,1853573..1853707,1853812..1854382)	codon_start	1
+			locus_tag	PRE_TEST_000040700
+			note	transcript_id:RCL_jg21799.t1
+			product	alpha/beta hydrolase
+			transl_table	1
+	CDS	join(1855433..1855769,1855854..1855961,1856051..1856117,1856194..1856440,1856771..1857829,1857908..1858073,1858151..1858516,1858603..1858613)	codon_start	1
+			locus_tag	PRE_TEST_000040800
+			note	transcript_id:RCL_jg21800.t1
+			product	cytochrome P450
+			transl_table	1
+	CDS	join(1863508..1863625,1863710..1863896,1863954..1864284,1864357..1864542,1864676..1865170)	codon_start	1
+			locus_tag	PRE_TEST_000040900
+			note	transcript_id:RCL_jg21801.t1
+			product	pogo transposable element with KRAB domain
+			transl_table	1
+	CDS	join(1876925..1877102,1877249..1877526,1877593..1877895,1878205..1878531)	codon_start	1
+			locus_tag	PRE_TEST_000041100
+			note	transcript_id:RCL_jg21803.t1
+			product	hypothetical protein GLOIN_2v1773465
+			transl_table	1
+	CDS	complement(join(1881185..1881194,1881259..1881651,1881726..1881728,1881803..1881879,1881965..1881987,1882062..1882123,1882211..1882262,1882346..1882696,1882763..1882837,1882920..1882934,1883045..1883066,1883144..1883317))	codon_start	1
+			locus_tag	PRE_TEST_000041200
+			note	transcript_id:RCL_jg21804.t1
+			product	hypothetical protein RCL_jg21804.t1
+			transl_table	1
+	CDS	complement(join(1885881..1886666,1886756..1887150,1887237..1887316,1887404..1887417))	codon_start	1
+			locus_tag	PRE_TEST_000041300
+			note	transcript_id:RCL_jg21805.t1
+			product	flotillin-like protein 4
+			transl_table	1
+	CDS	join(1888966..1889146,1889253..1889702,1889787..1889839,1889924..1890514,1890606..1890947)	codon_start	1
+			locus_tag	PRE_TEST_000041400
+			note	transcript_id:RCL_jg21806.t1
+			product	guanylate-binding protein
+			transl_table	1
+	CDS	complement(join(1894950..1895764,1895839..1895986))	codon_start	1
+			locus_tag	PRE_TEST_000041500
+			note	transcript_id:RCL_jg21807.t1
+			product	myb-like protein X isoform X1
+			transl_table	1
+	CDS	1896874..1897977	codon_start	1
+			locus_tag	PRE_TEST_000041600
+			note	transcript_id:RCL_jg21808.t1
+			product	phosphotransferase enzyme family protein
+			transl_table	1
+	CDS	complement(join(1905545..1905590,1905679..1905683,1905744..1905966,1906031..1906081,1906163..1906248,1906318..1906348,1906431..1906509,1906572..1906654,1906723..1906804,1906881..1907031))	codon_start	1
+			locus_tag	PRE_TEST_000041700
+			note	transcript_id:RCL_jg21809.t2
+			product	SAGA-associated factor 29 homolog B isoform X1
+			transl_table	1
+	CDS	complement(join(1905545..1905590,1905679..1905683,1905744..1905966,1906031..1906081,1906163..1906248,1906318..1906348,1906431..1906515,1906572..1906654,1906723..1906804,1906881..1907031))	codon_start	1
+			locus_tag	PRE_TEST_000041700
+			note	transcript_id:RCL_jg21809.t1
+			product	DUF1325-domain-containing protein
+			transl_table	1
+	CDS	join(1907281..1907410,1907480..1907832)	codon_start	1
+			locus_tag	PRE_TEST_000041800
+			note	transcript_id:RCL_jg21810.t1
+			product	ubiquitin domain containing protein
+			transl_table	1
+	CDS	complement(join(1908260..1908672,1908748..1909727,1909798..1910107,1910200..1911289))	codon_start	1
+			locus_tag	PRE_TEST_000041900
+			note	transcript_id:RCL_jg21811.t1
+			product	hypothetical protein GLOIN_2v1615959
+			transl_table	1
+	CDS	complement(join(1912290..1913446,1913527..1914214))	codon_start	1
+			locus_tag	PRE_TEST_000042000
+			note	transcript_id:RCL_jg21812.t1
+			product	T-box-containing protein TBXT-like
+			transl_table	1
+	CDS	join(1914785..1914809,1914878..1914961,1915044..1915167,1915251..1915335,1915412..1915630,1915701..1915788,1915861..1915893,1915973..1916058)	codon_start	1
+			locus_tag	PRE_TEST_000042100
+			note	transcript_id:RCL_jg21813.t1
+			product	triosephosphate isomerase
+			transl_table	1
+	CDS	complement(1916402..1917112)	codon_start	1
+			locus_tag	PRE_TEST_000042200
+			note	transcript_id:RCL_jg21814.t1
+			product	protein-lysine methyltransferase METTL21D isoform X1
+			transl_table	1
+	CDS	join(1917597..1917618,1917699..1917778,1917954..1918080,1918160..1918284,1918352..1918477,1918563..1918676,1918755..1918817,1918896..1919000)	codon_start	1
+			locus_tag	PRE_TEST_000042300
+			note	transcript_id:RCL_jg21815.t1
+			product	20S proteasome subunit alpha 4
+			transl_table	1
+	tRNA	1919232..1919303	product	tRNA-Val
+			locus_tag	PRE_TEST_000042400
+			anticodon	(pos:1919264..1919266,aa:Val)
+	CDS	complement(join(1919986..1920585,1920733..1921407))	codon_start	1
+			locus_tag	PRE_TEST_000042500
+			note	transcript_id:RCL_jg21816.t1
+			product	mucin, putative
+			transl_table	1
+	CDS	join(1922323..1922401,1922465..1922534,1922605..1922750,1922821..1922832,1922917..1922927,1922993..1923070,1923150..1923161,1923241..1923474,1923550..1923614,1923687..1923874,1923941..1924008,1924096..1924145,1924217..1924259,1924340..1924426,1924509..1924697)	codon_start	1
+			locus_tag	PRE_TEST_000042600
+			note	transcript_id:RCL_jg21817.t1
+			product	radical S-adenosyl methionine domain-containing protein 1, mitochondrial-like
+			transl_table	1
+	CDS	join(1925576..1925645,1925779..1926247,1926334..1926596,1926693..1926931)	codon_start	1
+			locus_tag	PRE_TEST_000042700
+			note	transcript_id:RCL_jg21818.t1
+			product	PIN2/TERF1-interacting telomerase inhibitor 1 isoform X1
+			transl_table	1
+	CDS	join(1927870..1928221,1928339..1929240)	codon_start	1
+			locus_tag	PRE_TEST_000042800
+			note	transcript_id:RCL_jg21819.t1
+			product	crinkler (CRN) family protein, putative
+			transl_table	1
+	CDS	join(1929604..1929730,1929807..1930234)	codon_start	1
+			locus_tag	PRE_TEST_000042900
+			note	transcript_id:RCL_jg21820.t1
+			product	plasma membrane proteolipid 3
+			transl_table	1
+	CDS	1931016..1932248	codon_start	1
+			locus_tag	PRE_TEST_000043000
+			note	transcript_id:RCL_jg21821.t2
+			product	hypothetical protein GLOIN_2v120438
+			transl_table	1
+	CDS	1931481..1932248	codon_start	1
+			locus_tag	PRE_TEST_000043000
+			note	transcript_id:RCL_jg21821.t1
+			product	hypothetical protein GLOIN_2v120438
+			transl_table	1
+	CDS	complement(join(1932623..1932906,1932988..1933209,1933299..1933468,1934060..1934178,1934287..1934444,1934529..1934547))	codon_start	1
+			locus_tag	PRE_TEST_000043100
+			note	transcript_id:RCL_jg21822.t1
+			product	hypothetical protein GLOIN_2v1616024
+			transl_table	1
+	CDS	join(1935385..1935485,1935562..1935689,1935758..1935885,1935956..1936168)	codon_start	1
+			locus_tag	PRE_TEST_000043200
+			note	transcript_id:RCL_jg21823.t1
+			product	vacuolar protein sorting-associated protein 37B
+			transl_table	1
+	CDS	complement(join(1936253..1936605,1936683..1936749,1936832..1936930,1937012..1937241,1937312..1937358,1937421..1937426,1937496..1937785,1937868..1938053))	codon_start	1
+			locus_tag	PRE_TEST_000043300
+			note	transcript_id:RCL_jg21824.t1
+			product	tyrosine-tRNA ligase
+			transl_table	1
+	CDS	complement(join(1936253..1936605,1936683..1936749,1936832..1936930,1937012..1937245,1937312..1937426,1937496..1937785,1937868..1938053))	codon_start	1
+			locus_tag	PRE_TEST_000043300
+			note	transcript_id:RCL_jg21824.t2
+			product	tyrosine-tRNA ligase
+			transl_table	1
+	CDS	join(1938518..1938714,1938786..1938821,1938900..1939462,1939532..1940465,1940546..1940756,1940824..1941130,1941205..1941528,1941601..1941680,1941912..1941990,1942054..1942600,1942670..1943649,1943715..1943792,1943864..1944000,1944071..1944256,1944328..1944405,1944480..1944683)	codon_start	1
+			locus_tag	PRE_TEST_000043400
+			note	transcript_id:RCL_jg21825.t1
+			product	glycoside hydrolase family 13 protein
+			transl_table	1
+	CDS	complement(join(1945030..1945057,1945152..1945220,1945290..1945414,1945487..1945915,1945994..1946117,1946185..1946313,1946406..1946447,1946562..1947670,1947759..1947833,1947909..1948007,1948113..1948274,1948353..1948427,1948505..1949794,1949867..1950150,1950223..1950271))	codon_start	1
+			locus_tag	PRE_TEST_000043500
+			note	transcript_id:RCL_jg21826.t1
+			product	rap/ran GTPase-activating protein
+			transl_table	1
+	CDS	complement(join(1951521..1951983,1952060..1952238,1952305..1952889,1952970..1952983,1953062..1953152,1953220..1953270,1953342..1953387,1953489..1953538,1953604..1953798))	codon_start	1
+			locus_tag	PRE_TEST_000043600
+			note	transcript_id:RCL_jg21827.t1
+			product	hypothetical protein RCL_jg21827.t1
+			transl_table	1
+	CDS	join(1954945..1955117,1955199..1955725,1955800..1955958,1956043..1956420,1956490..1956641,1956720..1957181)	codon_start	1
+			locus_tag	PRE_TEST_000043700
+			note	transcript_id:RCL_jg21828.t1
+			product	transporter, putative
+			transl_table	1
+	CDS	join(1957894..1958755,1958840..1958988,1959061..1959257,1959324..1961286)	codon_start	1
+			locus_tag	PRE_TEST_000043800
+			note	transcript_id:RCL_jg21829.t1
+			product	cellulase family glycosylhydrolase
+			transl_table	1
+	CDS	complement(join(1961929..1961937,1962026..1963012))	codon_start	1
+			locus_tag	PRE_TEST_000043900
+			note	transcript_id:RCL_jg21830.t1
+			product	nucleotidylyl transferase
+			transl_table	1
+	CDS	join(1963606..1964835,1964905..1965707,1965791..1967578,1967726..1971171,1971247..1971999,1972076..1978158,1978239..1978400)	codon_start	1
+			locus_tag	PRE_TEST_000044000
+			note	transcript_id:RCL_jg21831.t1
+			product	hypothetical protein GLOIN_2v1841731
+			transl_table	1
+	CDS	complement(join(1979465..1979570,1979651..1979723,1979794..1980509,1980599..1981031,1981104..1981322,1981413..1981556,1981628..1981947,1982021..1982088,1982171..1982328,1982411..1982530,1982616..1982647,1982718..1982722,1982830..1983183,1983252..1983865,1983942..1984968,1985064..1985200,1985275..1985322,1985411..1986813,1986891..1987018,1987093..1987680))	codon_start	1
+			locus_tag	PRE_TEST_000044100
+			note	transcript_id:RCL_jg21832.t1
+			product	P-loop containing nucleoside triphosphate hydrolase protein
+			transl_table	1
+	CDS	complement(join(1989415..1989462,1989539..1989664,1989725..1989769))	codon_start	1
+			locus_tag	PRE_TEST_000044200
+			note	transcript_id:RCL_jg21833.t1
+			product	hypothetical protein RCL_jg21833.t1
+			transl_table	1
+	CDS	join(1991857..1992047,1992110..1992180,1992263..1992294,1992373..1992583,1992658..1993293,1993392..1993687)	codon_start	1
+			locus_tag	PRE_TEST_000044300
+			note	transcript_id:RCL_jg21834.t1
+			product	major facilitator superfamily domain-containing protein
+			transl_table	1
+	CDS	complement(join(1996150..1997267,1997339..1997639,1997720..1997846,1997908..1997968,1998042..1998307,1998373..1998449,1998516..1999304,1999402..1999634,1999724..1999810,1999955..2000035,2000516..2000654,2000722..2001111,2001181..2001426,2001496..2001599,2001666..2001751,2001853..2001995,2002063..2002081,2002163..2002197,2002257..2002339,2002406..2002490))	codon_start	1
+			locus_tag	PRE_TEST_000044400
+			note	transcript_id:RCL_jg21835.t1
+			product	DUF221-domain-containing protein
+			transl_table	1
+	CDS	complement(join(2002718..2003229,2003298..2003442,2003563..2004056,2004126..2004593,2004667..2004775,2004853..2004924,2004999..2005070,2005144..2005427,2005496..2005904))	codon_start	1
+			locus_tag	PRE_TEST_000044500
+			note	transcript_id:RCL_jg21836.t1
+			product	endopeptidase La
+			transl_table	1
+	CDS	join(2006740..2006802,2006861..2007330,2007396..2007614,2007687..2007777,2007843..2007994,2008067..2008130,2008198..2008644,2008715..2008814,2008893..2009029,2009106..2009118,2009198..2009227,2009313..2009452)	codon_start	1
+			locus_tag	PRE_TEST_000044600
+			note	transcript_id:RCL_jg21837.t1
+			product	carnitine acetyl transferase
+			transl_table	1
+	CDS	complement(join(2009692..2009778,2009848..2009963,2010033..2010066))	codon_start	1
+			locus_tag	PRE_TEST_000044700
+			note	transcript_id:RCL_jg21838.t1
+			product	UPF0287-domain-containing protein
+			transl_table	1
+	CDS	join(2010575..2010814,2010899..2011293,2011534..2011556,2012068..2012095,2012167..2012220,2012296..2012390,2012462..2012638,2012725..2012801,2012863..2013086,2013152..2013222,2013296..2013339,2013410..2013544,2013618..2013983)	codon_start	1
+			locus_tag	PRE_TEST_000044800
+			note	transcript_id:RCL_jg21839.t1
+			product	phosphoglycerate kinase
+			transl_table	1
+	CDS	complement(join(2014171..2014691,2014778..2015066,2015141..2015469,2015552..2015882))	codon_start	1
+			locus_tag	PRE_TEST_000044900
+			note	transcript_id:RCL_jg21840.t1
+			product	tetracycline-efflux transporter, putative
+			transl_table	1
+	CDS	join(2016041..2016112,2016271..2016367,2016493..2016510,2016689..2016792,2016867..2017065,2017140..2017288)	codon_start	1
+			locus_tag	PRE_TEST_000045000
+			note	transcript_id:RCL_jg21841.t1
+			product	CPS1 protein
+			transl_table	1
+	CDS	join(2017991..2017997,2018192..2018245,2018357..2018491,2018613..2018755,2018846..2018929,2019005..2019317,2019401..2019750)	codon_start	1
+			locus_tag	PRE_TEST_000045100
+			note	transcript_id:RCL_jg21842.t1
+			product	GDP-mannose 4,6-dehydratase
+			transl_table	1
+	CDS	complement(join(2022418..2023490,2023563..2024747,2024826..2025551,2025623..2025713,2025781..2025856,2025932..2026078,2026153..2026576,2026651..2027236))	codon_start	1
+			locus_tag	PRE_TEST_000045200
+			note	transcript_id:RCL_jg21843.t1
+			product	phospholipid-translocating ATPase
+			transl_table	1
+	CDS	join(2027587..2028039,2028109..2028603,2028687..2028790,2028850..2029064,2029138..2029268,2029357..2029530)	codon_start	1
+			locus_tag	PRE_TEST_000045300
+			note	transcript_id:RCL_jg21844.t1
+			product	hypothetical protein RCL_jg21844.t1
+			transl_table	1
+	CDS	complement(join(2037485..2038441,2038502..2038573,2038637..2038872,2038947..2038995,2039057..2039130,2039205..2039312,2039384..2039490,2039585..2039752,2039875..2039906))	codon_start	1
+			locus_tag	PRE_TEST_000045500
+			note	transcript_id:RCL_jg21846.t1
+			product	fucose-1-phosphate guanylyltransferase
+			transl_table	1
+	CDS	join(2040662..2040677,2040778..2040828,2040903..2041064,2041207..2041341,2041412..2041540,2041623..2041775,2041843..2041992,2042061..2042222,2042309..2042440,2042521..2042649,2042717..2042842,2042922..2043104,2043187..2043345,2043425..2043691,2043769..2043893)	codon_start	1
+			locus_tag	PRE_TEST_000045600
+			note	transcript_id:RCL_jg21847.t1
+			product	ARM repeat-containing protein
+			transl_table	1
+	CDS	join(2046291..2046587,2046717..2047065,2047138..2047196,2047268..2047456)	codon_start	1
+			locus_tag	PRE_TEST_000045700
+			note	transcript_id:RCL_jg21848.t1
+			product	zinc finger BED domain-containing protein RICESLEEPER 2-like
+			transl_table	1
+	CDS	complement(join(2054005..2054025,2054102..2054137,2054214..2054250,2054326..2054350,2055026..2055083,2055153..2055252,2055576..2055628))	codon_start	1
+			locus_tag	PRE_TEST_000045800
+			note	transcript_id:RCL_jg21849.t1
+			product	hypothetical protein RCL_jg21849.t1
+			transl_table	1
+	CDS	complement(join(2059497..2060038,2060103..2060460,2060543..2060924,2061005..2061900,2061973..2061995,2062084..2062261,2062379..2062638,2062705..2063179))	codon_start	1
+			locus_tag	PRE_TEST_000045900
+			note	transcript_id:RCL_jg21850.t1
+			product	hypothetical protein GLOIN_2v1790940
+			transl_table	1
