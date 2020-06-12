@@ -1,5 +1,5 @@
 ---
-ftitle: 'GFF2MSS: GFF3 converter for DDBJ submission via MSS'
+title: 'GFF2MSS: GFF3 converter for DDBJ submission via MSS'
 tags:
   - Python
   - biology
