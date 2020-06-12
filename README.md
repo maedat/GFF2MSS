@@ -1,16 +1,17 @@
-# GFF2MSS; GFF3 converter for DDBJ submission via MSS
+# GFF2MSS: GFF3 converter for DDBJ submission via MSS
 
 ====
 
-MSS (Mass Submission System) on DDBJ requires Uniq annotation format file for data submission. I here made a python script converting the standard gff3 gene model file to the MSS annotation. 
-This script makes an MSS file from a gff3 file for gene modeling, a tsv file for annotation file, and a fasta file containing genomic sequence. Preprocessing of gff3 by [GFF3sort.pl](https://github.com/billzt/gff3sort). is recommended. After the making of MSS file, you should fill "COMMON" entries (SUBMITTER, REFERENCE, etc.) before the submission for DDBJ. 
+MSS (Mass Submission System) on DDBJ requires uniq annotation format file for data submission. I here made a python script converting the standard gff3 gene model file to the MSS annotation.  This script makes an MSS file from a gff3 file for gene modeling, a tsv file for annotation file, and a fasta file containing genomic sequence. We recommend pre-processing your gff3 data via [GFF3sort.pl](https://github.com/billzt/gff3sort), before your conversion. After the making of MSS file, you should fill "COMMON" entries (SUBMITTER, REFERENCE, etc.) before the submission for DDBJ. This software is a non-official converter for MSS. We do not guarantee that DDBJ accepts the generated files.
 
 ## v.4.0
 
 
-- Support for ambigous "N"-base in fasta. ("N/n"-base will be converted to "assembly_gap" feature in MSS). Please install "gffpandas" library. 
+- Support for ambiguous "N"-base in fasta. ("N/n"-base will be converted to "assembly_gap" feature in MSS). Please install "gffpandas" library. 
+- According to the "N"-base supporting, "artificial_location" qualifier was adopted to mark the modified exon/CDS by GFF2MSS. To fix frameshift caused by "N"-base gapping, V.4.0 cut 1-2 bases of the exon as necessary. These artificially modified mRNA data will be marked with this qualifier on the MSS file. 
+- Processing speed was improved by using pandas (e.g., v3 = 14.8s, v4 = 4.2s).
 
-- Processing speed is greatly improved by using pandas and so on (e.g., v3 = 14.8s, v4 = 4.2s).
+
 
 ## v.3.0
 
@@ -28,26 +29,57 @@ Python 3.7. (Biopython, numpy, pandas, argparse, bcbio-gff, gffpandas)
 
 ## Usage
 ```sh
-usage: GFF2MSS.py [-h] -f FASTA -g GFF -a ANN -l LOC -n NAM [-s STN] -o OUT
-                  [-m MOL] [-p PID]
+usage: GFF2MSS.py [-h] -f FASTA -g GFF -a ANN -l LOC -n NAM [-s STN] -o OUT [-m MOL] [-p PID] [-t GTY] [-c GCT]
 
 optional arguments:
   -h, --help            show this help message and exit
   -f FASTA, --fasta FASTA
                         File path to a genome sequence file
   -g GFF, --gff GFF     gff3 file for gene modeling
-  -a ANN, --ann ANN     txt file for gene annotation (header = ID,
-                        Description)
+  -a ANN, --ann ANN     txt file for gene annotation (header = ID, Description)
   -l LOC, --loc LOC     locus_tag prefix
   -n NAM, --nam NAM     organism name
   -s STN, --stn STN     strain
-  -o OUT, --out OUT     output MSS file path
+  -o OUT, --out OUT     output MSS file path (default = out.mss.txt)
   -m MOL, --mol MOL     mol_type value (default = genomic DNA)
   -p PID, --pid PID     file for protein ID (Only for the genome version-up)
   -t GTY, --gty GTY     type of linkage_evidence (default = paired-ends)
+  -c GCT, --gct GCT     number of Genetic Code Tables (default = 1)
+
 ```
 
 ## Demo
+
+Example 1: Plastid DNA
+
+```sh
+python3 GFF2MSS.py \
+-f example/Lj3.0_Chloroplastl.fna \
+-g example/Lj3.0_cp_gene_models.gff3  \
+-a example/Lj3.0_anno.txt \
+-l "PRE_TEST_" \
+-n "Demo japonicus" \
+-s "MG-20" \
+-c "11"
+-o mss.ex1.out.txt 
+
+```
+
+Example 2: Eukaryotic nuclear DNA with rDNA and tRNA data
+
+```sh:rDNA_tDNA.sh
+python3 GFF2MSS.py \
+-f example2/test.fa \
+-g example2/test.gff  \
+-a example2/annot.list \
+-l "PRE_TEST_" \
+-n "Demo japonicus" \
+-s "DAOM100" \
+-o mss.ex2.out.txt 
+```
+
+Example 3: Eukaryotic nuclear DNA with "N"-base gapping
+
 ```sh
 python3 GFF2MSS.py \
 -f example2/test.fa \
@@ -55,13 +87,16 @@ python3 GFF2MSS.py \
 -a example2/annot.list \
 -l "PRE_TEST_" \
 -n "Demo japonicus" \
--s "MG-20" \
--o mss.out.txt 
-
+-s "BB2" \
+-t "paired-ends"
+-o mss.ex2.out.txt 
 ```
 
+
+
 ## rDNA data
-To distinct the type of rDNA sequence, please add an attribute "Type=" for each rRNA sub-features. 
+
+To distinct the type of rDNA sequence, please add an attribute, "Type=", for each rRNA sub-features. 
 
 - 18S ribosomal RNA; 18S
 - internal transcribed spacer 1; ITS1
@@ -102,7 +137,7 @@ e.g.,
 			anticodon	(pos:45..47,aa:Lys)
 ```
 
-./utl/tRNA2gff3.py converts  the following type of tab-separated file, which is manually modified from tRNAscan structure prediction, to the GFF3
+./utl/tRNA2gff3.py converts the following type of tab-separated file, which is manually modified from tRNAscan structure prediction, to the GFF3
 
 ```txt
 e.g.,
