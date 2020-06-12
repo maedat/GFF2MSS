@@ -1,0 +1,30 @@
+COMMON	DATATYPE		type	WGS
+	KEYWORD		keyword	WGS
+			keyword	STANDARD_DRAFT
+	DBLINK		project	PRJDB3267
+			biosample	SAMD00025085
+			sequence read archive	DRR012345
+	SUBMITTER		ab_name	Maeda,T.
+			ab_name	JFK.
+			contact	Taro Maeda
+			email	---@-----
+			phone	00-000-00-0000
+			fax	00-000-00-0000
+			institute	National Institute for Basic Biology
+			department	Division of Symbiotic Systems
+			country	Japan
+			state	Aichi
+			city	Okazaki
+			street	Myodaiji Nshigonaka 38
+			zip	444-8585
+	REFERENCE		title	Your study namme
+			ab_name	Maeda,T.
+			ab_name	JFK.
+			year	2020
+			status	Unpublished
+	DATE		hold_date	20221130
+	ST_COMMENT		tagset_id	Genome-Assembly-Data
+			Assembly Method	Platanus assembler version 1.2.1
+			Assembly Name	GGG_
+			Genome Coverage	100x
+			Sequencing Technology	Illumina
