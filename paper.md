@@ -9,7 +9,7 @@ authors:
     orcid: 0000-0003-4185-0135
     affiliation: "1"
 affiliations:
- - name: Division of Symbiotic Systems, National Institute for Basic Biology
+ - name: Faculty of Agriculture, Ryukoku University
    index: 1
 date: 6 June 2020
 bibliography: paper.bib
