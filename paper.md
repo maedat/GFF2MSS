@@ -1,5 +1,5 @@
 ---
-title: 'GFF2MSS: GFF3 converter for DNA Data Bank of Japan'
+title: 'GFF2MSS: GFF3 converter for submission to DNA Data Bank of Japan'
 tags:
   - Python
   - biology
