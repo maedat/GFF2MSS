@@ -1,0 +1,5 @@
+source	start	end	Type	Anticodon	AntC_start	AntC_end	intron_start	intron_end	Possible_pseudogene
+chr1	491917	492013	Ile	TAT	491952	491954	491956	491977	
+chr1	917911	917808	Ile	TAT	917876	917874	917872	917845	pseudogene
+chr1	917525	917429	Asn	ATT	917490	917488	917486	917463	
+chr1	915945	915827	Pro	CGG	915909	915907	915905	915869	pseudogene
