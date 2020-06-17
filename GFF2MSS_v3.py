@@ -10,6 +10,7 @@
 # Creation Date   : 2019/08/30
 # Author : Taro Maeda 
 # license     MIT License (http://opensource.org/licenses/mit-license.php)
+# This software is released under the MIT License, see LICENSE.
 # Copyright (c) 2019 Taro Maeda
 # ======================================================================
 # 
