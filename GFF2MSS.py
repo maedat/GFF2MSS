@@ -24,10 +24,11 @@ import pandas as pd
 import numpy as np
 from Bio import SeqIO
 from Bio import Seq
+from Bio.Data import CodonTable
 from BCBio import GFF
 import gffpandas.gffpandas as gffpd
 import re
-
+from distutils.util import strtobool
 
 def GET_ARGS():
     parser = argparse.ArgumentParser()
@@ -42,6 +43,8 @@ def GET_ARGS():
     parser.add_argument('-p','--pid',help="file for protein ID (Only for the genome version-up)", type=str, required=False)
     parser.add_argument('-t','--gty',help="type of linkage_evidence (default = paired-ends)", type=str, required=False)
     parser.add_argument('-c','--gct',help="number of Genetic Code Tables (default = 1)", type=str, required=False)
+    parser.add_argument('--ifc',help="default=%(default)s: inferring the completeness of gene models by the presence of start and stop codons and add '>' or '<' to the output.", default='no', type=strtobool, required=False)
+    parser.add_argument('--stc',help="default=%(default)s: comma-separated list of start codons", default='ATG', type=str, required=False)
     parser.set_defaults(mol='genomic DNA', stn='', pid="NOFILE", gty='paired-ends', out='out.mss.txt', gct='1')
     
     return parser.parse_args()
@@ -285,7 +288,8 @@ def INCOMP_DETECT(sub_features_STRAND, COUNT, GAP_DF, out_STRAND, CODON_START):
         pass
     return INCOMP5, REVERSE_INCOMP5, CODON_START
 
-def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF):
+def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF,
+                 record, infer_boundary, start_codons, stop_codons):
     COUNT = 0 #Set count to 0 when entering a new mRNA.
     INCOMP5 = False #初期化
     REVERSE_INCOMP5 = False #初期化
@@ -307,14 +311,42 @@ def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
         gff_df_col_F_sub_sub_STRAND = gff_df_col_F_sub_sub.sort_values(by ='start', ascending=False)
     else:
         gff_df_col_F_sub_sub_STRAND = gff_df_col_F_sub_sub.sort_values(by ='start')
-    
+
     for rec_sub_sub, rec_sub_sub_strand in zip(gff_df_col_F_sub_sub.itertuples(), gff_df_col_F_sub_sub_STRAND.itertuples()):
         COUNT += 1
         POSITION, out_JOINT, out_JOINT_CLOSE, OUT_ART_LOC_FLAG = POSITION_SET(rec_sub_sub, COUNT, POSITION, GAP_DF, strand)        
         INCOMP5_tmp, REVERSE_INCOMP5_tmp, CODON_START = INCOMP_DETECT(rec_sub_sub_strand, COUNT, GAP_DF, out_STRAND, CODON_START)
         INCOMP5 = INCOMP5==True or INCOMP5_tmp==True
         REVERSE_INCOMP5 = REVERSE_INCOMP5==True or REVERSE_INCOMP5_tmp==True
-            
+
+    if infer_boundary:
+        if strand == '+':
+            start_codon_start = gff_df_col_F_sub_sub_STRAND.iloc[0].start
+            start_codon_end = start_codon_start + 2
+            stop_codon_end = gff_df_col_F_sub_sub_STRAND.iloc[-1].end
+            stop_codon_start = stop_codon_end - 2
+            start_codon_seq = record.seq[start_codon_start-1:start_codon_end]
+            stop_codon_seq = record.seq[stop_codon_start-1:stop_codon_end]
+            if start_codon_seq not in start_codons:
+                print('Start codon not found for {}'.format(mRNA_ID), flush=True)
+                INCOMP5 = True
+            if stop_codon_seq not in stop_codons:
+                print('Stop codon not found for {}'.format(mRNA_ID), flush=True)
+                REVERSE_INCOMP5 = True
+        elif strand == '-':
+            start_codon_start = gff_df_col_F_sub_sub_STRAND.iloc[0].end
+            start_codon_end = start_codon_start - 2
+            stop_codon_end = gff_df_col_F_sub_sub_STRAND.iloc[-1].start
+            stop_codon_start = stop_codon_end + 2
+            start_codon_seq = record.seq[start_codon_end-1:start_codon_start].reverse_complement()
+            stop_codon_seq = record.seq[stop_codon_end-1:stop_codon_start].reverse_complement()
+            if start_codon_seq not in start_codons:
+                print('Start codon not found for {}'.format(mRNA_ID), flush=True)
+                REVERSE_INCOMP5 = True
+            if stop_codon_seq not in stop_codons:
+                print('Stop codon not found for {}'.format(mRNA_ID), flush=True)
+                INCOMP5 = True
+
     if INCOMP5:
         POSITION = re.sub(r'^', '<', POSITION)
     if REVERSE_INCOMP5:
@@ -399,7 +431,7 @@ def tRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
     print(tRNA_name + " end") 
     return(OUT_CHA) 
 
-def GFF_TO_CDS(gff_df_col,gh, NowContig, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF):
+def GFF_TO_CDS(gff_df_col, gh, NowContig, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF, record, infer_boundary, start_codons, stop_codons):
     if gff_df_col.empty:
         pass
     else:
@@ -411,12 +443,21 @@ def GFF_TO_CDS(gff_df_col,gh, NowContig, locus_tag_counter, anno_DF, pid_DF, OUT
                 gff_df_col_F_sub = gff_df_col_F[gff_df_col_F['Parent'] == Now_gene_ID] #Extract the subfeature corresponding to the gene
                 for rec_sub in gff_df_col_F_sub.itertuples():
                     if rec_sub.type == 'mRNA':
-                        OUT_CHA = mRNA_MAKE_NP(gff_df_col_F, rec_sub, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF)
+                        OUT_CHA = mRNA_MAKE_NP(gff_df_col_F, rec_sub, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF, record, infer_boundary, start_codons, stop_codons)
                     elif rec_sub.type == 'rRNA':
                         OUT_CHA = rRNA_MAKE_NP(gff_df_col_F, rec_sub, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF)
                     elif rec_sub.type == 'tRNA':
                         OUT_CHA = tRNA_MAKE_NP(gff_df_col_F, rec_sub, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF)
     return locus_tag_counter, OUT_CHA
+
+
+def get_stop_codons(genetic_code):
+    stop_codons = []
+    for codon in CodonTable.unambiguous_dna_by_id[int(genetic_code)].stop_codons:
+        stop_codons.append(str(codon))
+    return stop_codons
+
+
 
 if __name__ == '__main__':
     args = GET_ARGS()
@@ -443,8 +484,9 @@ if __name__ == '__main__':
     locus_tag_counter = 0  #initialization
     PreContig = "" #initialization
     Contig_Count = 0 #initialization
-    OUT_CHA="" #initialization 
-    
+    OUT_CHA="" #initialization
+    start_codons = args.stc.split(',')
+    stop_codons = get_stop_codons(genetic_code=args.gct)
     
     gff_df = gffpd.read_gff3(in_file)
     gff_df_col = gff_df.attributes_to_columns()
@@ -465,7 +507,8 @@ if __name__ == '__main__':
         print("Gap find end")
         ##Read the features of the corresponding sequences from gff in order
         print("GFF Processing")            
-        locus_tag_counter, OUT_CHA = GFF_TO_CDS(gff_df_col,in_file, NowContig, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF)
+        locus_tag_counter, OUT_CHA = GFF_TO_CDS(gff_df_col, in_file, NowContig, locus_tag_counter, anno_DF, pid_DF,
+                                                OUT_CHA, GAP_DF, record, args.ifc, start_codons, stop_codons)
         print("GFF Processing end")
         ##Output string after MSS return
         with open(out_path, mode='a') as f:
