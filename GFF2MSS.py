@@ -37,7 +37,7 @@ def GET_ARGS():
     parser.add_argument('-a','--ann',help="tsv file for gene annotation The 'ID' and 'Description' columns are mandatory. 'Locus_tag' is optional.", required=True)
     parser.add_argument('-l','--loc',help="locus_tag prefix", type=str, required=True)
     parser.add_argument('-n','--nam',help="organism name", type=str, required=True)
-    parser.add_argument('-s','--stn',help="strain", type=str, required=False)
+    parser.add_argument('-s','--stn',help="strain", type=str, default='', required=False)
     parser.add_argument('-o','--out',help="output MSS file path (default = out.mss.txt)", required=True)
     parser.add_argument('-m','--mol',help="mol_type value (default = genomic DNA)", type=str, required=False)
     parser.add_argument('-p','--pid',help="file for protein ID (Only for the genome version-up)", type=str, required=False)
@@ -45,15 +45,33 @@ def GET_ARGS():
     parser.add_argument('-c','--gct',help="number of Genetic Code Tables (default = 1)", type=str, required=False)
     parser.add_argument('--ifc',help="default=%(default)s: inferring the completeness of gene models by the presence of start and stop codons and add '>' or '<' to the output.", default='no', type=strtobool, required=False)
     parser.add_argument('--stc',help="default=%(default)s: comma-separated list of start codons", default='ATG', type=str, required=False)
+    parser.add_argument('--iso',help="default=%(default)s: The 'isolate' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html", default='', type=str, required=False)
+    parser.add_argument('--sex',help="default=%(default)s: The 'sex' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html", default='', type=str, required=False)
+    parser.add_argument('--cou',help="default=%(default)s: The 'country' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html", default='', type=str, required=False)
+    parser.add_argument('--cod',help="default=%(default)s: The 'collection_date' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html", default='', type=str, required=False)
     parser.set_defaults(mol='genomic DNA', stn='', pid="NOFILE", gty='paired-ends', out='out.mss.txt', gct='1')
-    
+
     return parser.parse_args()
     
-def FASTA_CHA_SET(length_int, contig_name, organism_name_in, strain_in, mol_type_in):
-    OUT_CHA = NowContig + "\t" + "source" + "\t" + str(1) + ".." + str(length_int) + "\t" + "ff_definition" + "\t" + "@@[organism]@@ DNA, @@[submitter_seqid]@@" + "\n"
+def FASTA_CHA_SET(length_int, contig_name, organism_name_in, strain_in, mol_type_in, country_in, isolate_in,
+                  collection_date_in, sex_in):
+    OUT_CHA = NowContig + "\t" + "source" + "\t" + str(1) + ".." + str(length_int)
+    if isolate_in != '':
+        OUT_CHA += "\t" + "ff_definition" + "\t" + "@@[organism]@@ DNA, @@[submitter_seqid]@@" + "\n"
+    else:
+        OUT_CHA += "\t" + "ff_definition" + "\t" + "@@[organism]@@ @@[isolate]@@ DNA, @@[submitter_seqid]@@" + "\n"
     OUT_CHA += "\t" + "\t" + "\t" + "mol_type" + "\t" + mol_type_in + "\n"
     OUT_CHA += "\t" + "\t" + "\t" + "organism" + "\t" + organism_name_in + "\n"
-    OUT_CHA += "\t" + "\t" + "\t" + "strain" + "\t" + strain_in + "\n"
+    if strain_in != '':
+        OUT_CHA += "\t" + "\t" + "\t" + "strain" + "\t" + strain_in + "\n"
+    if isolate_in != '':
+        OUT_CHA += "\t" + "\t" + "\t" + "isolate" + "\t" + isolate_in + "\n"
+    if sex_in != '':
+        OUT_CHA += "\t" + "\t" + "\t" + "sex" + "\t" + sex_in + "\n"
+    if country_in != '':
+        OUT_CHA += "\t" + "\t" + "\t" + "country" + "\t" + country_in + "\n"
+    if collection_date_in != '':
+        OUT_CHA += "\t" + "\t" + "\t" + "collection_date" + "\t" + collection_date_in + "\n"
     OUT_CHA += "\t" + "\t" + "\t" + "submitter_seqid" + "\t" +  "@@[entry]@@" + "\n"
     return OUT_CHA
     
@@ -491,6 +509,10 @@ if __name__ == '__main__':
         pid_DF=False
     organism_name_in = args.nam
     strain_in = args.stn
+    country_in = args.cou
+    isolate_in = args.iso
+    collection_date_in = args.cod
+    sex_in = args.sex
     
     link_evi = args.gty
 
@@ -513,7 +535,8 @@ if __name__ == '__main__':
         length = len(record) #Get array length
         NowContig = record.id #Get the array name.
         print("Processing " +  NowContig)
-        OUT_CHA += FASTA_CHA_SET(length, NowContig, organism_name_in, strain_in, mol_type_in)
+        OUT_CHA += FASTA_CHA_SET(length, NowContig, organism_name_in, strain_in, mol_type_in, country_in, isolate_in,
+                                 collection_date_in, sex_in)
         ##Detect and describe the gap region from fasta.
         print("Gap finding")
         OUT_CHA, GAP_DF = GAP_DETECT_NP(record, OUT_CHA,link_evi)
