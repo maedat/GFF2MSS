@@ -34,7 +34,7 @@ def GET_ARGS():
     parser = argparse.ArgumentParser()
     parser.add_argument('-f','--fasta',  help="File path to a genome sequence file", required=True)
     parser.add_argument('-g','--gff', help="gff3 file for gene modeling", required=True)
-    parser.add_argument('-a','--ann',help="txt file for gene annotation (header = ID, Description)", required=True)
+    parser.add_argument('-a','--ann',help="tsv file for gene annotation The 'ID' and 'Description' columns are mandatory. 'Locus_tag' is optional.", required=True)
     parser.add_argument('-l','--loc',help="locus_tag prefix", type=str, required=True)
     parser.add_argument('-n','--nam',help="organism name", type=str, required=True)
     parser.add_argument('-s','--stn',help="strain", type=str, required=False)
@@ -57,8 +57,11 @@ def FASTA_CHA_SET(length_int, contig_name, organism_name_in, strain_in, mol_type
     OUT_CHA += "\t" + "\t" + "\t" + "submitter_seqid" + "\t" +  "@@[entry]@@" + "\n"
     return OUT_CHA
     
-def CDS_CHA_SET(JOIN_CDS, locus_tag_prefix, locus_tag_counter, mRNA_ID, product_name, ZFILL, CODON_START):
-    OUT_CHA = "\tCDS\t"+ JOIN_CDS + "\t"+ "locus_tag\t" + locus_tag_prefix + str(locus_tag_counter).zfill(ZFILL) + "\n"
+def CDS_CHA_SET(JOIN_CDS, locus_tag_prefix, locus_tag_counter, mRNA_ID, product_name, custom_locus_tag, ZFILL, CODON_START):
+    if custom_locus_tag is None:
+        OUT_CHA = "\tCDS\t"+ JOIN_CDS + "\t"+ "locus_tag\t" + locus_tag_prefix + str(locus_tag_counter).zfill(ZFILL) + "\n"
+    else:
+        OUT_CHA = "\tCDS\t"+ JOIN_CDS + "\t"+ "locus_tag\t" + custom_locus_tag + "\n"
     OUT_CHA += "\t\t\t" + "note\t" + "transcript_id:" + mRNA_ID+"\n"
     OUT_CHA += "\t\t\t" + "product\t" + product_name+"\n"
     OUT_CHA += "\t\t\t" + "transl_table\t" + transl_table+"\n"
@@ -103,8 +106,12 @@ def tRNA_CHA_SET(POSITION, locus_tag_prefix, locus_tag_counter, product, anticod
 
 def DF_EXTRACT(anno_DF, query):
     tmp_DF = anno_DF[anno_DF['ID'] == query]
-    out_DATA= tmp_DF.iat[0,1]
-    return out_DATA
+    product_name = tmp_DF.iat[0,1]
+    if tmp_DF.shape[1]==2: # if the column "Locus_tag" is missing.
+        custom_locus_tag = None
+    else:
+        custom_locus_tag = tmp_DF.iat[0,2]
+    return product_name, custom_locus_tag
     
 def GAP_DETECT_NP(NowSeq, OUT_CHA, link_evi):
     GAP_DF = pd.DataFrame({'start':[], 'end':[], 'seq_id':[]}) #Gapデータを初期化する
@@ -301,7 +308,7 @@ def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
         out_STRAND_CLOSE = ")"
     ####GENE_INFORMATIONS
     mRNA_ID = RNA_f.ID
-    product_name = DF_EXTRACT(anno_DF, mRNA_ID) #DF_EXTRACT関数で該当するアノテーション情報を取り出す
+    product_name, custom_locus_tag = DF_EXTRACT(anno_DF, mRNA_ID) #DF_EXTRACT関数で該当するアノテーション情報を取り出す
     ####    
     gff_df_col_F_sub_sub = gff_df_col[gff_df_col['Parent'] == mRNA_ID] #mRNAに対応するsubfeatureを取り出す
     gff_df_col_F_sub_sub = gff_df_col_F_sub_sub[gff_df_col_F_sub_sub['type'] == "CDS"] #CDSだけ取り出す
@@ -355,7 +362,7 @@ def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
     JOIN = out_STRAND + out_JOINT + POSITION + out_JOINT_CLOSE + out_STRAND_CLOSE 
     
     
-    OUT_CHA += CDS_CHA_SET(JOIN, locus_tag_prefix, locus_tag_counter, mRNA_ID, product_name, 9, CODON_START)
+    OUT_CHA += CDS_CHA_SET(JOIN, locus_tag_prefix, locus_tag_counter, mRNA_ID, product_name, custom_locus_tag, 9, CODON_START)
     if OUT_ART_LOC_FLAG: #If FLAG is standing, add artificial_location
         OUT_CHA += "\t\t\t" + "artificial_location" + "\t"+ "low-quality sequence region" + "\n"
     if pid_DF != False:
@@ -458,13 +465,19 @@ def get_stop_codons(genetic_code):
     return stop_codons
 
 
-
 if __name__ == '__main__':
     args = GET_ARGS()
     fasta_in = args.fasta
     in_file = args.gff
     anno_in = args.ann
     anno_DF = pd.read_csv(anno_in, sep='\t') #Finish loading the annotation file in one run
+    if 'Locus_tag' in anno_DF.columns:
+        print('The "Locus_tag" column exists in the annotation file. User-provided custom locus_tag values will be used.')
+        anno_DF = anno_DF.loc[:,['ID','Description','Locus_tag']]
+    else:
+        txt = 'The "Locus_tag" column does not exist in the annotation file. locus_tag values will be generated with the provided prefix: {}.'
+        print(txt.format(args.loc))
+        anno_DF = anno_DF.loc[:,['ID','Description']]
     transl_table = args.gct
     
     out_path = args.out
