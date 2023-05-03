@@ -49,6 +49,8 @@ def GET_ARGS():
     parser.add_argument('--sex',help="default=%(default)s: The 'sex' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html", default='', type=str, required=False)
     parser.add_argument('--cou',help="default=%(default)s: The 'country' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html", default='', type=str, required=False)
     parser.add_argument('--cod',help="default=%(default)s: The 'collection_date' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html", default='', type=str, required=False)
+    parser.add_argument('--mag',help="default=%(default)s: Minimum size of 'gap_assembly'. Ns smaller than this size are not annotated as 'gap_assembly'.", default=0, type=int, required=False)
+    parser.add_argument('--gel',help="default=%(default)s: Whether the estimate sizes of 'gap_assembly' are known.", default='known', choices=['known','unknown'], metavar='known|unknown', type=str, required=False)
     parser.set_defaults(mol='genomic DNA', stn='', pid="NOFILE", gty='paired-ends', out='out.mss.txt', gct='1')
 
     return parser.parse_args()
@@ -86,13 +88,15 @@ def CDS_CHA_SET(JOIN_CDS, locus_tag_prefix, locus_tag_counter, mRNA_ID, product_
     OUT_CHA += "\t\t\t" + "codon_start\t" + str(CODON_START)+"\n"    
     return OUT_CHA
     
-def GAP_CHA_SET(gap_start, gap_end, link_evi):
-    if(gap_start == gap_end): #1塩基のNの場合
-        OUT_CHA = "\t" + "assembly_gap" + "\t" + str(gap_start) + "\t" + "estimated_length" + "\t" + "known" + "\n"
-        OUT_CHA += "\t" + "\t" + "\t" + "gap_type" + "\t" + "within scaffold" + "\n"
-        OUT_CHA += "\t" + "\t" + "\t" + "linkage_evidence" + "\t" + link_evi + "\n"
-    else:
-        OUT_CHA = "\t" + "assembly_gap" + "\t" + str(gap_start) + ".." + str(gap_end) + "\t" + "estimated_length" + "\t" + "known" + "\n"
+def GAP_CHA_SET(gap_start, gap_end, link_evi, min_assembly_gap_size, gap_estimated_length):
+    gap_size = gap_end - gap_start + 1
+    OUT_CHA = ''
+    if (gap_size >= min_assembly_gap_size):
+        if (gap_start == gap_end): #1塩基のNの場合
+            OUT_CHA += "\t" + "assembly_gap" + "\t" + str(gap_start)
+        else:
+            OUT_CHA += "\t" + "assembly_gap" + "\t" + str(gap_start) + ".." + str(gap_end)
+        OUT_CHA += "\t" + "estimated_length" + "\t" + gap_estimated_length + "\n"
         OUT_CHA += "\t" + "\t" + "\t" + "gap_type" + "\t" + "within scaffold" + "\n"
         OUT_CHA += "\t" + "\t" + "\t" + "linkage_evidence" + "\t" + link_evi + "\n"
     return OUT_CHA
@@ -131,7 +135,7 @@ def DF_EXTRACT(anno_DF, query):
         custom_locus_tag = tmp_DF.iat[0,2]
     return product_name, custom_locus_tag
     
-def GAP_DETECT_NP(NowSeq, OUT_CHA, link_evi):
+def GAP_DETECT_NP(NowSeq, OUT_CHA, link_evi, min_assembly_gap_size, gap_estimated_length):
     GAP_DF = pd.DataFrame({'start':[], 'end':[], 'seq_id':[]}) #Gapデータを初期化する
     NowSeq_n = pd.DataFrame(record,columns=["seq"]) #sequenceデータをpandas_dataに変える
     N_base_index = list((NowSeq_n.query('seq == "N"').index)) #N-baseである場所indexを取り出す
@@ -161,7 +165,7 @@ def GAP_DETECT_NP(NowSeq, OUT_CHA, link_evi):
         GAP_DF['seq_id'] = NowSeq.id #get contig name
                                    
         for start_list, end_list in zip(N_base_index_pd_end_start_S_list, N_base_index_pd_end_start_E_list):
-            OUT_CHA += GAP_CHA_SET(int(start_list), int(end_list), link_evi)
+            OUT_CHA += GAP_CHA_SET(int(start_list), int(end_list), link_evi, min_assembly_gap_size, gap_estimated_length)
     return OUT_CHA, GAP_DF
 
 def EXON_GAP_DF_COMPA(EXON_DF_iterated, TEST_GAP_DF, strand):
@@ -513,6 +517,8 @@ if __name__ == '__main__':
     isolate_in = args.iso
     collection_date_in = args.cod
     sex_in = args.sex
+    min_assembly_gap_size = args.mag
+    gap_estimated_length = args.gel
     
     link_evi = args.gty
 
@@ -539,7 +545,7 @@ if __name__ == '__main__':
                                  collection_date_in, sex_in)
         ##Detect and describe the gap region from fasta.
         print("Gap finding")
-        OUT_CHA, GAP_DF = GAP_DETECT_NP(record, OUT_CHA,link_evi)
+        OUT_CHA, GAP_DF = GAP_DETECT_NP(record, OUT_CHA, link_evi, min_assembly_gap_size, gap_estimated_length)
         print("Gap find end")
         ##Read the features of the corresponding sequences from gff in order
         print("GFF Processing")            
