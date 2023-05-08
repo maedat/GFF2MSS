@@ -24,51 +24,79 @@ import pandas as pd
 import numpy as np
 from Bio import SeqIO
 from Bio import Seq
+from Bio.Data import CodonTable
 from BCBio import GFF
 import gffpandas.gffpandas as gffpd
 import re
-
+from distutils.util import strtobool
 
 def GET_ARGS():
     parser = argparse.ArgumentParser()
     parser.add_argument('-f','--fasta',  help="File path to a genome sequence file", required=True)
     parser.add_argument('-g','--gff', help="gff3 file for gene modeling", required=True)
-    parser.add_argument('-a','--ann',help="txt file for gene annotation (header = ID, Description)", required=True)
+    parser.add_argument('-a','--ann',help="tsv file for gene annotation The 'ID' and 'Description' columns are mandatory. 'Locus_tag' is optional.", required=True)
     parser.add_argument('-l','--loc',help="locus_tag prefix", type=str, required=True)
     parser.add_argument('-n','--nam',help="organism name", type=str, required=True)
-    parser.add_argument('-s','--stn',help="strain", type=str, required=False)
+    parser.add_argument('-s','--stn',help="strain", type=str, default='', required=False)
     parser.add_argument('-o','--out',help="output MSS file path (default = out.mss.txt)", required=True)
     parser.add_argument('-m','--mol',help="mol_type value (default = genomic DNA)", type=str, required=False)
     parser.add_argument('-p','--pid',help="file for protein ID (Only for the genome version-up)", type=str, required=False)
     parser.add_argument('-t','--gty',help="type of linkage_evidence (default = paired-ends)", type=str, required=False)
     parser.add_argument('-c','--gct',help="number of Genetic Code Tables (default = 1)", type=str, required=False)
+    parser.add_argument('--ifc',help="default=%(default)s: inferring the completeness of gene models by the presence of start and stop codons and add '>' or '<' to the output.", default='no', type=strtobool, required=False)
+    parser.add_argument('--stc',help="default=%(default)s: comma-separated list of start codons", default='ATG', type=str, required=False)
+    parser.add_argument('--iso',help="default=%(default)s: The 'isolate' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html", default='', type=str, required=False)
+    parser.add_argument('--sex',help="default=%(default)s: The 'sex' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html", default='', type=str, required=False)
+    parser.add_argument('--cou',help="default=%(default)s: The 'country' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html", default='', type=str, required=False)
+    parser.add_argument('--cod',help="default=%(default)s: The 'collection_date' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html", default='', type=str, required=False)
+    parser.add_argument('--mag',help="default=%(default)s: Minimum size of 'gap_assembly'. Ns smaller than this size are not annotated as 'gap_assembly'.", default=0, type=int, required=False)
+    parser.add_argument('--gel',help="default=%(default)s: Whether the estimate sizes of 'gap_assembly' are known.", default='known', choices=['known','unknown'], metavar='known|unknown', type=str, required=False)
     parser.set_defaults(mol='genomic DNA', stn='', pid="NOFILE", gty='paired-ends', out='out.mss.txt', gct='1')
-    
+
     return parser.parse_args()
     
-def FASTA_CHA_SET(length_int, contig_name, organism_name_in, strain_in, mol_type_in):
-    OUT_CHA = NowContig + "\t" + "source" + "\t" + str(1) + ".." + str(length_int) + "\t" + "ff_definition" + "\t" + "@@[organism]@@ DNA, @@[submitter_seqid]@@" + "\n"
+def FASTA_CHA_SET(length_int, contig_name, organism_name_in, strain_in, mol_type_in, country_in, isolate_in,
+                  collection_date_in, sex_in):
+    OUT_CHA = NowContig + "\t" + "source" + "\t" + str(1) + ".." + str(length_int)
+    if isolate_in != '':
+        OUT_CHA += "\t" + "ff_definition" + "\t" + "@@[organism]@@ DNA, @@[submitter_seqid]@@" + "\n"
+    else:
+        OUT_CHA += "\t" + "ff_definition" + "\t" + "@@[organism]@@ @@[isolate]@@ DNA, @@[submitter_seqid]@@" + "\n"
     OUT_CHA += "\t" + "\t" + "\t" + "mol_type" + "\t" + mol_type_in + "\n"
     OUT_CHA += "\t" + "\t" + "\t" + "organism" + "\t" + organism_name_in + "\n"
-    OUT_CHA += "\t" + "\t" + "\t" + "strain" + "\t" + strain_in + "\n"
+    if strain_in != '':
+        OUT_CHA += "\t" + "\t" + "\t" + "strain" + "\t" + strain_in + "\n"
+    if isolate_in != '':
+        OUT_CHA += "\t" + "\t" + "\t" + "isolate" + "\t" + isolate_in + "\n"
+    if sex_in != '':
+        OUT_CHA += "\t" + "\t" + "\t" + "sex" + "\t" + sex_in + "\n"
+    if country_in != '':
+        OUT_CHA += "\t" + "\t" + "\t" + "country" + "\t" + country_in + "\n"
+    if collection_date_in != '':
+        OUT_CHA += "\t" + "\t" + "\t" + "collection_date" + "\t" + collection_date_in + "\n"
     OUT_CHA += "\t" + "\t" + "\t" + "submitter_seqid" + "\t" +  "@@[entry]@@" + "\n"
     return OUT_CHA
     
-def CDS_CHA_SET(JOIN_CDS, locus_tag_prefix, locus_tag_counter, mRNA_ID, product_name, ZFILL, CODON_START):
-    OUT_CHA = "\tCDS\t"+ JOIN_CDS + "\t"+ "locus_tag\t" + locus_tag_prefix + str(locus_tag_counter).zfill(ZFILL) + "\n"
+def CDS_CHA_SET(JOIN_CDS, locus_tag_prefix, locus_tag_counter, mRNA_ID, product_name, custom_locus_tag, ZFILL, CODON_START):
+    if custom_locus_tag is None:
+        OUT_CHA = "\tCDS\t"+ JOIN_CDS + "\t"+ "locus_tag\t" + locus_tag_prefix + str(locus_tag_counter).zfill(ZFILL) + "\n"
+    else:
+        OUT_CHA = "\tCDS\t"+ JOIN_CDS + "\t"+ "locus_tag\t" + custom_locus_tag + "\n"
     OUT_CHA += "\t\t\t" + "note\t" + "transcript_id:" + mRNA_ID+"\n"
     OUT_CHA += "\t\t\t" + "product\t" + product_name+"\n"
     OUT_CHA += "\t\t\t" + "transl_table\t" + transl_table+"\n"
     OUT_CHA += "\t\t\t" + "codon_start\t" + str(CODON_START)+"\n"    
     return OUT_CHA
     
-def GAP_CHA_SET(gap_start, gap_end, link_evi):
-    if(gap_start == gap_end): #1塩基のNの場合
-        OUT_CHA = "\t" + "assembly_gap" + "\t" + str(gap_start) + "\t" + "estimated_length" + "\t" + "known" + "\n"
-        OUT_CHA += "\t" + "\t" + "\t" + "gap_type" + "\t" + "within scaffold" + "\n"
-        OUT_CHA += "\t" + "\t" + "\t" + "linkage_evidence" + "\t" + link_evi + "\n"
-    else:
-        OUT_CHA = "\t" + "assembly_gap" + "\t" + str(gap_start) + ".." + str(gap_end) + "\t" + "estimated_length" + "\t" + "known" + "\n"
+def GAP_CHA_SET(gap_start, gap_end, link_evi, min_assembly_gap_size, gap_estimated_length):
+    gap_size = gap_end - gap_start + 1
+    OUT_CHA = ''
+    if (gap_size >= min_assembly_gap_size):
+        if (gap_start == gap_end): #1塩基のNの場合
+            OUT_CHA += "\t" + "assembly_gap" + "\t" + str(gap_start)
+        else:
+            OUT_CHA += "\t" + "assembly_gap" + "\t" + str(gap_start) + ".." + str(gap_end)
+        OUT_CHA += "\t" + "estimated_length" + "\t" + gap_estimated_length + "\n"
         OUT_CHA += "\t" + "\t" + "\t" + "gap_type" + "\t" + "within scaffold" + "\n"
         OUT_CHA += "\t" + "\t" + "\t" + "linkage_evidence" + "\t" + link_evi + "\n"
     return OUT_CHA
@@ -100,10 +128,14 @@ def tRNA_CHA_SET(POSITION, locus_tag_prefix, locus_tag_counter, product, anticod
 
 def DF_EXTRACT(anno_DF, query):
     tmp_DF = anno_DF[anno_DF['ID'] == query]
-    out_DATA= tmp_DF.iat[0,1]
-    return out_DATA
+    product_name = tmp_DF.iat[0,1]
+    if tmp_DF.shape[1]==2: # if the column "Locus_tag" is missing.
+        custom_locus_tag = None
+    else:
+        custom_locus_tag = tmp_DF.iat[0,2]
+    return product_name, custom_locus_tag
     
-def GAP_DETECT_NP(NowSeq, OUT_CHA, link_evi):
+def GAP_DETECT_NP(NowSeq, OUT_CHA, link_evi, min_assembly_gap_size, gap_estimated_length):
     GAP_DF = pd.DataFrame({'start':[], 'end':[], 'seq_id':[]}) #Gapデータを初期化する
     NowSeq_n = pd.DataFrame(record,columns=["seq"]) #sequenceデータをpandas_dataに変える
     N_base_index = list((NowSeq_n.query('seq == "N"').index)) #N-baseである場所indexを取り出す
@@ -133,7 +165,7 @@ def GAP_DETECT_NP(NowSeq, OUT_CHA, link_evi):
         GAP_DF['seq_id'] = NowSeq.id #get contig name
                                    
         for start_list, end_list in zip(N_base_index_pd_end_start_S_list, N_base_index_pd_end_start_E_list):
-            OUT_CHA += GAP_CHA_SET(int(start_list), int(end_list), link_evi)
+            OUT_CHA += GAP_CHA_SET(int(start_list), int(end_list), link_evi, min_assembly_gap_size, gap_estimated_length)
     return OUT_CHA, GAP_DF
 
 def EXON_GAP_DF_COMPA(EXON_DF_iterated, TEST_GAP_DF, strand):
@@ -285,7 +317,8 @@ def INCOMP_DETECT(sub_features_STRAND, COUNT, GAP_DF, out_STRAND, CODON_START):
         pass
     return INCOMP5, REVERSE_INCOMP5, CODON_START
 
-def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF):
+def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF,
+                 record, infer_boundary, start_codons, stop_codons):
     COUNT = 0 #Set count to 0 when entering a new mRNA.
     INCOMP5 = False #初期化
     REVERSE_INCOMP5 = False #初期化
@@ -297,7 +330,7 @@ def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
         out_STRAND_CLOSE = ")"
     ####GENE_INFORMATIONS
     mRNA_ID = RNA_f.ID
-    product_name = DF_EXTRACT(anno_DF, mRNA_ID) #DF_EXTRACT関数で該当するアノテーション情報を取り出す
+    product_name, custom_locus_tag = DF_EXTRACT(anno_DF, mRNA_ID) #DF_EXTRACT関数で該当するアノテーション情報を取り出す
     ####    
     gff_df_col_F_sub_sub = gff_df_col[gff_df_col['Parent'] == mRNA_ID] #mRNAに対応するsubfeatureを取り出す
     gff_df_col_F_sub_sub = gff_df_col_F_sub_sub[gff_df_col_F_sub_sub['type'] == "CDS"] #CDSだけ取り出す
@@ -307,14 +340,42 @@ def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
         gff_df_col_F_sub_sub_STRAND = gff_df_col_F_sub_sub.sort_values(by ='start', ascending=False)
     else:
         gff_df_col_F_sub_sub_STRAND = gff_df_col_F_sub_sub.sort_values(by ='start')
-    
+
     for rec_sub_sub, rec_sub_sub_strand in zip(gff_df_col_F_sub_sub.itertuples(), gff_df_col_F_sub_sub_STRAND.itertuples()):
         COUNT += 1
         POSITION, out_JOINT, out_JOINT_CLOSE, OUT_ART_LOC_FLAG = POSITION_SET(rec_sub_sub, COUNT, POSITION, GAP_DF, strand)        
         INCOMP5_tmp, REVERSE_INCOMP5_tmp, CODON_START = INCOMP_DETECT(rec_sub_sub_strand, COUNT, GAP_DF, out_STRAND, CODON_START)
         INCOMP5 = INCOMP5==True or INCOMP5_tmp==True
         REVERSE_INCOMP5 = REVERSE_INCOMP5==True or REVERSE_INCOMP5_tmp==True
-            
+
+    if infer_boundary:
+        if strand == '+':
+            start_codon_start = gff_df_col_F_sub_sub_STRAND.iloc[0].start
+            start_codon_end = start_codon_start + 2
+            stop_codon_end = gff_df_col_F_sub_sub_STRAND.iloc[-1].end
+            stop_codon_start = stop_codon_end - 2
+            start_codon_seq = record.seq[start_codon_start-1:start_codon_end]
+            stop_codon_seq = record.seq[stop_codon_start-1:stop_codon_end]
+            if start_codon_seq not in start_codons:
+                print('Start codon not found for {}'.format(mRNA_ID), flush=True)
+                INCOMP5 = True
+            if stop_codon_seq not in stop_codons:
+                print('Stop codon not found for {}'.format(mRNA_ID), flush=True)
+                REVERSE_INCOMP5 = True
+        elif strand == '-':
+            start_codon_start = gff_df_col_F_sub_sub_STRAND.iloc[0].end
+            start_codon_end = start_codon_start - 2
+            stop_codon_end = gff_df_col_F_sub_sub_STRAND.iloc[-1].start
+            stop_codon_start = stop_codon_end + 2
+            start_codon_seq = record.seq[start_codon_end-1:start_codon_start].reverse_complement()
+            stop_codon_seq = record.seq[stop_codon_end-1:stop_codon_start].reverse_complement()
+            if start_codon_seq not in start_codons:
+                print('Start codon not found for {}'.format(mRNA_ID), flush=True)
+                REVERSE_INCOMP5 = True
+            if stop_codon_seq not in stop_codons:
+                print('Stop codon not found for {}'.format(mRNA_ID), flush=True)
+                INCOMP5 = True
+
     if INCOMP5:
         POSITION = re.sub(r'^', '<', POSITION)
     if REVERSE_INCOMP5:
@@ -323,7 +384,7 @@ def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
     JOIN = out_STRAND + out_JOINT + POSITION + out_JOINT_CLOSE + out_STRAND_CLOSE 
     
     
-    OUT_CHA += CDS_CHA_SET(JOIN, locus_tag_prefix, locus_tag_counter, mRNA_ID, product_name, 9, CODON_START)
+    OUT_CHA += CDS_CHA_SET(JOIN, locus_tag_prefix, locus_tag_counter, mRNA_ID, product_name, custom_locus_tag, 9, CODON_START)
     if OUT_ART_LOC_FLAG: #If FLAG is standing, add artificial_location
         OUT_CHA += "\t\t\t" + "artificial_location" + "\t"+ "low-quality sequence region" + "\n"
     if pid_DF != False:
@@ -399,7 +460,7 @@ def tRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
     print(tRNA_name + " end") 
     return(OUT_CHA) 
 
-def GFF_TO_CDS(gff_df_col,gh, NowContig, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF):
+def GFF_TO_CDS(gff_df_col, gh, NowContig, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF, record, infer_boundary, start_codons, stop_codons):
     if gff_df_col.empty:
         pass
     else:
@@ -411,12 +472,20 @@ def GFF_TO_CDS(gff_df_col,gh, NowContig, locus_tag_counter, anno_DF, pid_DF, OUT
                 gff_df_col_F_sub = gff_df_col_F[gff_df_col_F['Parent'] == Now_gene_ID] #Extract the subfeature corresponding to the gene
                 for rec_sub in gff_df_col_F_sub.itertuples():
                     if rec_sub.type == 'mRNA':
-                        OUT_CHA = mRNA_MAKE_NP(gff_df_col_F, rec_sub, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF)
+                        OUT_CHA = mRNA_MAKE_NP(gff_df_col_F, rec_sub, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF, record, infer_boundary, start_codons, stop_codons)
                     elif rec_sub.type == 'rRNA':
                         OUT_CHA = rRNA_MAKE_NP(gff_df_col_F, rec_sub, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF)
                     elif rec_sub.type == 'tRNA':
                         OUT_CHA = tRNA_MAKE_NP(gff_df_col_F, rec_sub, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF)
     return locus_tag_counter, OUT_CHA
+
+
+def get_stop_codons(genetic_code):
+    stop_codons = []
+    for codon in CodonTable.unambiguous_dna_by_id[int(genetic_code)].stop_codons:
+        stop_codons.append(str(codon))
+    return stop_codons
+
 
 if __name__ == '__main__':
     args = GET_ARGS()
@@ -424,6 +493,13 @@ if __name__ == '__main__':
     in_file = args.gff
     anno_in = args.ann
     anno_DF = pd.read_csv(anno_in, sep='\t') #Finish loading the annotation file in one run
+    if 'Locus_tag' in anno_DF.columns:
+        print('The "Locus_tag" column exists in the annotation file. User-provided custom locus_tag values will be used.')
+        anno_DF = anno_DF.loc[:,['ID','Description','Locus_tag']]
+    else:
+        txt = 'The "Locus_tag" column does not exist in the annotation file. locus_tag values will be generated with the provided prefix: {}.'
+        print(txt.format(args.loc))
+        anno_DF = anno_DF.loc[:,['ID','Description']]
     transl_table = args.gct
     
     out_path = args.out
@@ -437,14 +513,21 @@ if __name__ == '__main__':
         pid_DF=False
     organism_name_in = args.nam
     strain_in = args.stn
+    country_in = args.cou
+    isolate_in = args.iso
+    collection_date_in = args.cod
+    sex_in = args.sex
+    min_assembly_gap_size = args.mag
+    gap_estimated_length = args.gel
     
     link_evi = args.gty
 
     locus_tag_counter = 0  #initialization
     PreContig = "" #initialization
     Contig_Count = 0 #initialization
-    OUT_CHA="" #initialization 
-    
+    OUT_CHA="" #initialization
+    start_codons = args.stc.split(',')
+    stop_codons = get_stop_codons(genetic_code=args.gct)
     
     gff_df = gffpd.read_gff3(in_file)
     gff_df_col = gff_df.attributes_to_columns()
@@ -458,14 +541,16 @@ if __name__ == '__main__':
         length = len(record) #Get array length
         NowContig = record.id #Get the array name.
         print("Processing " +  NowContig)
-        OUT_CHA += FASTA_CHA_SET(length, NowContig, organism_name_in, strain_in, mol_type_in)
+        OUT_CHA += FASTA_CHA_SET(length, NowContig, organism_name_in, strain_in, mol_type_in, country_in, isolate_in,
+                                 collection_date_in, sex_in)
         ##Detect and describe the gap region from fasta.
         print("Gap finding")
-        OUT_CHA, GAP_DF = GAP_DETECT_NP(record, OUT_CHA,link_evi)
+        OUT_CHA, GAP_DF = GAP_DETECT_NP(record, OUT_CHA, link_evi, min_assembly_gap_size, gap_estimated_length)
         print("Gap find end")
         ##Read the features of the corresponding sequences from gff in order
         print("GFF Processing")            
-        locus_tag_counter, OUT_CHA = GFF_TO_CDS(gff_df_col,in_file, NowContig, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF)
+        locus_tag_counter, OUT_CHA = GFF_TO_CDS(gff_df_col, in_file, NowContig, locus_tag_counter, anno_DF, pid_DF,
+                                                OUT_CHA, GAP_DF, record, args.ifc, start_codons, stop_codons)
         print("GFF Processing end")
         ##Output string after MSS return
         with open(out_path, mode='a') as f:
