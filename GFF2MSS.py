@@ -61,9 +61,9 @@ def FASTA_CHA_SET(length_int, contig_name, organism_name_in, strain_in, mol_type
                   collection_date_in, sex_in):
     OUT_CHA = NowContig + "\t" + "source" + "\t" + str(1) + ".." + str(length_int)
     if isolate_in != '':
-        OUT_CHA += "\t" + "ff_definition" + "\t" + "@@[organism]@@ DNA, @@[submitter_seqid]@@" + "\n"
-    else:
         OUT_CHA += "\t" + "ff_definition" + "\t" + "@@[organism]@@ @@[isolate]@@ DNA, @@[submitter_seqid]@@" + "\n"
+    else:
+        OUT_CHA += "\t" + "ff_definition" + "\t" + "@@[organism]@@ DNA, @@[submitter_seqid]@@" + "\n"
     OUT_CHA += "\t" + "\t" + "\t" + "mol_type" + "\t" + mol_type_in + "\n"
     OUT_CHA += "\t" + "\t" + "\t" + "organism" + "\t" + organism_name_in + "\n"
     if strain_in != '':
