@@ -51,7 +51,8 @@ def GET_ARGS():
     parser.add_argument('--cod',help="default=%(default)s: The 'collection_date' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html", default='', type=str, required=False)
     parser.add_argument('--mag',help="default=%(default)s: Minimum size of 'gap_assembly'. Ns smaller than this size are not annotated as 'gap_assembly'.", default=0, type=int, required=False)
     parser.add_argument('--gel',help="default=%(default)s: Whether the estimate sizes of 'gap_assembly' are known.", default='known', choices=['known','unknown'], metavar='known|unknown', type=str, required=False)
-    parser.add_argument('--fwg',help="default=%(default)s: How to describe features spanning an assembly_gap.", default='asis', choices=['asis','misc_feature'], metavar='asis|misc_feature', type=str, required=False)
+    parser.add_argument('--fwg',help="default=%(default)s: How to describe features spanning an 'assembly_gap'.", default='asis', choices=['asis','misc_feature'], metavar='asis|misc_feature', type=str, required=False)
+    parser.add_argument('--mis',help="default=%(default)s: Introns smaller than this size are annotated with 'artificial_location'.", type=int, metavar='INT', default=0, required=False)
     parser.set_defaults(mol='genomic DNA', stn='', pid="NOFILE", gty='paired-ends', out='out.mss.txt', gct='1')
 
     return parser.parse_args()
@@ -256,7 +257,6 @@ def EXON_GAP_DF_COMPA(EXON_DF_iterated, TEST_GAP_DF, strand):
         NEW_START_LIST.append(EXON_START)
         NEW_END_LIST.append(EXON_END)
     elif(gap_count >=1):
-        #Set up an artificial_location flag if you've ever been in a Gap process
         GAP_FLAG = True
     OUT_EXON_DF = pd.DataFrame({'start' : list(map(int, NEW_START_LIST)), 'end' : list(map(int, NEW_END_LIST))}) #Save the EXON mock area
     return OUT_EXON_DF, GAP_FLAG, GAP_START_FLAG, GAP_END_FLAG
@@ -315,10 +315,11 @@ def INCOMP_DETECT(sub_features_STRAND, COUNT, GAP_DF, out_STRAND, CODON_START):
     return INCOMP5, REVERSE_INCOMP5, CODON_START
 
 def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF,
-                 record, infer_boundary, start_codons, stop_codons, feature_with_gap):
+                 record, infer_boundary, start_codons, stop_codons, feature_with_gap, minimum_intron_size_cutoff):
     COUNT = 0 #Set count to 0 when entering a new mRNA.
     INCOMP5 = False #初期化
     REVERSE_INCOMP5 = False #初期化
+    ARTIFICIAL_LOCATION_FLAG = False #初期化
     CODON_START = 1
     out_STRAND, out_STRAND_CLOSE, POSITION, out_JOINT, out_JOINT_CLOSE="", "", "", "", "" #各出力項目を初期化
     strand = RNA_f.strand
@@ -378,18 +379,34 @@ def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
     if REVERSE_INCOMP5:
         POSITION = re.sub(r'\.([^.]*$)', r'.>\1', POSITION)
         
-    JOIN = out_STRAND + out_JOINT + POSITION + out_JOINT_CLOSE + out_STRAND_CLOSE 
-    
-    
+    JOIN = out_STRAND + out_JOINT + POSITION + out_JOINT_CLOSE + out_STRAND_CLOSE
+
+    intron_sizes = []
+    for end_start in POSITION.split('..'):
+        if ',' in end_start:
+            end,start = end_start.split(',')
+            intron_size = int(start) - int(end) -1
+            intron_sizes.append(intron_size)
+    intron_sizes = np.array(intron_sizes)
     OUT_CHA_tmp = CDS_CHA_SET(JOIN, locus_tag_prefix, locus_tag_counter, mRNA_ID, product_name, custom_locus_tag, 9, CODON_START)
+    if intron_sizes.shape[0] > 0:
+        min_intron_size = intron_sizes.min()
+        if min_intron_size < minimum_intron_size_cutoff:
+            txt = 'Introns too small ({:,} bp). "artificial_location" will be added to: {}'
+            print(txt.format(intron_sizes.min(), mRNA_ID), flush=True)
+            ARTIFICIAL_LOCATION_FLAG = True
     if OUT_GAP_FLAG:
         if feature_with_gap == 'asis':
-            OUT_CHA_tmp += "\t\t\t" + "artificial_location" + "\t"+ "low-quality sequence region" + "\n"
+            print('Gap found. "artificial_location" will be added to: {}'.format(mRNA_ID), flush=True)
+            ARTIFICIAL_LOCATION_FLAG = True
         elif feature_with_gap == 'misc_feature':
+            print('Gap found. {} will be described with "misc_feature".'.format(mRNA_ID), flush=True)
             OUT_CHA_tmp = re.sub('^\tCDS\t', '\tmisc_feature\t', OUT_CHA_tmp)
             OUT_CHA_tmp = re.sub('\n\t\t\tproduct\t.*\n', '\n', OUT_CHA_tmp)
             OUT_CHA_tmp = re.sub('\n\t\t\ttransl_table\t.*\n', '\n', OUT_CHA_tmp)
             OUT_CHA_tmp = re.sub('\n\t\t\tcodon_start\t.*\n', '\n', OUT_CHA_tmp)
+    if ARTIFICIAL_LOCATION_FLAG:
+        OUT_CHA_tmp += "\t\t\t" + "artificial_location" + "\t" + "low-quality sequence region" + "\n"
     if pid_DF != False:
         tmp_DF = pid_DF[pid_DF['ID'] == mRNA_ID]
         if (len(tmp_DF)>0):
@@ -463,7 +480,8 @@ def tRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
     print(tRNA_name + " end")
     return(OUT_CHA) 
 
-def GFF_TO_CDS(gff_df_col, gh, NowContig, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF, record, infer_boundary, start_codons, stop_codons, feature_with_gap):
+def GFF_TO_CDS(gff_df_col, gh, NowContig, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF, record, infer_boundary,
+               start_codons, stop_codons, feature_with_gap, minimum_intron_size_cutoff):
     if gff_df_col.empty:
         pass
     else:
@@ -475,7 +493,9 @@ def GFF_TO_CDS(gff_df_col, gh, NowContig, locus_tag_counter, anno_DF, pid_DF, OU
                 gff_df_col_F_sub = gff_df_col_F[gff_df_col_F['Parent'] == Now_gene_ID] #Extract the subfeature corresponding to the gene
                 for rec_sub in gff_df_col_F_sub.itertuples():
                     if rec_sub.type == 'mRNA':
-                        OUT_CHA = mRNA_MAKE_NP(gff_df_col_F, rec_sub, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF, record, infer_boundary, start_codons, stop_codons, feature_with_gap)
+                        OUT_CHA = mRNA_MAKE_NP(gff_df_col_F, rec_sub, locus_tag_prefix, locus_tag_counter, anno_DF,
+                                               pid_DF, OUT_CHA, GAP_DF, record, infer_boundary, start_codons,
+                                               stop_codons, feature_with_gap, minimum_intron_size_cutoff)
                     elif rec_sub.type == 'rRNA':
                         OUT_CHA = rRNA_MAKE_NP(gff_df_col_F, rec_sub, locus_tag_prefix, locus_tag_counter, anno_DF, pid_DF, OUT_CHA, GAP_DF)
                     elif rec_sub.type == 'tRNA':
@@ -553,7 +573,8 @@ if __name__ == '__main__':
         ##Read the features of the corresponding sequences from gff in order
         print("GFF Processing")            
         locus_tag_counter, OUT_CHA = GFF_TO_CDS(gff_df_col, in_file, NowContig, locus_tag_counter, anno_DF, pid_DF,
-                                                OUT_CHA, GAP_DF, record, args.ifc, start_codons, stop_codons, feature_with_gap=args.fwg)
+                                                OUT_CHA, GAP_DF, record, args.ifc, start_codons, stop_codons,
+                                                feature_with_gap=args.fwg, minimum_intron_size_cutoff=args.mis)
         print("GFF Processing end")
         ##Output string after MSS return
         with open(out_path, mode='a') as f:
