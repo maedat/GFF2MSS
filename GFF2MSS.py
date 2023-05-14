@@ -395,6 +395,7 @@ def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
             txt = 'Introns too small ({:,} bp). "artificial_location" will be added to: {}'
             print(txt.format(intron_sizes.min(), mRNA_ID), flush=True)
             ARTIFICIAL_LOCATION_FLAG = True
+
     if OUT_GAP_FLAG:
         if feature_with_gap == 'asis':
             print('Gap found. "artificial_location" will be added to: {}'.format(mRNA_ID), flush=True)
@@ -405,6 +406,7 @@ def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
             OUT_CHA_tmp = re.sub('\n\t\t\tproduct\t.*\n', '\n', OUT_CHA_tmp)
             OUT_CHA_tmp = re.sub('\n\t\t\ttransl_table\t.*\n', '\n', OUT_CHA_tmp)
             OUT_CHA_tmp = re.sub('\n\t\t\tcodon_start\t.*\n', '\n', OUT_CHA_tmp)
+            ARTIFICIAL_LOCATION_FLAG = False # JP0073:ER1:STX:ANN:Line [170.102]: [artificial_location] qualifier can NOT use for [misc_feature] feature.
     if ARTIFICIAL_LOCATION_FLAG:
         OUT_CHA_tmp += "\t\t\t" + "artificial_location" + "\t" + "low-quality sequence region" + "\n"
     if pid_DF != False:
