@@ -377,7 +377,11 @@ def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
     if INCOMP5:
         POSITION = re.sub(r'^', '<', POSITION)
     if REVERSE_INCOMP5:
-        POSITION = re.sub(r'\.([^.]*$)', r'.>\1', POSITION)
+        new_position = re.sub(r'\.([^.]*$)', r'.>\1', POSITION)
+        if new_position == POSITION:
+            # If nothing changed, we likely have a single-coordinate end.
+            # So replace the very last coordinate with '>...'
+            new_position = re.sub(r'(\d+)([^,]*)$', r'>\1\2', POSITION)
         
     JOIN = out_STRAND + out_JOINT + POSITION + out_JOINT_CLOSE + out_STRAND_CLOSE
 
