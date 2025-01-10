@@ -6,7 +6,7 @@
 # ======================================================================
 # Project Name    : GFF2MSS
 # File Name       : GFF2MSS.py
-# Version       : 4.0.3
+# Version       : 4.0.4
 # Encoding        : python
 # Creation Date   : 2019/08/30
 # Author : Taro Maeda 
@@ -384,8 +384,12 @@ def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
     intron_sizes = []
     for end_start in POSITION.split('..'):
         if ',' in end_start:
-            end,start = end_start.split(',')
-            intron_size = int(start) - int(end) -1
+            end_val, start_val = end_start.split(',')
+            end_val_clean = end_val.strip('><')
+            start_val_clean = start_val.strip('><')
+            end_int = int(end_val_clean)
+            start_int = int(start_val_clean)
+            intron_size = start_int - end_int - 1
             intron_sizes.append(intron_size)
     intron_sizes = np.array(intron_sizes)
     OUT_CHA_tmp = CDS_CHA_SET(JOIN, locus_tag_prefix, locus_tag_counter, mRNA_ID, product_name, custom_locus_tag, 9, CODON_START)
