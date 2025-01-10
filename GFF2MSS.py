@@ -6,7 +6,7 @@
 # ======================================================================
 # Project Name    : GFF2MSS
 # File Name       : GFF2MSS.py
-# Version       : 4.0.3
+# Version       : 4.0.5
 # Encoding        : python
 # Creation Date   : 2019/08/30
 # Author : Taro Maeda 
@@ -23,7 +23,7 @@ import argparse
 import pandas as pd
 import numpy as np
 from Bio import SeqIO
-from Bio import Seq
+from Bio.Seq import Seq
 from Bio.Data import CodonTable
 from BCBio import GFF
 import gffpandas.gffpandas as gffpd
@@ -319,6 +319,8 @@ def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
     COUNT = 0 #Set count to 0 when entering a new mRNA.
     INCOMP5 = False #初期化
     REVERSE_INCOMP5 = False #初期化
+    INCOMP3 = False #初期化
+    REVERSE_INCOMP3 = False #初期化
     ARTIFICIAL_LOCATION_FLAG = False #初期化
     CODON_START = 1
     out_STRAND, out_STRAND_CLOSE, POSITION, out_JOINT, out_JOINT_CLOSE="", "", "", "", "" #各出力項目を初期化
@@ -347,45 +349,45 @@ def mRNA_MAKE_NP(gff_df_col, RNA_f, locus_tag_prefix, locus_tag_counter, anno_DF
         REVERSE_INCOMP5 = REVERSE_INCOMP5==True or REVERSE_INCOMP5_tmp==True
 
     if infer_boundary:
-        if strand == '+':
-            start_codon_start = gff_df_col_F_sub_sub_STRAND.iloc[0].start
-            start_codon_end = start_codon_start + 2
-            stop_codon_end = gff_df_col_F_sub_sub_STRAND.iloc[-1].end
-            stop_codon_start = stop_codon_end - 2
-            start_codon_seq = record.seq[start_codon_start-1:start_codon_end]
-            stop_codon_seq = record.seq[stop_codon_start-1:stop_codon_end]
-            if start_codon_seq not in start_codons:
-                print('Start codon not found for {}'.format(mRNA_ID), flush=True)
+        subfeatures = gff_df_col_F_sub_sub_STRAND[gff_df_col_F_sub_sub_STRAND["type"] == "CDS"]
+        spliced_cds = ""
+        for exon in subfeatures.itertuples():
+            exon_seq = record.seq[exon.start-1 : exon.end]  # Biopython slice is 0-based
+            spliced_cds += str(exon_seq)
+        if strand == '-':
+            spliced_cds = str(Seq(spliced_cds).reverse_complement())
+        start_codon_seq = spliced_cds[:3]
+        stop_codon_seq = spliced_cds[-3:]
+        if start_codon_seq not in start_codons:
+            print('Start codon not found for {}'.format(mRNA_ID), flush=True)
+            if strand == '+':
                 INCOMP5 = True
-            if stop_codon_seq not in stop_codons:
-                print('Stop codon not found for {}'.format(mRNA_ID), flush=True)
+            else:
                 REVERSE_INCOMP5 = True
-        elif strand == '-':
-            start_codon_start = gff_df_col_F_sub_sub_STRAND.iloc[0].end
-            start_codon_end = start_codon_start - 2
-            stop_codon_end = gff_df_col_F_sub_sub_STRAND.iloc[-1].start
-            stop_codon_start = stop_codon_end + 2
-            start_codon_seq = record.seq[start_codon_end-1:start_codon_start].reverse_complement()
-            stop_codon_seq = record.seq[stop_codon_end-1:stop_codon_start].reverse_complement()
-            if start_codon_seq not in start_codons:
-                print('Start codon not found for {}'.format(mRNA_ID), flush=True)
-                REVERSE_INCOMP5 = True
-            if stop_codon_seq not in stop_codons:
-                print('Stop codon not found for {}'.format(mRNA_ID), flush=True)
-                INCOMP5 = True
-
-    if INCOMP5:
+        if stop_codon_seq not in stop_codons:
+            print('Stop codon not found for {}'.format(mRNA_ID), flush=True)
+            if strand == '+':
+                INCOMP3 = True
+            else:
+                REVERSE_INCOMP3 = True
+    
+    if INCOMP5 or REVERSE_INCOMP3:
         POSITION = re.sub(r'^', '<', POSITION)
-    if REVERSE_INCOMP5:
-        POSITION = re.sub(r'\.([^.]*$)', r'.>\1', POSITION)
+    if REVERSE_INCOMP5 or INCOMP3:
+        new_position = re.sub(r'([^.,]+$)', r'>\1', POSITION)
+        POSITION = new_position
         
     JOIN = out_STRAND + out_JOINT + POSITION + out_JOINT_CLOSE + out_STRAND_CLOSE
 
     intron_sizes = []
     for end_start in POSITION.split('..'):
         if ',' in end_start:
-            end,start = end_start.split(',')
-            intron_size = int(start) - int(end) -1
+            end_val, start_val = end_start.split(',')
+            end_val_clean = end_val.strip('><')
+            start_val_clean = start_val.strip('><')
+            end_int = int(end_val_clean)
+            start_int = int(start_val_clean)
+            intron_size = start_int - end_int - 1
             intron_sizes.append(intron_size)
     intron_sizes = np.array(intron_sizes)
     OUT_CHA_tmp = CDS_CHA_SET(JOIN, locus_tag_prefix, locus_tag_counter, mRNA_ID, product_name, custom_locus_tag, 9, CODON_START)
