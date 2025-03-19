@@ -13,28 +13,54 @@ pip install gff2mss
 ```
 
 ## v.4.1
+
+
 Several new features have been added. Thanks to @kfuku52.
+
 Modifications improve flexibility while ensuring compliance with DDBJ and annotation validation tools (e.g., transChecker).
-    •    Added country and collection_date fields to the source feature.
-            Example: country: Singapore:Tempines, collection_date: 2019-03-26
-    •    Added isolate field to the source feature.
-            Example: isolate: SING2019-196
-    •    Modified strain field to sex.
-            Example: strain: male → sex: male
-    •    Updated ff_definition format to:
-            @@[organism]@@ @@[isolate]@@ DNA, @@[submitter_seqid]@@
-    •    Introduced new options in GFF2MSS:
-            --iso <isolate> for setting isolate
-            --sex <sex> for setting sex
-            --cou <country> for setting country
-            --cod <collection_date> for setting collection_date
-            --mag <minimum size of gap_assembly> (sets the minimum size of assembly_gap)
-            --gel <gap_assembly size known/unknown> (sets whether the gap size is known or unknown,)
-    •    User-Defined locus_tag Support
-            Allows users to specify their own locus_tag values instead of GFF2MSS’s numbering system.
-            Uses the third column of the TSV file provided via --ann.
-            If the TSV has only two columns (ID & Description), the behavior remains unchanged.
-    •    Adds > or < symbols to indicate incomplete start or stop codons.
+
+
+
+- Added country and collection_date fields to the source features
+
+  ​    Example: country: Singapore: Tampines, collection_date: 2019-03-26
+
+- Added isolate field to the source feature.
+
+  ​    Example: isolate: SING2019-196
+
+- Modified sex field .
+
+​    Example: sex: male
+
+-  Updated ff_definition format to:
+
+   @@[organism]@@ @@[isolate]@@ DNA, @@[submitter_seqid]@@
+
+-  Introduced new options in GFF2MSS:
+
+  ​      --iso <isolate> for setting isolate
+
+  ​      --sex <sex> for setting sex
+
+  ​      --cou <country> for setting country
+
+  ​      --cod <collection_date> for setting collection_date
+
+  ​      --mag <minimum size of gap_assembly> (sets the minimum size of assembly_gap)
+
+  ​      --gel <gap_assembly size known/unknown> (sets whether the gap size is known or unknown,)
+
+-   User-Defined locus_tag Support
+
+​      Allows users to specify their own locus_tag values instead of GFF2MSS’s numbering system.
+
+​      Uses the third column of the TSV file provided via --ann.
+
+​      If the TSV has only two columns (ID & Description), the behavior remains unchanged.
+
+-   Adds > or < symbols to indicate incomplete start or stop codons.
+
 
 
 ## v.4.0
