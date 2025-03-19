@@ -89,14 +89,15 @@ Python 3.7. (Biopython, numpy, pandas, argparse, bcbio-gff, gffpandas)
 
 ## Usage
 ```sh
-usage: GFF2MSS.py [-h] -f FASTA -g GFF -a ANN -l LOC -n NAM [-s STN] -o OUT [-m MOL] [-p PID] [-t GTY] [-c GCT]
-
+usage: GFF2MSS.py [-h] -f FASTA -g GFF -a ANN -l LOC -n NAM [-s STN] -o OUT [-m MOL] [-p PID] [-t GTY] [-c GCT] [--ifc IFC] [--stc STC] [--iso ISO]
+                  [--sex SEX] [--cou COU] [--cod COD] [--mag MAG] [--gel known|unknown] [--fwg asis|misc_feature] [--mis INT]
+                  
 optional arguments:
   -h, --help            show this help message and exit
   -f FASTA, --fasta FASTA
                         File path to a genome sequence file
   -g GFF, --gff GFF     gff3 file for gene modeling
-  -a ANN, --ann ANN     txt file for gene annotation (header = ID, Description)
+  -a ANN, --ann ANN     tsv file for gene annotation The 'ID' and 'Description' columns are mandatory. 'Locus_tag' is optional.
   -l LOC, --loc LOC     locus_tag prefix
   -n NAM, --nam NAM     organism name
   -s STN, --stn STN     strain
@@ -105,6 +106,17 @@ optional arguments:
   -p PID, --pid PID     file for protein ID (Only for the genome version-up)
   -t GTY, --gty GTY     type of linkage_evidence (default = paired-ends)
   -c GCT, --gct GCT     number of Genetic Code Tables (default = 1)
+  --ifc IFC             default=no: inferring the completeness of gene models by the presence of start and stop codons and add '>' or '<' to the output.
+  --stc STC             default=ATG: comma-separated list of start codons
+  --iso ISO             default=: The 'isolate' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html
+  --sex SEX             default=: The 'sex' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html
+  --cou COU             default=: The 'country' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html
+  --cod COD             default=: The 'collection_date' value. See https://www.ddbj.nig.ac.jp/ddbj/file-format-e.html
+  --mag MAG             default=0: Minimum size of 'gap_assembly'. Ns smaller than this size are not annotated as 'gap_assembly'.
+  --gel known|unknown   default=known: Whether the estimate sizes of 'gap_assembly' are known.
+  --fwg asis|misc_feature
+                        default=asis: How to describe features spanning an 'assembly_gap'.
+  --mis INT             default=0: Introns smaller than this size are annotated with 'artificial_location'.
 
 ```
 
