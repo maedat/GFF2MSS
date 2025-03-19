@@ -4,8 +4,37 @@
 
 MSS (Mass Submission System) on DDBJ requires uniq annotation format file for data submission. I here made a python script converting the standard gff3 gene model file to the MSS annotation.  This script makes an MSS file from a gff3 file for gene modeling, a tsv file for annotation file, and a fasta file containing genomic sequence. We recommend pre-processing your gff3 data via [GFF3sort.pl](https://github.com/billzt/gff3sort), before your conversion. After the making of MSS file, you should fill "COMMON" entries (SUBMITTER, REFERENCE, etc.) before the submission for DDBJ. This software is a non-official converter for MSS. We do not guarantee that DDBJ accepts the generated files.
 
+## v.4.2
+our package is now available for installation via pip. 
+You can easily install it using the following command:
+
+```txt
+pip install gff2mss
+```
+
 ## v.4.1
-Several new features have been added. Thanks to @kfuku52. Details will be added to the readme later.
+Several new features have been added. Thanks to @kfuku52.
+Modifications improve flexibility while ensuring compliance with DDBJ and annotation validation tools (e.g., transChecker).
+    •    Added country and collection_date fields to the source feature.
+            Example: country: Singapore:Tempines, collection_date: 2019-03-26
+    •    Added isolate field to the source feature.
+            Example: isolate: SING2019-196
+    •    Modified strain field to sex.
+            Example: strain: male → sex: male
+    •    Updated ff_definition format to:
+            @@[organism]@@ @@[isolate]@@ DNA, @@[submitter_seqid]@@
+    •    Introduced new options in GFF2MSS:
+            --iso <isolate> for setting isolate
+            --sex <sex> for setting sex
+            --cou <country> for setting country
+            --cod <collection_date> for setting collection_date
+            --mag <minimum size of gap_assembly> (sets the minimum size of assembly_gap)
+            --gel <gap_assembly size known/unknown> (sets whether the gap size is known or unknown,)
+    •    User-Defined locus_tag Support
+            Allows users to specify their own locus_tag values instead of GFF2MSS’s numbering system.
+            Uses the third column of the TSV file provided via --ann.
+            If the TSV has only two columns (ID & Description), the behavior remains unchanged.
+    •    Adds > or < symbols to indicate incomplete start or stop codons.
 
 
 ## v.4.0
@@ -64,7 +93,7 @@ python3 GFF2MSS.py \
 -l "PRE_TEST_" \
 -n "Demo japonicus" \
 -s "MG-20" \
--c "11"
+-c "11" \
 -o mss.ex1.out.txt 
 
 ```
@@ -92,7 +121,7 @@ python3 GFF2MSS.py \
 -l "PRE_TEST_" \
 -n "Demo japonicus" \
 -s "BB2" \
--t "paired-ends"
+-t "paired-ends" \
 -o mss.ex2.out.txt 
 ```
 
