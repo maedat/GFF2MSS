@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["gff2mss"]
+
+[project]
+name = "gff2mss"
+version = "4.2.1"
+description = "Convert GFF3 gene model to DDBJ MSS format"
+readme = "README.md"
+requires-python = ">=3.8, <3.12"
+license = {text = "MIT"}
+authors = [
+  { name="Taro Maeda", email="taromaedaj@gmail.com" }
+]
+dependencies = [
+  "pandas",
+  "numpy",
+  "biopython",
+  "bcbio-gff",
+  "gffpandas"
+]
+
+
+
+[project.scripts]
+gff2mss = "gff2mss.main:main"

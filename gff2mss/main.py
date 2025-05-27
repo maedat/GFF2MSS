@@ -30,6 +30,7 @@ import gffpandas.gffpandas as gffpd
 import re
 from distutils.util import strtobool
 
+
 def GET_ARGS():
     parser = argparse.ArgumentParser()
     parser.add_argument('-f','--fasta',  help="File path to a genome sequence file", required=True)
@@ -513,31 +514,30 @@ def get_stop_codons(genetic_code):
         stop_codons.append(str(codon))
     return stop_codons
 
-
-if __name__ == '__main__':
+def main():
     args = GET_ARGS()
     fasta_in = args.fasta
     in_file = args.gff
     anno_in = args.ann
-    anno_DF = pd.read_csv(anno_in, sep='\t') #Finish loading the annotation file in one run
+    anno_DF = pd.read_csv(anno_in, sep='\t')  # Finish loading the annotation file in one run
     if 'Locus_tag' in anno_DF.columns:
         print('The "Locus_tag" column exists in the annotation file. User-provided custom locus_tag values will be used.')
-        anno_DF = anno_DF.loc[:,['ID','Description','Locus_tag']]
+        anno_DF = anno_DF.loc[:, ['ID', 'Description', 'Locus_tag']]
     else:
         txt = 'The "Locus_tag" column does not exist in the annotation file. locus_tag values will be generated with the provided prefix: {}.'
         print(txt.format(args.loc))
-        anno_DF = anno_DF.loc[:,['ID','Description']]
+        anno_DF = anno_DF.loc[:, ['ID', 'Description']]
+
     transl_table = args.gct
-    
     out_path = args.out
     locus_tag_prefix = args.loc
-
     mol_type_in = args.mol
     protein_id = args.pid
     if protein_id != "NOFILE":
-        pid_DF=pd.read_csv(protein_id, sep='\t')
+        pid_DF = pd.read_csv(protein_id, sep='\t')
     else:
-        pid_DF=False
+        pid_DF = False
+
     organism_name_in = args.nam
     strain_in = args.stn
     country_in = args.cou
@@ -546,43 +546,51 @@ if __name__ == '__main__':
     sex_in = args.sex
     min_assembly_gap_size = args.mag
     gap_estimated_length = args.gel
-    
     link_evi = args.gty
 
-    locus_tag_counter = 0  #initialization
-    PreContig = "" #initialization
-    Contig_Count = 0 #initialization
-    OUT_CHA="" #initialization
+    locus_tag_counter = 0  # initialization
+    PreContig = ""  # initialization
+    Contig_Count = 0  # initialization
+    OUT_CHA = ""  # initialization
     start_codons = args.stc.split(',')
     stop_codons = get_stop_codons(genetic_code=args.gct)
-    
+
     gff_df = gffpd.read_gff3(in_file)
     gff_df_col = gff_df.attributes_to_columns()
     gff_df_col = gff_df_col.sort_values('start')
+
     with open(out_path, mode='w') as f:
         f.write(OUT_CHA)
+
     for record in SeqIO.parse(fasta_in, 'fasta'):
-        record=record.upper() #All bases should be capitalized.    
+        record = record.upper()  # All bases should be capitalized
         print("new_contig")
-        features=[] #Initialize the features (sometimes it's not there)
-        length = len(record) #Get array length
-        NowContig = record.id #Get the array name.
-        print("Processing " +  NowContig)
-        OUT_CHA += FASTA_CHA_SET(length, NowContig, organism_name_in, strain_in, mol_type_in, country_in, isolate_in,
-                                 collection_date_in, sex_in)
-        ##Detect and describe the gap region from fasta.
+        features = []  # Initialize the features
+        length = len(record)
+        NowContig = record.id
+        print("Processing " + NowContig)
+
+        OUT_CHA += FASTA_CHA_SET(length, NowContig, organism_name_in, strain_in, mol_type_in,
+                                 country_in, isolate_in, collection_date_in, sex_in)
+
         print("Gap finding")
         OUT_CHA, GAP_DF = GAP_DETECT_NP(record, OUT_CHA, link_evi, min_assembly_gap_size, gap_estimated_length)
         print("Gap find end")
-        ##Read the features of the corresponding sequences from gff in order
-        print("GFF Processing")            
-        locus_tag_counter, OUT_CHA = GFF_TO_CDS(gff_df_col, in_file, NowContig, locus_tag_counter, anno_DF, pid_DF,
-                                                OUT_CHA, GAP_DF, record, args.ifc, start_codons, stop_codons,
-                                                feature_with_gap=args.fwg, minimum_intron_size_cutoff=args.mis)
+
+        print("GFF Processing")
+        locus_tag_counter, OUT_CHA = GFF_TO_CDS(
+            gff_df_col, in_file, NowContig, locus_tag_counter,
+            anno_DF, pid_DF, OUT_CHA, GAP_DF, record,
+            args.ifc, start_codons, stop_codons,
+            feature_with_gap=args.fwg, minimum_intron_size_cutoff=args.mis
+        )
         print("GFF Processing end")
-        ##Output string after MSS return
+
         with open(out_path, mode='a') as f:
             f.write(OUT_CHA)
-        print("Processing " +NowContig+" end")
-        OUT_CHA=""
 
+        print("Processing " + NowContig + " end")
+        OUT_CHA = ""
+
+if __name__ == '__main__':
+    main()

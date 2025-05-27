@@ -1,0 +1,2 @@
+[console_scripts]
+gff2mss = gff2mss.main:main
