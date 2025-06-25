@@ -9,6 +9,7 @@ Previous pip installation was not correctly configured.
 This version fixes the setup and packaging for proper installation via pip.
 
 ```txt
+conda install python==3.10
 pip install gff2mss
 gff2mss --help
 ```
